@@ -32,10 +32,11 @@
 <div id="root"></div>
 
 <!-- Campaign atmosphere: surveillance HUD + CRT/grain/vignette overlays -->
-<div class="hud hud-tl">REC</div>
+<div class="hud hud-tl"><span class="rec-dot"></span>REC <span id="tc">00:00:00</span></div>
 <div class="hud hud-tr">EXP. 01 · VIDA O NADA</div>
 <div class="fx-grain"></div>
 <div class="fx-scan"></div>
+<div class="fx-screen"></div>
 <div class="fx-vignette"></div>
 
 <script src="./vendor/react.production.min.js"></script>
@@ -58,6 +59,19 @@
       }
     }, 1500);
   });
+</script>
+<script>
+  /* Live REC timecode — sells the "this is being recorded" feel. */
+  (function () {
+    var el = document.getElementById("tc");
+    if (!el) return;
+    var s = 0;
+    var p = function (n) { return String(n).padStart(2, "0"); };
+    setInterval(function () {
+      s++;
+      el.textContent = p(Math.floor(s / 3600)) + ":" + p(Math.floor(s / 60) % 60) + ":" + p(s % 60);
+    }, 1000);
+  })();
 </script>
 </body>
 </html>

@@ -1,144 +1,144 @@
 /* ============================================================
-   VIDA O NADA — "INTERVENCIÓN" campaign skin
-   Analog · clinical · surveillance. CRT, VHS grain, alert red.
-   Re-skins the design system by overriding tokens + adding
-   effect layers. Visual treatment only — copy/structure intact.
+   VIDA O NADA — "EN DIRECTO" campaign skin
+   TV / recording aesthetic on the BRAND palette.
+   Teal-deep base + amber action + sienna REC. Teal-orange,
+   clean (coffee-photo) — not grungy. Treatment only; copy intact.
    ============================================================ */
 
-/* ---------- 1. Palette flip: everything goes clinical-dark ---------- */
+/* ---------- 1. Palette: brand teal + amber, all dark ---------- */
 :root {
-  /* former "light" world -> deep warm black surfaces */
-  --von-parchment:      #0f0b09;
-  --von-parchment-deep: #16110d;
-  --surface-card:       #16110d;
-  --surface-base:       #0f0b09;
+  /* former "light" world -> deep teal surfaces */
+  --von-parchment:      #0a2230;
+  --von-parchment-deep: #0f3447;
+  --surface-card:       #0f3447;
+  --surface-base:       #0a2230;
 
-  /* text inks flip to bone (legible on dark) */
-  --von-ink:            #e8e1d5;
-  --von-ink-soft:       #9a9080;
-  --text-heading:       #f1ece1;
-  --text-body:          #e8e1d5;
-  --text-muted:         #9a9080;
+  /* text -> warm bone (warm on teal = the teal/orange contrast) */
+  --von-ink:            #efe7d6;
+  --von-ink-soft:       #a7b4b3;
+  --text-heading:       #f4ede0;
+  --text-body:          #efe7d6;
+  --text-muted:         #a7b4b3;
 
-  /* the already-dark world: deepen + cool the cream slightly */
-  --von-ink-black:      #0b0807;
-  --von-ink-black-2:    #14100c;
-  --von-ink-black-3:    #241a12;
-  --von-cream:          #e6ddcf;
-  --von-cream-soft:     #968b7a;
-  --von-parchment-text: #f2ece1;
+  /* the dark world -> brand "disciplina / profundidad" teal */
+  --von-ink-black:      #0b2839;  /* disciplina  */
+  --von-ink-black-2:    #103a4d;  /* profundidad-ish raised */
+  --von-ink-black-3:    #1b4c60;  /* hairline */
+  --von-cream:          #efe7d6;
+  --von-cream-soft:     #aebbbb;
+  --von-parchment-text: #f4ede0;
 
-  /* borders for the new dark light-sections */
-  --border-soft:        rgba(232,225,213,0.12);
-  --border-strong:      rgba(232,225,213,0.24);
-  --border-dark:        rgba(232,225,213,0.14);
-  --border-dark-strong: rgba(232,225,213,0.30);
+  /* borders */
+  --border-soft:        rgba(239,231,214,0.12);
+  --border-strong:      rgba(239,231,214,0.22);
+  --border-dark:        rgba(239,231,214,0.13);
+  --border-dark-strong: rgba(239,231,214,0.26);
 
-  /* ACTION COLOR -> surveillance/alert red (was amber) */
-  --accent:             #cc1f1a;
-  --accent-hover:       #e23a2f;
-  --accent-press:       #a5160f;
-  --accent-on:          #f6f0e7;
-  --focus-ring:         rgba(204,31,26,0.38);
+  /* ACTION -> brand amber "claridad" */
+  --accent:             #d68631;
+  --accent-hover:       #e59a45;
+  --accent-press:       #b8691e;
+  --accent-on:          #0b2839;     /* deep-teal text on amber */
+  --focus-ring:         rgba(214,134,49,0.40);
 
-  /* keep amber as the warm secondary thread (eyebrows, highlight word,
-     and the pre-rendered icon set stays amber automatically) */
-  --von-energia:        #d68631;
+  /* warm secondary + teal accents (all from the brand six) */
+  --von-energia:        #964405;     /* sienna — eyebrows, REC */
+  --von-claridad:       #d68631;
+  --von-enfoque:        #3d717e;
+  --von-profundidad:    #10475e;
 
-  --alert:              #cc1f1a;
-  --hud:                #c9bfae;
+  --rec:                #b3530a;     /* warm sienna-orange REC dot */
+  --teal:               #4f93a1;     /* brightened enfoque for labels */
+  --hud:                #bcd0cf;
 }
 
-html { background: #0b0807; }
-body { background: #0b0807; color: var(--von-cream); }
+html { background: #081d28; }
+body { background: #081d28; color: var(--von-cream); }
 
-::selection { background: var(--alert); color: #f6f0e7; }
+::selection { background: var(--accent); color: var(--accent-on); }
 
-/* ---------- 2. Global effect layers (fixed, over everything) ---------- */
-/* grain */
+/* ---------- 2. Effect layers — clean TV screen, not VHS ---------- */
 .fx-grain {
   position: fixed; inset: 0; z-index: 9996; pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.07; mix-blend-mode: overlay;
+  opacity: 0.04; mix-blend-mode: overlay;          /* cleaner */
 }
-/* CRT scanlines + faint flicker */
 .fx-scan {
   position: fixed; inset: 0; z-index: 9997; pointer-events: none;
   background: repeating-linear-gradient(
-    to bottom, rgba(0,0,0,0) 0 2px, rgba(0,0,0,0.22) 2px 3px);
-  mix-blend-mode: multiply; opacity: 0.55;
-  animation: fxFlicker 5s infinite steps(1);
+    to bottom, rgba(0,0,0,0) 0 3px, rgba(2,18,26,0.16) 3px 4px);  /* finer, softer */
+  opacity: 0.45; animation: fxFlicker 6s infinite steps(1);
 }
-/* vignette — pulls the eye to center, kills the "flat web page" feel */
+/* TV screen bezel: soft inset glow + faint frame around the whole viewport */
+.fx-screen {
+  position: fixed; inset: 0; z-index: 9995; pointer-events: none;
+  box-shadow: inset 0 0 160px rgba(0,0,0,0.45),
+              inset 0 0 0 1px rgba(239,231,214,0.05);
+}
 .fx-vignette {
   position: fixed; inset: 0; z-index: 9998; pointer-events: none;
-  background: radial-gradient(125% 105% at 50% 38%,
-    transparent 52%, rgba(0,0,0,0.45) 82%, rgba(0,0,0,0.72) 100%);
+  background: radial-gradient(130% 110% at 50% 40%,
+    transparent 58%, rgba(4,14,20,0.40) 86%, rgba(4,14,20,0.66) 100%);
 }
 @keyframes fxFlicker {
-  0%, 96%, 100% { opacity: 0.55; }
-  97% { opacity: 0.42; }
-  98% { opacity: 0.62; }
-  99% { opacity: 0.48; }
+  0%, 97%, 100% { opacity: 0.45; }
+  98% { opacity: 0.36; }
+  99% { opacity: 0.52; }
 }
 
-/* ---------- 3. Surveillance HUD (corners) ---------- */
+/* ---------- 3. "Recording" HUD: REC dot + live timecode ---------- */
 .hud {
   position: fixed; z-index: 9999; pointer-events: none;
   font-family: var(--font-subtitle, "Space Grotesk"), monospace;
-  font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--hud); opacity: 0.7; mix-blend-mode: screen;
+  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--hud); opacity: 0.82;
+  display: flex; align-items: center; gap: 8px;
 }
-.hud-tl { top: 14px; left: 16px; color: var(--alert); opacity: 0.9; }
-.hud-tr { top: 16px; right: 16px; text-align: right; }
-.hud-bl { bottom: 14px; left: 16px; }
-.hud-br { bottom: 14px; right: 16px; text-align: right; }
-.hud-tl::before {
-  content: "●"; margin-right: 7px; color: var(--alert);
-  animation: recBlink 1.4s infinite steps(1);
+.hud-tl { top: 16px; left: 18px; color: var(--von-cream); }
+.hud-tr { top: 18px; right: 18px; }
+.hud #tc { color: var(--von-cream-soft); letter-spacing: 0.12em; }
+.rec-dot {
+  width: 9px; height: 9px; border-radius: 50%; background: var(--rec);
+  box-shadow: 0 0 9px var(--rec); animation: recBlink 1.4s steps(1) infinite;
 }
-@keyframes recBlink { 0%,49%{opacity:1} 50%,100%{opacity:0.15} }
+@keyframes recBlink { 0%,49%{opacity:1} 50%,100%{opacity:0.2} }
 
-/* ---------- 4. Glitch on the hero headline ---------- */
+/* ---------- 4. Subtle glitch on the hero headline (amber/teal) ---------- */
 .glitch {
-  text-shadow: 0.018em 0 rgba(204,31,26,0.55), -0.018em 0 rgba(58,140,160,0.45);
-  animation: glitchShift 7s infinite steps(1);
+  text-shadow: 0.014em 0 rgba(214,134,49,0.45), -0.014em 0 rgba(61,113,126,0.40);
+  animation: glitchShift 8s infinite steps(1);
 }
 @keyframes glitchShift {
-  0%, 92%, 100% { text-shadow: 0.018em 0 rgba(204,31,26,0.55), -0.018em 0 rgba(58,140,160,0.45); }
-  94% { text-shadow: -0.05em 0 rgba(204,31,26,0.8), 0.05em 0 rgba(58,140,160,0.7); transform: translateX(1px); }
-  96% { text-shadow: 0.06em 0 rgba(204,31,26,0.8), -0.06em 0 rgba(58,140,160,0.7); transform: translateX(-1px); }
+  0%, 94%, 100% { text-shadow: 0.014em 0 rgba(214,134,49,0.45), -0.014em 0 rgba(61,113,126,0.40); }
+  96% { text-shadow: -0.04em 0 rgba(214,134,49,0.7), 0.04em 0 rgba(61,113,126,0.6); }
+  98% { text-shadow: 0.05em 0 rgba(214,134,49,0.7), -0.05em 0 rgba(61,113,126,0.6); }
 }
 
 /* ---------- 5. CRT frame around the hero illustration ---------- */
 .crt {
-  position: relative; border-radius: 12px; overflow: hidden;
-  padding: 14px;
-  background: radial-gradient(120% 120% at 50% 40%, rgba(40,28,18,0.5), rgba(8,6,5,0.85));
-  box-shadow: inset 0 0 70px rgba(0,0,0,0.7), 0 0 0 1px var(--border-strong),
-              0 22px 60px rgba(0,0,0,0.5);
+  position: relative; border-radius: 14px; overflow: hidden; padding: 16px;
+  background: radial-gradient(120% 120% at 50% 38%, rgba(16,71,94,0.45), rgba(8,29,40,0.9));
+  box-shadow: inset 0 0 80px rgba(0,0,0,0.6), 0 0 0 1px var(--border-strong),
+              0 24px 64px rgba(0,0,0,0.45);
 }
 .crt::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: repeating-linear-gradient(to bottom,
-    rgba(0,0,0,0) 0 2px, rgba(0,0,0,0.28) 2px 3px);
-  mix-blend-mode: multiply; opacity: 0.6;
+    rgba(0,0,0,0) 0 2px, rgba(2,18,26,0.22) 2px 3px);
+  opacity: 0.55;
 }
 .crt::before {
   content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2;
-  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.05) 48%, transparent 60%);
+  background: linear-gradient(105deg, transparent 32%, rgba(214,134,49,0.06) 48%, transparent 62%);
 }
-.crt img { display: block; width: 100%; filter: contrast(1.08) saturate(0.92) brightness(0.96); }
+.crt img { display: block; width: 100%; filter: contrast(1.05) saturate(0.96) brightness(0.98); }
 
-/* ---------- 6. Misc atmosphere ---------- */
-/* tighten the in-section grain that already exists, so it reads VHS */
-.von-grain { opacity: 0.6 !important; }
+/* ---------- 6. polish ---------- */
+.von-grain { opacity: 0.4 !important; }   /* tame the per-section grain */
 
 @media (prefers-reduced-motion: reduce) {
-  .fx-scan, .glitch, .hud-tl::before { animation: none; }
+  .fx-scan, .glitch, .rec-dot { animation: none; }
 }
-
-/* hide HUD on small screens so it never crowds the copy */
 @media (max-width: 720px) {
-  .hud-tr, .hud-bl, .hud-br { display: none; }
+  .hud-tr { display: none; }
 }
