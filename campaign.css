@@ -138,14 +138,13 @@ body { background: #081d28; color: var(--von-cream); }
 .vf-tr { top: 14px; right: 14px; border-left: 0;  border-bottom: 0; }
 .vf-bl { bottom: 14px; left: 14px;  border-right: 0; border-top: 0; }
 .vf-br { bottom: 14px; right: 14px; border-left: 0;  border-top: 0; }
+/* center reticle = a compass rose (camera viewfinder meets navigation) */
 .vf-reticle {
   position: fixed; z-index: 9999; pointer-events: none;
-  top: 50%; left: 50%; width: 48px; height: 48px; transform: translate(-50%,-50%);
-  border: 1px solid rgba(214,134,49,0.45); opacity: 0.5;
+  top: 50%; left: 50%; width: 68px; height: 68px; transform: translate(-50%,-50%);
+  opacity: 0.5;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%23d68631' stroke-width='1.4'/%3E%3Ccircle cx='50' cy='50' r='33' fill='none' stroke='%234f93a1' stroke-width='1'/%3E%3Cpath d='M22 22 L78 78 M78 22 L22 78' stroke='%234f93a1' stroke-width='0.7'/%3E%3Cpath d='M50 6 L56 50 L50 94 L44 50 Z' fill='%23d68631'/%3E%3Cpath d='M6 50 L50 56 L94 50 L50 44 Z' fill='%23d68631' opacity='0.6'/%3E%3Ccircle cx='50' cy='50' r='3' fill='%23d68631'/%3E%3C/svg%3E") center / contain no-repeat;
 }
-.vf-reticle::before, .vf-reticle::after { content: ""; position: absolute; background: var(--accent); }
-.vf-reticle::before { left: 50%; top: -8px; bottom: -8px; width: 1px; transform: translateX(-50%); }
-.vf-reticle::after  { top: 50%; left: -8px; right: -8px; height: 1px; transform: translateY(-50%); }
 
 /* ---------- 8. Film-strip edges (tierra) — frames the page like a roll ---------- */
 .film-strip {
@@ -199,11 +198,29 @@ a[style*="var(--accent)"]:hover {
     0 0 30px rgba(214,134,49,0.4) !important;            /* focus pull = stronger glow */
 }
 
+/* ---------- 10. Antique nautical-chart texture + heading HUD ---------- */
+.fx-map {
+  position: fixed; inset: 0; z-index: 9993; pointer-events: none;
+  opacity: 0.06; mix-blend-mode: overlay;
+  background-image:
+    repeating-linear-gradient(0deg,  rgba(239,231,214,0.5) 0 1px, transparent 1px 84px),
+    repeating-linear-gradient(90deg, rgba(239,231,214,0.5) 0 1px, transparent 1px 84px),
+    repeating-linear-gradient(45deg, rgba(239,231,214,0.32) 0 1px, transparent 1px 168px),
+    repeating-linear-gradient(-45deg, rgba(239,231,214,0.32) 0 1px, transparent 1px 168px);
+}
+.hud-tc {
+  top: 19px; left: 50%; transform: translateX(-50%);
+  color: var(--von-cream-soft); gap: 10px;
+}
+.hud-tc::before {
+  content: "↟"; color: var(--accent); font-size: 0.85rem; opacity: 0.9;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fx-scan, .glitch, .rec-dot { animation: none; }
 }
 @media (max-width: 720px) {
-  .hud-tr { display: none; }
+  .hud-tr, .hud-tc { display: none; }
   .film-strip { width: 11px; }
   .vf { width: 22px; height: 22px; }
 }
