@@ -7,11 +7,11 @@
 
 /* ---------- 1. Palette: PARCHMENT base + brown anchors, teal+orange pops ---------- */
 :root {
-  /* light sections -> warm parchment (translucent, atmosphere shows through) */
-  --von-parchment:      rgba(233,220,193,0.55);
-  --von-parchment-deep: rgba(221,205,171,0.72);
-  --surface-card:       rgba(226,212,182,0.74);
-  --surface-base:       rgba(233,220,193,0.55);
+  /* light sections -> warm parchment (clean cream, slight translucency) */
+  --von-parchment:      rgba(238,227,201,0.86);
+  --von-parchment-deep: rgba(226,212,182,0.92);
+  --surface-card:       rgba(231,218,189,0.92);
+  --surface-base:       rgba(238,227,201,0.86);
 
   /* text on parchment -> dark brown ink (strong contrast) */
   --von-ink:            #2a1810;
