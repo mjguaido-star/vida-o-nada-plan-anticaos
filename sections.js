@@ -220,7 +220,7 @@ function Hero({
   }, React.createElement(Button, {
     variant: "primary",
     size: "lg",
-    iconSrc: ICONS + "/ink/rumbo.png",
+    iconSrc: ICONS + "/cream/rumbo.png",
     iconRight: true,
     onClick: onJoin
   }, "Lo decido ahora"), React.createElement(Button, {

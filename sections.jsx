@@ -94,7 +94,7 @@ function Hero({ onJoin }) {
           </Reveal>
           <Reveal delay={270}>
             <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
-              <Button variant="primary" size="lg" iconSrc={ICONS + "/ink/rumbo.png"} iconRight onClick={onJoin}>Lo decido ahora</Button>
+              <Button variant="primary" size="lg" iconSrc={ICONS + "/cream/rumbo.png"} iconRight onClick={onJoin}>Lo decido ahora</Button>
               <Button variant="ghost" size="lg" as="a" href="#programa" style={{ color: "var(--von-cream)" }}>Enséñame el plan</Button>
             </div>
           </Reveal>
