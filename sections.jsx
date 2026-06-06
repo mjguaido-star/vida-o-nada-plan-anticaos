@@ -126,7 +126,7 @@ function Problema() {
           </p>
         </Reveal>
         <Reveal delay={200}>
-          <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(2.2rem,5vw,4rem)", lineHeight: 0.95, letterSpacing: "-0.01em", color: "var(--von-energia)", margin: 0 }}>
+          <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(2.2rem,5vw,4rem)", lineHeight: 0.95, letterSpacing: "-0.01em", color: "var(--accent)", margin: 0 }}>
             Es que no estás eligiendo.
           </p>
         </Reveal>
@@ -138,12 +138,12 @@ function Problema() {
 /* ======================================================== TRANSICIÓN */
 function Transformacion() {
   return (
-    <section style={{ background: "var(--von-ink-black)", paddingTop: "calc(var(--section-pad-y) * 0.9)", paddingBottom: "calc(var(--section-pad-y) * 0.9)", overflow: "hidden" }}>
+    <section style={{ background: "var(--von-parchment)", color: "var(--von-ink)", paddingTop: "calc(var(--section-pad-y) * 0.9)", paddingBottom: "calc(var(--section-pad-y) * 0.9)", overflow: "hidden" }}>
       <Grain />
       <div className="wrap" style={{ position: "relative", zIndex: 2, textAlign: "center", maxWidth: 900 }}>
         <Reveal>
-          <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(2.4rem,6vw,5rem)", lineHeight: 0.95, letterSpacing: "-0.01em", color: "var(--von-parchment-text)", margin: 0 }}>
-            No es motivación.<br /><span style={{ color: "var(--accent)" }}>Es un sistema.</span>
+          <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(2.4rem,6vw,5rem)", lineHeight: 0.95, letterSpacing: "-0.01em", color: "var(--von-ink)", margin: 0 }}>
+            No es motivación.<br /><span style={{ color: "var(--teal)" }}>Es un sistema.</span>
           </p>
         </Reveal>
       </div>
@@ -187,17 +187,17 @@ function Programa() {
 /* ======================================================== RESULTADO */
 function Manifiesto() {
   return (
-    <section id="resultado" style={{ background: "var(--von-ink-black)", paddingTop: "calc(var(--section-pad-y) * 1.05)", paddingBottom: "calc(var(--section-pad-y) * 1.05)", overflow: "hidden" }}>
+    <section id="resultado" style={{ background: "var(--von-parchment)", color: "var(--von-ink)", paddingTop: "calc(var(--section-pad-y) * 1.05)", paddingBottom: "calc(var(--section-pad-y) * 1.05)", overflow: "hidden" }}>
       <Grain />
       <div className="wrap" style={{ position: "relative", zIndex: 2, textAlign: "center", maxWidth: 900 }}>
-        <Reveal><Eyebrow number="03" tone="cream" style={{ justifyContent: "center" }}>El resultado</Eyebrow></Reveal>
+        <Reveal><Eyebrow number="03" tone="energia" style={{ justifyContent: "center" }}>El resultado</Eyebrow></Reveal>
         <Reveal delay={80}>
-          <p style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: "clamp(2rem,4.4vw,3.4rem)", lineHeight: 1.2, letterSpacing: "-0.015em", color: "var(--von-parchment-text)", margin: "20px 0 22px" }}>
+          <p style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: "clamp(2rem,4.4vw,3.4rem)", lineHeight: 1.2, letterSpacing: "-0.015em", color: "var(--von-ink)", margin: "20px 0 22px" }}>
             Dejas de pensar tanto.<br /><span style={{ color: "var(--accent)" }}>Empiezas a moverte.</span>
           </p>
         </Reveal>
         <Reveal delay={150}>
-          <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(1.15rem,1.9vw,1.5rem)", lineHeight: 1.5, color: "var(--von-cream)", maxWidth: "46ch", margin: "0 auto" }}>
+          <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(1.15rem,1.9vw,1.5rem)", lineHeight: 1.5, color: "var(--von-ink-soft)", maxWidth: "46ch", margin: "0 auto" }}>
             Y por primera vez en mucho tiempo, sientes que estás haciendo algo de verdad.
           </p>
         </Reveal>

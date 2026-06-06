@@ -5,61 +5,62 @@
    Treatment only; copy & structure untouched.
    ============================================================ */
 
-/* ---------- 1. Palette: warm earth, no blue ---------- */
+/* ---------- 1. Palette: PARCHMENT base + brown anchors, teal+orange pops ---------- */
 :root {
-  /* former "light" world -> translucent warm browns (atmosphere shows through) */
-  --von-parchment:      rgba(42,24,16,0.55);
-  --von-parchment-deep: rgba(60,38,22,0.6);
-  --surface-card:       rgba(60,38,22,0.6);
-  --surface-base:       rgba(42,24,16,0.55);
+  /* light sections -> warm parchment (translucent, atmosphere shows through) */
+  --von-parchment:      rgba(233,220,193,0.55);
+  --von-parchment-deep: rgba(221,205,171,0.72);
+  --surface-card:       rgba(226,212,182,0.74);
+  --surface-base:       rgba(233,220,193,0.55);
 
-  /* text -> cream */
-  --von-ink:            #f3e8cc;
-  --von-ink-soft:       #c2a982;
-  --text-heading:       #f8f0db;
-  --text-body:          #f3e8cc;
-  --text-muted:         #c2a982;
+  /* text on parchment -> dark brown ink (strong contrast) */
+  --von-ink:            #2a1810;
+  --von-ink-soft:       #5e4a32;
+  --text-heading:       #241509;
+  --text-body:          #2a1810;
+  --text-muted:         #5e4a32;
 
-  /* dark world -> translucent deep browns (layered over the warm gradient) */
-  --von-ink-black:      rgba(26,15,9,0.66);
-  --von-ink-black-2:    rgba(46,27,16,0.62);
-  --von-ink-black-3:    #432a18;
+  /* dark anchor sections (hero / cierre) -> solid warm brown */
+  --von-ink-black:      #20120b;
+  --von-ink-black-2:    #2e1b10;
+  --von-ink-black-3:    #46301c;
   --von-cream:          #f3e8cc;
-  --von-cream-soft:     #bfa57e;
-  --von-parchment-text: #f8f0db;
+  --von-cream-soft:     #c7ad84;
+  --von-parchment-text: #f6efdc;
 
-  /* borders */
-  --border-soft:        rgba(243,232,204,0.12);
-  --border-strong:      rgba(243,232,204,0.22);
-  --border-dark:        rgba(243,232,204,0.13);
-  --border-dark-strong: rgba(243,232,204,0.26);
+  /* borders: dark-on-light + light-on-dark */
+  --border-soft:        rgba(42,24,16,0.16);
+  --border-strong:      rgba(42,24,16,0.28);
+  --border-dark:        rgba(243,232,204,0.15);
+  --border-dark-strong: rgba(243,232,204,0.30);
 
-  /* ACTION = amber (claridad) */
+  /* ACTION = orange (claridad) */
   --accent:             #d68631;
   --accent-hover:       #e59a45;
   --accent-press:       #b8691e;
   --accent-on:          #241006;
   --focus-ring:         rgba(214,134,49,0.40);
 
-  /* alternative POP colors to make things stand out */
-  --von-energia:        #d52518;   /* tomato — eyebrow numbers / highlight word */
-  --tomato:             #d52518;
-  --sunshine:           #ffc926;
+  /* POP colors: orange + blue(teal) to highlight */
+  --von-energia:        #2f6f7e;   /* teal (enfoque/profundidad) — eyebrow numbers on light */
+  --teal:               #3d717e;
+  --teal-bright:        #5fa0b0;   /* teal for text on dark */
+  --orange:             #d68631;
   --citrus:             #f5821f;
 
-  --rec:                #d52518;   /* tomato REC dot */
-  --hud:                #d8c7a4;   /* warm cream HUD text */
+  --rec:                #cf5a1a;   /* warm orange REC dot */
+  --hud:                #d8c7a4;
 }
 
-html { background: #160d07; }
+html { background: #e6d8ba; }
 body {
-  /* soft cinematic mix: warm amber light + parchment haze over a brown base */
+  /* parchment base mixed with brown — warm orange light + subtle teal haze */
   background:
-    radial-gradient(115% 75% at 78% 6%, rgba(214,134,49,0.20), transparent 46%),
-    radial-gradient(95% 70% at 12% 102%, rgba(243,232,204,0.10), transparent 52%),
-    linear-gradient(180deg, #35210f 0%, #241509 52%, #160d07 100%);
+    radial-gradient(120% 80% at 80% 2%, rgba(214,134,49,0.16), transparent 46%),
+    radial-gradient(90% 70% at 8% 102%, rgba(61,113,126,0.12), transparent 52%),
+    linear-gradient(180deg, #efe3c9 0%, #e6d8ba 52%, #dccca8 100%);
   background-attachment: fixed;
-  color: var(--von-cream);
+  color: var(--von-ink);
 }
 
 ::selection { background: var(--accent); color: var(--accent-on); }
@@ -73,18 +74,18 @@ body {
 .fx-scan {
   position: fixed; inset: 0; z-index: 9997; pointer-events: none;
   background: repeating-linear-gradient(
-    to bottom, rgba(0,0,0,0) 0 3px, rgba(18,9,4,0.18) 3px 4px);
-  opacity: 0.4; animation: fxFlicker 6s infinite steps(1);
+    to bottom, rgba(0,0,0,0) 0 3px, rgba(60,40,20,0.10) 3px 4px);
+  opacity: 0.5; animation: fxFlicker 6s infinite steps(1);
 }
 .fx-screen {
   position: fixed; inset: 0; z-index: 9995; pointer-events: none;
-  box-shadow: inset 0 0 140px rgba(0,0,0,0.32),
-              inset 0 0 0 1px rgba(243,232,204,0.05);
+  box-shadow: inset 0 0 130px rgba(60,38,18,0.22),
+              inset 0 0 0 1px rgba(90,60,30,0.06);
 }
 .fx-vignette {
   position: fixed; inset: 0; z-index: 9998; pointer-events: none;
-  background: radial-gradient(135% 115% at 50% 38%,
-    transparent 62%, rgba(14,7,3,0.24) 88%, rgba(14,7,3,0.48) 100%);
+  background: radial-gradient(140% 120% at 50% 36%,
+    transparent 66%, rgba(70,44,20,0.14) 90%, rgba(50,30,14,0.3) 100%);
 }
 @keyframes fxFlicker {
   0%, 97%, 100% { opacity: 0.4; }
@@ -103,7 +104,7 @@ body {
 .hud-tl { top: 19px; left: 60px; color: var(--von-cream); }
 .hud-tr { top: 21px; right: 60px; }
 .hud-tc { top: 19px; left: 50%; transform: translateX(-50%); color: var(--von-cream-soft); gap: 10px; }
-.hud-tc::before { content: "↟"; color: var(--sunshine); font-size: 0.85rem; }
+.hud-tc::before { content: "↟"; color: var(--teal-bright); font-size: 0.85rem; }
 .hud #tc { color: var(--von-cream-soft); letter-spacing: 0.12em; }
 .cam-val { color: var(--accent); }
 .rec-dot {
@@ -212,7 +213,7 @@ a[style*="var(--accent)"]:hover {
   content: ""; position: absolute; z-index: 0; pointer-events: none;
   top: 50%; right: 4%; width: min(46vw, 520px); height: min(46vw, 520px);
   transform: translateY(-34%);
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='96' fill='none' stroke='%23d68631' stroke-width='1.4'/%3E%3Ccircle cx='100' cy='100' r='88' fill='none' stroke='%23f3e8cc' stroke-width='4' stroke-dasharray='1.4 6.6' opacity='0.85'/%3E%3Ccircle cx='100' cy='100' r='58' fill='none' stroke='%23d68631' stroke-width='1'/%3E%3Cg stroke='%23f3e8cc' stroke-width='0.8' opacity='0.7'%3E%3Cpath d='M100 100 L143 57 M100 100 L143 143 M100 100 L57 143 M100 100 L57 57'/%3E%3C/g%3E%3Cg%3E%3Cpath d='M100 100 L100 22 L90 100 Z' fill='%23d68631'/%3E%3Cpath d='M100 100 L100 22 L110 100 Z' fill='%23f3e8cc' opacity='0.85'/%3E%3Cpath d='M100 100 L100 178 L110 100 Z' fill='%23d68631'/%3E%3Cpath d='M100 100 L100 178 L90 100 Z' fill='%23f3e8cc' opacity='0.85'/%3E%3Cpath d='M100 100 L178 100 L100 90 Z' fill='%23d68631'/%3E%3Cpath d='M100 100 L178 100 L100 110 Z' fill='%23f3e8cc' opacity='0.85'/%3E%3Cpath d='M100 100 L22 100 L100 110 Z' fill='%23d68631'/%3E%3Cpath d='M100 100 L22 100 L100 90 Z' fill='%23f3e8cc' opacity='0.85'/%3E%3C/g%3E%3Ccircle cx='100' cy='100' r='4' fill='%23d68631'/%3E%3Cpath d='M100 6 L94 20 L106 20 Z' fill='%23d52518'/%3E%3C/svg%3E") center / contain no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='96' fill='none' stroke='%23d68631' stroke-width='1.4'/%3E%3Ccircle cx='100' cy='100' r='88' fill='none' stroke='%23f3e8cc' stroke-width='4' stroke-dasharray='1.4 6.6' opacity='0.85'/%3E%3Ccircle cx='100' cy='100' r='58' fill='none' stroke='%23d68631' stroke-width='1'/%3E%3Cg stroke='%23f3e8cc' stroke-width='0.8' opacity='0.7'%3E%3Cpath d='M100 100 L143 57 M100 100 L143 143 M100 100 L57 143 M100 100 L57 57'/%3E%3C/g%3E%3Cg%3E%3Cpath d='M100 100 L100 22 L90 100 Z' fill='%23d68631'/%3E%3Cpath d='M100 100 L100 22 L110 100 Z' fill='%23f3e8cc' opacity='0.85'/%3E%3Cpath d='M100 100 L100 178 L110 100 Z' fill='%23d68631'/%3E%3Cpath d='M100 100 L100 178 L90 100 Z' fill='%23f3e8cc' opacity='0.85'/%3E%3Cpath d='M100 100 L178 100 L100 90 Z' fill='%23d68631'/%3E%3Cpath d='M100 100 L178 100 L100 110 Z' fill='%23f3e8cc' opacity='0.85'/%3E%3Cpath d='M100 100 L22 100 L100 110 Z' fill='%23d68631'/%3E%3Cpath d='M100 100 L22 100 L100 90 Z' fill='%23f3e8cc' opacity='0.85'/%3E%3C/g%3E%3Ccircle cx='100' cy='100' r='4' fill='%23d68631'/%3E%3Cpath d='M100 6 L94 20 L106 20 Z' fill='%23d68631'/%3E%3C/svg%3E") center / contain no-repeat;
   opacity: 0.15;
 }
 

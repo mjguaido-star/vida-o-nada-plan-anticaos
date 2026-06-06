@@ -305,7 +305,7 @@ function Problema() {
       fontSize: "clamp(2.2rem,5vw,4rem)",
       lineHeight: 0.95,
       letterSpacing: "-0.01em",
-      color: "var(--von-energia)",
+      color: "var(--accent)",
       margin: 0
     }
   }, "Es que no est\xE1s eligiendo."))));
@@ -313,7 +313,8 @@ function Problema() {
 function Transformacion() {
   return React.createElement("section", {
     style: {
-      background: "var(--von-ink-black)",
+      background: "var(--von-parchment)",
+      color: "var(--von-ink)",
       paddingTop: "calc(var(--section-pad-y) * 0.9)",
       paddingBottom: "calc(var(--section-pad-y) * 0.9)",
       overflow: "hidden"
@@ -333,12 +334,12 @@ function Transformacion() {
       fontSize: "clamp(2.4rem,6vw,5rem)",
       lineHeight: 0.95,
       letterSpacing: "-0.01em",
-      color: "var(--von-parchment-text)",
+      color: "var(--von-ink)",
       margin: 0
     }
   }, "No es motivaci\xF3n.", React.createElement("br", null), React.createElement("span", {
     style: {
-      color: "var(--accent)"
+      color: "var(--teal)"
     }
   }, "Es un sistema.")))));
 }
@@ -411,7 +412,8 @@ function Manifiesto() {
   return React.createElement("section", {
     id: "resultado",
     style: {
-      background: "var(--von-ink-black)",
+      background: "var(--von-parchment)",
+      color: "var(--von-ink)",
       paddingTop: "calc(var(--section-pad-y) * 1.05)",
       paddingBottom: "calc(var(--section-pad-y) * 1.05)",
       overflow: "hidden"
@@ -426,7 +428,7 @@ function Manifiesto() {
     }
   }, React.createElement(Reveal, null, React.createElement(Eyebrow, {
     number: "03",
-    tone: "cream",
+    tone: "energia",
     style: {
       justifyContent: "center"
     }
@@ -439,7 +441,7 @@ function Manifiesto() {
       fontSize: "clamp(2rem,4.4vw,3.4rem)",
       lineHeight: 1.2,
       letterSpacing: "-0.015em",
-      color: "var(--von-parchment-text)",
+      color: "var(--von-ink)",
       margin: "20px 0 22px"
     }
   }, "Dejas de pensar tanto.", React.createElement("br", null), React.createElement("span", {
@@ -454,7 +456,7 @@ function Manifiesto() {
       fontStyle: "italic",
       fontSize: "clamp(1.15rem,1.9vw,1.5rem)",
       lineHeight: 1.5,
-      color: "var(--von-cream)",
+      color: "var(--von-ink-soft)",
       maxWidth: "46ch",
       margin: "0 auto"
     }
