@@ -1,242 +1,218 @@
 /* ============================================================
-   VIDA O NADA — "EN DIRECTO" campaign skin
-   TV / recording aesthetic on the BRAND palette.
-   Teal-deep base + amber action + sienna REC. Teal-orange,
-   clean (coffee-photo) — not grungy. Treatment only; copy intact.
+   VIDA O NADA — "EN DIRECTO / CARTA NÁUTICA" campaign skin
+   Earth-tone base (tierra/brown) + amber action + vibrant pops
+   (tomato / sunshine). Vintage camera + film + antique compass.
+   Treatment only; copy & structure untouched.
    ============================================================ */
 
-/* ---------- 1. Palette: brand teal + amber, all dark ---------- */
+/* ---------- 1. Palette: warm earth, no blue ---------- */
 :root {
-  /* former "light" world -> deep teal surfaces */
-  --von-parchment:      #0a2230;
-  --von-parchment-deep: #0f3447;
-  --surface-card:       #0f3447;
-  --surface-base:       #0a2230;
+  /* former "light" world -> warm browns */
+  --von-parchment:      #2a1810;
+  --von-parchment-deep: #3a2415;
+  --surface-card:       #3a2415;
+  --surface-base:       #2a1810;
 
-  /* text -> warm bone (warm on teal = the teal/orange contrast) */
-  --von-ink:            #efe7d6;
-  --von-ink-soft:       #a7b4b3;
-  --text-heading:       #f4ede0;
-  --text-body:          #efe7d6;
-  --text-muted:         #a7b4b3;
+  /* text -> cream */
+  --von-ink:            #f3e8cc;
+  --von-ink-soft:       #c2a982;
+  --text-heading:       #f8f0db;
+  --text-body:          #f3e8cc;
+  --text-muted:         #c2a982;
 
-  /* the dark world -> brand "disciplina / profundidad" teal */
-  --von-ink-black:      #0b2839;  /* disciplina  */
-  --von-ink-black-2:    #103a4d;  /* profundidad-ish raised */
-  --von-ink-black-3:    #1b4c60;  /* hairline */
-  --von-cream:          #efe7d6;
-  --von-cream-soft:     #aebbbb;
-  --von-parchment-text: #f4ede0;
+  /* dark world -> deepest browns (tierra family) */
+  --von-ink-black:      #20120b;
+  --von-ink-black-2:    #2e1b10;
+  --von-ink-black-3:    #432a18;
+  --von-cream:          #f3e8cc;
+  --von-cream-soft:     #bfa57e;
+  --von-parchment-text: #f8f0db;
 
   /* borders */
-  --border-soft:        rgba(239,231,214,0.12);
-  --border-strong:      rgba(239,231,214,0.22);
-  --border-dark:        rgba(239,231,214,0.13);
-  --border-dark-strong: rgba(239,231,214,0.26);
+  --border-soft:        rgba(243,232,204,0.12);
+  --border-strong:      rgba(243,232,204,0.22);
+  --border-dark:        rgba(243,232,204,0.13);
+  --border-dark-strong: rgba(243,232,204,0.26);
 
-  /* ACTION -> brand amber "claridad" */
+  /* ACTION = amber (claridad) */
   --accent:             #d68631;
   --accent-hover:       #e59a45;
   --accent-press:       #b8691e;
-  --accent-on:          #0b2839;     /* deep-teal text on amber */
+  --accent-on:          #241006;
   --focus-ring:         rgba(214,134,49,0.40);
 
-  /* warm secondary + teal accents (all from the brand six) */
-  --von-energia:        #964405;     /* sienna — eyebrows, REC */
-  --von-claridad:       #d68631;
-  --von-enfoque:        #3d717e;
-  --von-profundidad:    #10475e;
+  /* alternative POP colors to make things stand out */
+  --von-energia:        #d52518;   /* tomato — eyebrow numbers / highlight word */
+  --tomato:             #d52518;
+  --sunshine:           #ffc926;
+  --citrus:             #f5821f;
 
-  --rec:                #b3530a;     /* warm sienna-orange REC dot */
-  --teal:               #4f93a1;     /* brightened enfoque for labels */
-  --hud:                #bcd0cf;
+  --rec:                #d52518;   /* tomato REC dot */
+  --hud:                #d8c7a4;   /* warm cream HUD text */
 }
 
-html { background: #081d28; }
-body { background: #081d28; color: var(--von-cream); }
+html { background: #1b0f0a; }
+body { background: #1b0f0a; color: var(--von-cream); }
 
 ::selection { background: var(--accent); color: var(--accent-on); }
 
-/* ---------- 2. Effect layers — clean TV screen, not VHS ---------- */
+/* ---------- 2. Effect layers — clean warm screen ---------- */
 .fx-grain {
   position: fixed; inset: 0; z-index: 9996; pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.04; mix-blend-mode: overlay;          /* cleaner */
+  opacity: 0.045; mix-blend-mode: overlay;
 }
 .fx-scan {
   position: fixed; inset: 0; z-index: 9997; pointer-events: none;
   background: repeating-linear-gradient(
-    to bottom, rgba(0,0,0,0) 0 3px, rgba(2,18,26,0.16) 3px 4px);  /* finer, softer */
-  opacity: 0.45; animation: fxFlicker 6s infinite steps(1);
+    to bottom, rgba(0,0,0,0) 0 3px, rgba(18,9,4,0.18) 3px 4px);
+  opacity: 0.4; animation: fxFlicker 6s infinite steps(1);
 }
-/* TV screen bezel: soft inset glow + faint frame around the whole viewport */
 .fx-screen {
   position: fixed; inset: 0; z-index: 9995; pointer-events: none;
-  box-shadow: inset 0 0 160px rgba(0,0,0,0.45),
-              inset 0 0 0 1px rgba(239,231,214,0.05);
+  box-shadow: inset 0 0 160px rgba(0,0,0,0.5),
+              inset 0 0 0 1px rgba(243,232,204,0.05);
 }
 .fx-vignette {
   position: fixed; inset: 0; z-index: 9998; pointer-events: none;
   background: radial-gradient(130% 110% at 50% 40%,
-    transparent 58%, rgba(4,14,20,0.40) 86%, rgba(4,14,20,0.66) 100%);
+    transparent 56%, rgba(14,7,3,0.42) 86%, rgba(14,7,3,0.7) 100%);
 }
 @keyframes fxFlicker {
-  0%, 97%, 100% { opacity: 0.45; }
-  98% { opacity: 0.36; }
-  99% { opacity: 0.52; }
+  0%, 97%, 100% { opacity: 0.4; }
+  98% { opacity: 0.32; }
+  99% { opacity: 0.48; }
 }
 
-/* ---------- 3. "Recording" HUD: REC dot + live timecode ---------- */
+/* ---------- 3. "Recording" HUD: REC dot + live timecode + heading ---------- */
 .hud {
   position: fixed; z-index: 9999; pointer-events: none;
   font-family: var(--font-subtitle, "Space Grotesk"), monospace;
   font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--hud); opacity: 0.82;
+  color: var(--hud); opacity: 0.85;
   display: flex; align-items: center; gap: 8px;
 }
 .hud-tl { top: 19px; left: 60px; color: var(--von-cream); }
 .hud-tr { top: 21px; right: 60px; }
-.cam-val { color: var(--accent); }
+.hud-tc { top: 19px; left: 50%; transform: translateX(-50%); color: var(--von-cream-soft); gap: 10px; }
+.hud-tc::before { content: "↟"; color: var(--sunshine); font-size: 0.85rem; }
 .hud #tc { color: var(--von-cream-soft); letter-spacing: 0.12em; }
+.cam-val { color: var(--accent); }
 .rec-dot {
   width: 9px; height: 9px; border-radius: 50%; background: var(--rec);
   box-shadow: 0 0 9px var(--rec); animation: recBlink 1.4s steps(1) infinite;
 }
 @keyframes recBlink { 0%,49%{opacity:1} 50%,100%{opacity:0.2} }
 
-/* ---------- 4. Headline: crisp & legible (glitch removed on purpose) ---------- */
+/* ---------- 4. Headline: crisp & legible ---------- */
 .glitch { text-shadow: none; }
 
 /* ---------- 5. CRT frame around the hero illustration ---------- */
 .crt {
   position: relative; border-radius: 14px; overflow: hidden; padding: 16px;
-  background: radial-gradient(120% 120% at 50% 38%, rgba(16,71,94,0.45), rgba(8,29,40,0.9));
+  background: radial-gradient(120% 120% at 50% 38%, rgba(90,50,17,0.5), rgba(20,10,5,0.92));
   box-shadow: inset 0 0 80px rgba(0,0,0,0.6), 0 0 0 1px var(--border-strong),
               0 24px 64px rgba(0,0,0,0.45);
 }
 .crt::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: repeating-linear-gradient(to bottom,
-    rgba(0,0,0,0) 0 2px, rgba(2,18,26,0.22) 2px 3px);
-  opacity: 0.55;
+    rgba(0,0,0,0) 0 2px, rgba(18,9,4,0.22) 2px 3px);
+  opacity: 0.5;
 }
 .crt::before {
   content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2;
-  background: linear-gradient(105deg, transparent 32%, rgba(214,134,49,0.06) 48%, transparent 62%);
+  background: linear-gradient(105deg, transparent 32%, rgba(255,201,38,0.06) 48%, transparent 62%);
 }
-.crt img { display: block; width: 100%; filter: contrast(1.05) saturate(0.96) brightness(0.98); }
+.crt img { display: block; width: 100%; filter: contrast(1.05) saturate(1.02) brightness(0.99); }
 
-/* ---------- 6. polish ---------- */
-.von-grain { opacity: 0.4 !important; }   /* tame the per-section grain */
-
-/* ---------- 7. Camera viewfinder: focus corners + center reticle ---------- */
+/* ---------- 6. Camera viewfinder: amber focus corners ---------- */
 .vf {
   position: fixed; z-index: 9999; pointer-events: none;
-  width: 30px; height: 30px; border: 2px solid var(--teal); opacity: 0.6;
+  width: 30px; height: 30px; border: 2px solid rgba(214,134,49,0.6); opacity: 0.7;
 }
 .vf-tl { top: 14px; left: 14px;  border-right: 0; border-bottom: 0; }
 .vf-tr { top: 14px; right: 14px; border-left: 0;  border-bottom: 0; }
 .vf-bl { bottom: 14px; left: 14px;  border-right: 0; border-top: 0; }
 .vf-br { bottom: 14px; right: 14px; border-left: 0;  border-top: 0; }
-/* center reticle = a compass rose (camera viewfinder meets navigation) */
-.vf-reticle {
-  position: fixed; z-index: 9999; pointer-events: none;
-  top: 50%; left: 50%; width: 68px; height: 68px; transform: translate(-50%,-50%);
-  opacity: 0.5;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%23d68631' stroke-width='1.4'/%3E%3Ccircle cx='50' cy='50' r='33' fill='none' stroke='%234f93a1' stroke-width='1'/%3E%3Cpath d='M22 22 L78 78 M78 22 L22 78' stroke='%234f93a1' stroke-width='0.7'/%3E%3Cpath d='M50 6 L56 50 L50 94 L44 50 Z' fill='%23d68631'/%3E%3Cpath d='M6 50 L50 56 L94 50 L50 44 Z' fill='%23d68631' opacity='0.6'/%3E%3Ccircle cx='50' cy='50' r='3' fill='%23d68631'/%3E%3C/svg%3E") center / contain no-repeat;
-}
 
-/* ---------- 8. Film-strip edges (tierra) — frames the page like a roll ---------- */
+/* ---------- 7. Film-strip edges (dark, cream perforations) ---------- */
 .film-strip {
   position: fixed; top: 0; bottom: 0; width: 18px; z-index: 9994;
-  pointer-events: none; opacity: 0.5; background: #5a3211;
+  pointer-events: none; opacity: 0.7; background: #160a05;
 }
 .film-strip::before {
   content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 8px;
   transform: translateX(-50%);
   background-image: repeating-linear-gradient(to bottom,
-    rgba(244,237,224,0.92) 0 7px, transparent 7px 18px);
+    rgba(243,232,204,0.85) 0 7px, transparent 7px 18px);
 }
-.film-left  { left: 0;  border-right: 1px solid rgba(0,0,0,0.45); }
-.film-right { right: 0; border-left: 1px solid rgba(0,0,0,0.45); }
+.film-left  { left: 0;  border-right: 1px solid rgba(0,0,0,0.5); }
+.film-right { right: 0; border-left: 1px solid rgba(0,0,0,0.5); }
+
+/* ---------- 8. Antique nautical-chart texture ---------- */
+.fx-map {
+  position: fixed; inset: 0; z-index: 9993; pointer-events: none;
+  opacity: 0.06; mix-blend-mode: overlay;
+  background-image:
+    repeating-linear-gradient(0deg,  rgba(243,232,204,0.5) 0 1px, transparent 1px 84px),
+    repeating-linear-gradient(90deg, rgba(243,232,204,0.5) 0 1px, transparent 1px 84px),
+    repeating-linear-gradient(45deg, rgba(243,232,204,0.32) 0 1px, transparent 1px 168px),
+    repeating-linear-gradient(-45deg, rgba(243,232,204,0.32) 0 1px, transparent 1px 168px);
+}
 
 /* ---------- 9. CTA buttons styled as a camera lens ---------- */
-/* Targets only the amber/primary CTAs (their inline bg is var(--accent)).
-   All lens visuals live in the background layers so the label stays legible. */
 button,
 a[style*="var(--accent)"] {
   background:
-    radial-gradient(58% 44% at 32% 24%, rgba(255,255,255,0.30), transparent 58%),     /* glass glare   */
-    radial-gradient(34% 30% at 74% 74%, rgba(79,147,161,0.55), transparent 62%),       /* teal coating  */
-    radial-gradient(circle at 50% 42%, #150c05 0%, #160d06 26%, #5a3211 52%,
-                    var(--accent) 80%, #a85f1a 100%) !important;                        /* glass -> barrel */
-  color: #f6efe3 !important;
+    radial-gradient(56% 42% at 32% 24%, rgba(255,255,255,0.32), transparent 56%),   /* glass glare */
+    radial-gradient(30% 26% at 72% 76%, rgba(255,201,38,0.35), transparent 60%),     /* warm coating */
+    radial-gradient(circle at 50% 42%, #120a04 0%, #160d06 24%, #5a3211 50%,
+                    var(--accent) 80%, #a85f1a 100%) !important;                      /* glass -> barrel */
+  color: #fbf4e6 !important;
   border-radius: 999px !important;
   text-shadow: 0 1px 3px rgba(0,0,0,0.85);
   box-shadow:
-    inset 0 0 0 1.5px rgba(0,0,0,0.55),                 /* outer barrel edge   */
-    inset 0 0 0 3px rgba(214,134,49,0.9),               /* amber ring          */
-    inset 0 0 0 4.5px rgba(0,0,0,0.5),                  /* groove              */
-    inset 0 0 0 6px rgba(90,50,17,0.8),                 /* tierra ring         */
-    inset 0 0 16px 5px rgba(0,0,0,0.6),                 /* lens depth          */
+    inset 0 0 0 1.5px rgba(0,0,0,0.6),
+    inset 0 0 0 3px rgba(214,134,49,0.9),
+    inset 0 0 0 4.5px rgba(0,0,0,0.5),
+    inset 0 0 0 6.5px rgba(90,50,17,0.85),
+    inset 0 0 0 8px rgba(255,201,38,0.25),
+    inset 0 0 16px 5px rgba(0,0,0,0.62),
     0 0 0 1px rgba(0,0,0,0.5),
     0 10px 28px rgba(0,0,0,0.5),
-    0 0 22px rgba(214,134,49,0.22) !important;          /* warm glow           */
+    0 0 22px rgba(214,134,49,0.22) !important;
   transition: box-shadow .25s var(--ease-out), filter .25s var(--ease-out) !important;
 }
 button:hover,
 a[style*="var(--accent)"]:hover {
   filter: brightness(1.07) saturate(1.05);
   box-shadow:
-    inset 0 0 0 1.5px rgba(0,0,0,0.55),
+    inset 0 0 0 1.5px rgba(0,0,0,0.6),
     inset 0 0 0 3px rgba(229,154,69,1),
     inset 0 0 0 4.5px rgba(0,0,0,0.5),
-    inset 0 0 0 6px rgba(90,50,17,0.85),
-    inset 0 0 18px 5px rgba(0,0,0,0.55),
+    inset 0 0 0 6.5px rgba(90,50,17,0.9),
+    inset 0 0 0 8px rgba(255,201,38,0.4),
+    inset 0 0 18px 5px rgba(0,0,0,0.58),
     0 0 0 1px rgba(0,0,0,0.5),
     0 12px 32px rgba(0,0,0,0.55),
-    0 0 30px rgba(214,134,49,0.4) !important;            /* focus pull = stronger glow */
+    0 0 30px rgba(214,134,49,0.42) !important;
 }
 
-/* ---------- 10. Antique nautical-chart texture + heading HUD ---------- */
-.fx-map {
-  position: fixed; inset: 0; z-index: 9993; pointer-events: none;
-  opacity: 0.06; mix-blend-mode: overlay;
-  background-image:
-    repeating-linear-gradient(0deg,  rgba(239,231,214,0.5) 0 1px, transparent 1px 84px),
-    repeating-linear-gradient(90deg, rgba(239,231,214,0.5) 0 1px, transparent 1px 84px),
-    repeating-linear-gradient(45deg, rgba(239,231,214,0.32) 0 1px, transparent 1px 168px),
-    repeating-linear-gradient(-45deg, rgba(239,231,214,0.32) 0 1px, transparent 1px 168px);
-}
-.hud-tc {
-  top: 19px; left: 50%; transform: translateX(-50%);
-  color: var(--von-cream-soft); gap: 10px;
-}
-.hud-tc::before {
-  content: "↟"; color: var(--accent); font-size: 0.85rem; opacity: 0.9;
-}
-
-/* ---------- 11. Hero watermarks: compass (rumbo) + lemon sprig (mediterráneo) ---------- */
+/* ---------- 10. Hero watermark: vintage compass rose (rumbo) ---------- */
 #top::before {
   content: ""; position: absolute; z-index: 0; pointer-events: none;
-  top: 50%; right: 4%; width: min(42vw, 470px); height: min(42vw, 470px);
+  top: 50%; right: 4%; width: min(46vw, 520px); height: min(46vw, 520px);
   transform: translateY(-34%);
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%23d68631' stroke-width='1.2'/%3E%3Ccircle cx='50' cy='50' r='33' fill='none' stroke='%234f93a1' stroke-width='0.9'/%3E%3Cpath d='M22 22 L78 78 M78 22 L22 78' stroke='%234f93a1' stroke-width='0.6'/%3E%3Cpath d='M50 5 L56 50 L50 95 L44 50 Z' fill='%23d68631'/%3E%3Cpath d='M5 50 L50 56 L95 50 L50 44 Z' fill='%23d68631' opacity='0.6'/%3E%3Ccircle cx='50' cy='50' r='3' fill='%23d68631'/%3E%3C/svg%3E") center / contain no-repeat;
-  opacity: 0.08;
-}
-#top::after {
-  content: ""; position: absolute; z-index: 0; pointer-events: none;
-  top: 104px; right: 3%; width: 132px; height: 132px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23e5a300' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M18 14 C40 28 52 46 60 66'/%3E%3Cpath d='M28 26 C40 18 56 22 60 34 C48 40 34 36 28 26 Z'/%3E%3Cpath d='M44 46 C58 38 72 44 74 56 C62 62 50 56 44 46 Z'/%3E%3C/g%3E%3Cellipse cx='60' cy='80' rx='15' ry='12' fill='%23e5a300' fill-opacity='0.16' stroke='%23e5a300' stroke-width='2'/%3E%3Cpath d='M60 92 L60 97' stroke='%23e5a300' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
-  opacity: 0.5;
-}
-@media (max-width: 880px) {
-  #top::before { opacity: 0.05; }
-  #top::after { display: none; }
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='96' fill='none' stroke='%23d68631' stroke-width='1.4'/%3E%3Ccircle cx='100' cy='100' r='88' fill='none' stroke='%23f3e8cc' stroke-width='4' stroke-dasharray='1.4 6.6' opacity='0.85'/%3E%3Ccircle cx='100' cy='100' r='58' fill='none' stroke='%23d68631' stroke-width='1'/%3E%3Cg stroke='%23f3e8cc' stroke-width='0.8' opacity='0.7'%3E%3Cpath d='M100 100 L143 57 M100 100 L143 143 M100 100 L57 143 M100 100 L57 57'/%3E%3C/g%3E%3Cg%3E%3Cpath d='M100 100 L100 22 L90 100 Z' fill='%23d68631'/%3E%3Cpath d='M100 100 L100 22 L110 100 Z' fill='%23f3e8cc' opacity='0.85'/%3E%3Cpath d='M100 100 L100 178 L110 100 Z' fill='%23d68631'/%3E%3Cpath d='M100 100 L100 178 L90 100 Z' fill='%23f3e8cc' opacity='0.85'/%3E%3Cpath d='M100 100 L178 100 L100 90 Z' fill='%23d68631'/%3E%3Cpath d='M100 100 L178 100 L100 110 Z' fill='%23f3e8cc' opacity='0.85'/%3E%3Cpath d='M100 100 L22 100 L100 110 Z' fill='%23d68631'/%3E%3Cpath d='M100 100 L22 100 L100 90 Z' fill='%23f3e8cc' opacity='0.85'/%3E%3C/g%3E%3Ccircle cx='100' cy='100' r='4' fill='%23d68631'/%3E%3Cpath d='M100 6 L94 20 L106 20 Z' fill='%23d52518'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.15;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .fx-scan, .glitch, .rec-dot { animation: none; }
+  .fx-scan, .rec-dot { animation: none; }
+}
+@media (max-width: 880px) {
+  #top::before { opacity: 0.1; }
 }
 @media (max-width: 720px) {
   .hud-tr, .hud-tc { display: none; }
