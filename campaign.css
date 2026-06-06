@@ -7,11 +7,11 @@
 
 /* ---------- 1. Palette: warm earth, no blue ---------- */
 :root {
-  /* former "light" world -> warm browns */
-  --von-parchment:      #2a1810;
-  --von-parchment-deep: #3a2415;
-  --surface-card:       #3a2415;
-  --surface-base:       #2a1810;
+  /* former "light" world -> translucent warm browns (atmosphere shows through) */
+  --von-parchment:      rgba(42,24,16,0.55);
+  --von-parchment-deep: rgba(60,38,22,0.6);
+  --surface-card:       rgba(60,38,22,0.6);
+  --surface-base:       rgba(42,24,16,0.55);
 
   /* text -> cream */
   --von-ink:            #f3e8cc;
@@ -20,9 +20,9 @@
   --text-body:          #f3e8cc;
   --text-muted:         #c2a982;
 
-  /* dark world -> deepest browns (tierra family) */
-  --von-ink-black:      #20120b;
-  --von-ink-black-2:    #2e1b10;
+  /* dark world -> translucent deep browns (layered over the warm gradient) */
+  --von-ink-black:      rgba(26,15,9,0.66);
+  --von-ink-black-2:    rgba(46,27,16,0.62);
   --von-ink-black-3:    #432a18;
   --von-cream:          #f3e8cc;
   --von-cream-soft:     #bfa57e;
@@ -51,8 +51,16 @@
   --hud:                #d8c7a4;   /* warm cream HUD text */
 }
 
-html { background: #1b0f0a; }
-body { background: #1b0f0a; color: var(--von-cream); }
+html { background: #160d07; }
+body {
+  /* soft cinematic mix: warm amber light + parchment haze over a brown base */
+  background:
+    radial-gradient(115% 75% at 78% 6%, rgba(214,134,49,0.20), transparent 46%),
+    radial-gradient(95% 70% at 12% 102%, rgba(243,232,204,0.10), transparent 52%),
+    linear-gradient(180deg, #35210f 0%, #241509 52%, #160d07 100%);
+  background-attachment: fixed;
+  color: var(--von-cream);
+}
 
 ::selection { background: var(--accent); color: var(--accent-on); }
 
@@ -70,13 +78,13 @@ body { background: #1b0f0a; color: var(--von-cream); }
 }
 .fx-screen {
   position: fixed; inset: 0; z-index: 9995; pointer-events: none;
-  box-shadow: inset 0 0 160px rgba(0,0,0,0.5),
+  box-shadow: inset 0 0 140px rgba(0,0,0,0.32),
               inset 0 0 0 1px rgba(243,232,204,0.05);
 }
 .fx-vignette {
   position: fixed; inset: 0; z-index: 9998; pointer-events: none;
-  background: radial-gradient(130% 110% at 50% 40%,
-    transparent 56%, rgba(14,7,3,0.42) 86%, rgba(14,7,3,0.7) 100%);
+  background: radial-gradient(135% 115% at 50% 38%,
+    transparent 62%, rgba(14,7,3,0.24) 88%, rgba(14,7,3,0.48) 100%);
 }
 @keyframes fxFlicker {
   0%, 97%, 100% { opacity: 0.4; }

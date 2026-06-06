@@ -62,7 +62,7 @@ function Nav({
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const links = [["El problema", "#problema"], ["El programa", "#programa"], ["Precio", "#precio"]];
+  const links = [["El caos", "#problema"], ["El plan", "#programa"], ["Empezar", "#cierre"]];
   return React.createElement("header", {
     style: {
       position: "fixed",
@@ -135,7 +135,7 @@ function Nav({
     variant: "primary",
     size: "sm",
     onClick: onJoin
-  }, "Doy el paso"))));
+  }, "Empieza ahora"))));
 }
 function Hero({
   onJoin
@@ -167,49 +167,39 @@ function Hero({
     }
   }, React.createElement(Eyebrow, {
     tone: "cream"
-  }, "Programa grupal"), React.createElement(Badge, {
+  }, "Plan Anticaos"), React.createElement(Badge, {
     variant: "cream-outline"
-  }, "1\xAA edici\xF3n"))), React.createElement(Reveal, {
+  }, "by Marian G Paris"))), React.createElement(Reveal, {
     delay: 80
   }, React.createElement("h1", {
     className: "glitch",
     style: {
       fontFamily: "var(--font-condensed)",
       textTransform: "uppercase",
-      fontSize: "clamp(3.2rem, 6.4vw, 6.2rem)",
-      lineHeight: 0.9,
+      fontSize: "clamp(2.6rem, 5.2vw, 5rem)",
+      lineHeight: 0.92,
       letterSpacing: "-0.01em",
       margin: "0 0 24px",
       color: "var(--von-parchment-text)"
     }
-  }, "No te falta vida.", React.createElement("br", null), React.createElement("span", {
+  }, "Tienes una vida.", React.createElement("br", null), React.createElement("span", {
     style: {
       color: "var(--accent)"
     }
-  }, "Te sobra ruido."))), React.createElement(Reveal, {
-    delay: 150
+  }, "No la vivas como si tuvieras dos."))), React.createElement(Reveal, {
+    delay: 160
   }, React.createElement("p", {
     style: {
       fontFamily: "var(--font-display)",
       fontStyle: "italic",
-      fontSize: "clamp(1.15rem,1.7vw,1.5rem)",
+      fontSize: "clamp(1.25rem,1.9vw,1.7rem)",
       lineHeight: 1.4,
       color: "var(--von-cream)",
-      maxWidth: "30ch",
-      margin: "0 0 18px"
-    }
-  }, "Plan Anticaos: cuatro semanas para ordenar la cabeza y elegir un primer paso real.")), React.createElement(Reveal, {
-    delay: 210
-  }, React.createElement("p", {
-    style: {
-      fontSize: "1.02rem",
-      lineHeight: 1.6,
-      color: "var(--von-cream-soft)",
-      maxWidth: "44ch",
+      maxWidth: "32ch",
       margin: "0 0 34px"
     }
-  }, "No es una agenda ni un curso de productividad. Es un sistema simple para entender qu\xE9 te pasa, dejar de vivir en bucle y bajar tus ideas a tierra.")), React.createElement(Reveal, {
-    delay: 270
+  }, "Sabes lo que quieres\u2026 pero no lo est\xE1s haciendo.")), React.createElement(Reveal, {
+    delay: 240
   }, React.createElement("div", {
     style: {
       display: "flex",
@@ -223,7 +213,7 @@ function Hero({
     iconSrc: ICONS + "/cream/rumbo.png",
     iconRight: true,
     onClick: onJoin
-  }, "Lo decido ahora"), React.createElement(Button, {
+  }, "Empieza ahora"), React.createElement(Button, {
     variant: "ghost",
     size: "lg",
     as: "a",
@@ -231,7 +221,7 @@ function Hero({
     style: {
       color: "var(--von-cream)"
     }
-  }, "Ens\xE9\xF1ame el plan")))), React.createElement(Reveal, {
+  }, "Ver el plan")))), React.createElement(Reveal, {
     delay: 200,
     style: {
       display: "flex",
@@ -269,8 +259,6 @@ function Hero({
   }, "Direcci\xF3n clara")))));
 }
 function Problema() {
-  const si = ["Vives en automático y el tiempo se te escapa.", "Tienes mil ideas y ninguna bajada a tierra.", "Por fuera todo parece bien; por dentro hay una voz: ‘esto no puede ser todo’.", "Quieres dejar de vivir en bucle."];
-  const no = ["Buscas soluciones mágicas.", "Quieres motivación rápida sin aplicar nada.", "No quieres hacerte preguntas incómodas."];
   return React.createElement("section", {
     id: "problema",
     style: {
@@ -280,223 +268,82 @@ function Problema() {
       paddingBottom: "var(--section-pad-y)"
     }
   }, React.createElement("div", {
-    className: "wrap"
+    className: "wrap",
+    style: {
+      maxWidth: 920
+    }
   }, React.createElement(Reveal, null, React.createElement(Eyebrow, {
     number: "01",
     tone: "energia"
-  }, "\xBFTe suena?")), React.createElement(Reveal, {
+  }, "El caos")), React.createElement(Reveal, {
     delay: 80
   }, React.createElement("h2", {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 600,
-      fontSize: "clamp(2rem,4vw,3.4rem)",
-      lineHeight: 1.05,
+      fontSize: "clamp(2rem,4.2vw,3.4rem)",
+      lineHeight: 1.08,
       letterSpacing: "-0.015em",
-      margin: "18px 0 8px",
-      maxWidth: "18ch"
+      margin: "18px 0 28px",
+      maxWidth: "22ch"
     }
-  }, "No est\xE1s perdida. Est\xE1s saturada.")), React.createElement(Reveal, {
-    delay: 130
+  }, "Tienes mil ideas. Mil ganas de cambiar cosas. Pero sigues en el mismo punto.")), React.createElement(Reveal, {
+    delay: 140
   }, React.createElement("p", {
     style: {
-      fontSize: "1.1rem",
+      fontSize: "1.2rem",
       lineHeight: 1.6,
       color: "var(--von-ink-soft)",
-      maxWidth: "52ch",
-      margin: "0 0 48px"
+      margin: "0 0 30px"
     }
-  }, "No necesitas otra se\xF1al ni otra libreta. Necesitas dejar de posponer tu vida \u2014 y un sistema honesto para empezar.")), React.createElement("div", {
-    style: {
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-      gap: 22
-    }
-  }, React.createElement(Reveal, {
-    delay: 120
-  }, React.createElement(Card, {
-    tone: "light",
-    pad: "xl",
-    bordered: true,
-    style: {
-      height: "100%"
-    }
-  }, React.createElement(Eyebrow, {
-    number: "",
-    tone: "ink",
-    style: {
-      marginBottom: 18
-    }
-  }, "Para qui\xE9n es"), React.createElement("ul", {
-    style: {
-      listStyle: "none",
-      margin: 0,
-      padding: 0,
-      display: "flex",
-      flexDirection: "column",
-      gap: 14
-    }
-  }, si.map((t, i) => React.createElement("li", {
-    key: i,
-    style: {
-      display: "flex",
-      gap: 13,
-      alignItems: "flex-start",
-      fontSize: "1rem",
-      lineHeight: 1.45
-    }
-  }, React.createElement("img", {
-    src: ICONS + "/amber/hecho.png",
-    alt: "",
-    style: {
-      width: 22,
-      height: 22,
-      marginTop: 1,
-      flexShrink: 0
-    }
-  }), React.createElement("span", null, t)))))), React.createElement(Reveal, {
+  }, "No es falta de tiempo.", React.createElement("br", null), "No es falta de capacidad.")), React.createElement(Reveal, {
     delay: 200
-  }, React.createElement(Card, {
-    tone: "dark",
-    pad: "xl",
-    grain: true,
+  }, React.createElement("p", {
     style: {
-      height: "100%"
+      fontFamily: "var(--font-condensed)",
+      textTransform: "uppercase",
+      fontSize: "clamp(2.2rem,5vw,4rem)",
+      lineHeight: 0.95,
+      letterSpacing: "-0.01em",
+      color: "var(--von-energia)",
+      margin: 0
     }
-  }, React.createElement(Eyebrow, {
-    tone: "cream",
-    style: {
-      marginBottom: 18
-    }
-  }, "Para qui\xE9n no es"), React.createElement("ul", {
-    style: {
-      listStyle: "none",
-      margin: 0,
-      padding: 0,
-      display: "flex",
-      flexDirection: "column",
-      gap: 14
-    }
-  }, no.map((t, i) => React.createElement("li", {
-    key: i,
-    style: {
-      display: "flex",
-      gap: 13,
-      alignItems: "flex-start",
-      fontSize: "1rem",
-      lineHeight: 1.45,
-      color: "var(--von-cream)"
-    }
-  }, React.createElement("span", {
-    style: {
-      color: "var(--von-cream-soft)",
-      fontFamily: "var(--font-display)",
-      fontSize: "1.3rem",
-      lineHeight: 1,
-      marginTop: -2
-    }
-  }, "\u2715"), React.createElement("span", null, t)))))))));
+  }, "Es que no est\xE1s eligiendo."))));
 }
 function Transformacion() {
   return React.createElement("section", {
     style: {
       background: "var(--von-ink-black)",
-      paddingTop: "var(--section-pad-y)",
-      paddingBottom: "var(--section-pad-y)",
+      paddingTop: "calc(var(--section-pad-y) * 0.9)",
+      paddingBottom: "calc(var(--section-pad-y) * 0.9)",
       overflow: "hidden"
     }
   }, React.createElement(Grain, null), React.createElement("div", {
     className: "wrap",
     style: {
       position: "relative",
-      zIndex: 2
+      zIndex: 2,
+      textAlign: "center",
+      maxWidth: 900
     }
-  }, React.createElement(Reveal, {
-    style: {
-      textAlign: "center"
-    }
-  }, React.createElement(Eyebrow, {
-    number: "02",
-    tone: "cream",
-    style: {
-      justifyContent: "center"
-    }
-  }, "La transformaci\xF3n")), React.createElement("div", {
-    style: {
-      display: "grid",
-      gridTemplateColumns: "1fr auto 1fr",
-      gap: 28,
-      alignItems: "center",
-      marginTop: 40
-    }
-  }, React.createElement(Reveal, {
-    delay: 80
-  }, React.createElement("div", {
-    style: {
-      border: "1px solid var(--border-dark)",
-      borderRadius: "var(--radius-xl)",
-      padding: "34px 32px",
-      background: "rgba(232,200,144,0.03)"
-    }
-  }, React.createElement("span", {
+  }, React.createElement(Reveal, null, React.createElement("p", {
     style: {
       fontFamily: "var(--font-condensed)",
-      fontSize: "1.4rem",
-      color: "var(--von-cream-soft)",
-      letterSpacing: "0.04em"
+      textTransform: "uppercase",
+      fontSize: "clamp(2.4rem,6vw,5rem)",
+      lineHeight: 0.95,
+      letterSpacing: "-0.01em",
+      color: "var(--von-parchment-text)",
+      margin: 0
     }
-  }, "DE"), React.createElement("p", {
+  }, "No es motivaci\xF3n.", React.createElement("br", null), React.createElement("span", {
     style: {
-      fontFamily: "var(--font-display)",
-      fontStyle: "italic",
-      fontSize: "clamp(1.4rem,2.4vw,2rem)",
-      lineHeight: 1.25,
-      color: "var(--von-cream)",
-      margin: "10px 0 0"
+      color: "var(--accent)"
     }
-  }, "\u2018No s\xE9 qu\xE9 hacer con mi vida.\u2019"))), React.createElement(Reveal, {
-    delay: 160,
-    style: {
-      display: "flex",
-      justifyContent: "center"
-    }
-  }, React.createElement("img", {
-    src: ICONS + "/amber/direccion.png",
-    alt: "hacia",
-    style: {
-      width: 54,
-      height: 54
-    }
-  })), React.createElement(Reveal, {
-    delay: 240
-  }, React.createElement("div", {
-    style: {
-      borderRadius: "var(--radius-xl)",
-      padding: "34px 32px",
-      background: "var(--accent)",
-      color: "var(--accent-on)",
-      boxShadow: "var(--shadow-cta)"
-    }
-  }, React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-condensed)",
-      fontSize: "1.4rem",
-      letterSpacing: "0.04em",
-      opacity: 0.8
-    }
-  }, "A"), React.createElement("p", {
-    style: {
-      fontFamily: "var(--font-display)",
-      fontStyle: "italic",
-      fontWeight: 600,
-      fontSize: "clamp(1.4rem,2.4vw,2rem)",
-      lineHeight: 1.25,
-      margin: "10px 0 0"
-    }
-  }, "\u2018Vale, ya s\xE9 por d\xF3nde empezar.\u2019"))))));
+  }, "Es un sistema.")))));
 }
 function Programa() {
-  const weeks = [["01", "caos", "Caos interno", "Entender tu mente antes de cambiar nada. Le pones nombre al ruido."], ["02", "direccion", "Dirección", "Definir lo que importa de verdad y soltar lo que no."], ["03", "decision", "Vida en automático", "Identificar los patrones que te mantienen estancada."], ["04", "accion", "Acción real", "Eliges un primer paso concreto y lo das. Sin esperar a estar lista."]];
+  const pillars = [["01", "caos", "Caos interno", "Entender tu mente antes de cambiar nada."], ["02", "direccion", "Dirección", "Definir lo que importa y soltar lo que no."], ["03", "accion", "Acción real", "Hacer, aunque no sea perfecto."]];
   return React.createElement("section", {
     id: "programa",
     style: {
@@ -509,53 +356,50 @@ function Programa() {
     className: "wrap"
   }, React.createElement("div", {
     style: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "flex-end",
-      flexWrap: "wrap",
-      gap: 20,
-      marginBottom: 44
+      textAlign: "center",
+      maxWidth: 720,
+      margin: "0 auto 48px"
     }
-  }, React.createElement("div", null, React.createElement(Reveal, null, React.createElement(Eyebrow, {
-    number: "03",
-    tone: "energia"
-  }, "El programa \xB7 4 semanas")), React.createElement(Reveal, {
+  }, React.createElement(Reveal, null, React.createElement(Eyebrow, {
+    number: "02",
+    tone: "energia",
+    style: {
+      justifyContent: "center"
+    }
+  }, "La soluci\xF3n")), React.createElement(Reveal, {
     delay: 80
   }, React.createElement("h2", {
     style: {
       fontFamily: "var(--font-condensed)",
       textTransform: "uppercase",
-      fontSize: "clamp(2.4rem,5vw,4rem)",
-      lineHeight: 0.92,
+      fontSize: "clamp(2.8rem,6.5vw,5.4rem)",
+      lineHeight: 0.9,
       letterSpacing: "-0.01em",
-      margin: "16px 0 0"
+      margin: "16px 0 14px"
     }
-  }, "Del ruido al ", React.createElement("span", {
-    style: {
-      color: "var(--von-energia)"
-    }
-  }, "primer paso")))), React.createElement(Reveal, {
-    delay: 120
+  }, "Plan Anticaos")), React.createElement(Reveal, {
+    delay: 130
   }, React.createElement("p", {
     style: {
-      fontSize: "1rem",
-      lineHeight: 1.6,
+      fontFamily: "var(--font-display)",
+      fontStyle: "italic",
+      fontSize: "clamp(1.2rem,2vw,1.6rem)",
+      lineHeight: 1.4,
       color: "var(--von-ink-soft)",
-      maxWidth: "34ch",
       margin: 0
     }
-  }, "Cada semana, un movimiento. Verdad, orden y movimiento \u2014 en grupo, sin juicio."))), React.createElement("div", {
+  }, "Para dejar de dar vueltas y empezar a hacer."))), React.createElement("div", {
     style: {
       display: "grid",
-      gridTemplateColumns: "repeat(4,1fr)",
+      gridTemplateColumns: "repeat(3,1fr)",
       gap: 16
     }
-  }, weeks.map(([n, ic, t, d], i) => React.createElement(Reveal, {
+  }, pillars.map(([n, ic, t, d], i) => React.createElement(Reveal, {
     key: n,
-    delay: i * 90
+    delay: i * 100
   }, React.createElement(PillarCard, {
     base: ICONS,
-    number: "Semana " + n,
+    number: n,
     icon: ic,
     title: t,
     style: {
@@ -565,10 +409,11 @@ function Programa() {
 }
 function Manifiesto() {
   return React.createElement("section", {
+    id: "resultado",
     style: {
       background: "var(--von-ink-black)",
-      paddingTop: "calc(var(--section-pad-y) * 1.1)",
-      paddingBottom: "calc(var(--section-pad-y) * 1.1)",
+      paddingTop: "calc(var(--section-pad-y) * 1.05)",
+      paddingBottom: "calc(var(--section-pad-y) * 1.05)",
       overflow: "hidden"
     }
   }, React.createElement(Grain, null), React.createElement("div", {
@@ -577,170 +422,43 @@ function Manifiesto() {
       position: "relative",
       zIndex: 2,
       textAlign: "center",
-      maxWidth: 1000
+      maxWidth: 900
     }
-  }, React.createElement(Reveal, null, React.createElement(QuoteBlock, {
-    size: "xl",
-    tone: "dark",
-    cite: "\u2014 El mensaje central de Vida o Nada",
-    style: {
-      display: "inline-block",
-      textAlign: "center"
-    }
-  }, "Tienes una vida. No la vivas como si tuvieras dos."))));
-}
-function Precio({
-  onJoin
-}) {
-  const tiers = [{
-    name: "1ª edición",
-    price: "247€",
-    tag: "Lanzamiento",
-    feats: ["4 semanas en grupo", "Sesiones en directo", "Plan Anticaos completo", "Comunidad honesta"],
-    featured: false,
-    cta: "Esta es la mía"
-  }, {
-    name: "Estándar",
-    price: "297€",
-    tag: "Precio habitual",
-    feats: ["Todo lo de la 1ª edición", "Acceso a ediciones futuras", "Recursos descargables"],
-    featured: true,
-    cta: "Esta es mi decisión"
-  }, {
-    name: "VIP",
-    price: "397€",
-    tag: "1 a 1",
-    feats: ["Todo lo de Estándar", "Sesión individual con Marian", "Seguimiento personal 14 días"],
-    featured: false,
-    cta: "Voy con todo"
-  }];
-  return React.createElement("section", {
-    id: "precio",
-    style: {
-      background: "var(--von-parchment)",
-      color: "var(--von-ink)",
-      paddingTop: "var(--section-pad-y)",
-      paddingBottom: "var(--section-pad-y)"
-    }
-  }, React.createElement("div", {
-    className: "wrap"
-  }, React.createElement(Reveal, {
-    style: {
-      textAlign: "center"
-    }
-  }, React.createElement(Eyebrow, {
-    number: "04",
-    tone: "energia",
+  }, React.createElement(Reveal, null, React.createElement(Eyebrow, {
+    number: "03",
+    tone: "cream",
     style: {
       justifyContent: "center"
     }
-  }, "\xDAnete a la 1\xAA edici\xF3n")), React.createElement(Reveal, {
+  }, "El resultado")), React.createElement(Reveal, {
     delay: 80
-  }, React.createElement("h2", {
+  }, React.createElement("p", {
     style: {
-      textAlign: "center",
       fontFamily: "var(--font-display)",
       fontWeight: 600,
-      fontSize: "clamp(2rem,4vw,3.2rem)",
+      fontSize: "clamp(2rem,4.4vw,3.4rem)",
+      lineHeight: 1.2,
       letterSpacing: "-0.015em",
-      margin: "16px 0 42px"
+      color: "var(--von-parchment-text)",
+      margin: "20px 0 22px"
     }
-  }, "Un precio de salida. Plazas limitadas.")), React.createElement("div", {
+  }, "Dejas de pensar tanto.", React.createElement("br", null), React.createElement("span", {
     style: {
-      display: "grid",
-      gridTemplateColumns: "repeat(3,1fr)",
-      gap: 18,
-      alignItems: "stretch"
+      color: "var(--accent)"
     }
-  }, tiers.map((t, i) => React.createElement(Reveal, {
-    key: t.name,
-    delay: i * 90,
+  }, "Empiezas a moverte."))), React.createElement(Reveal, {
+    delay: 150
+  }, React.createElement("p", {
     style: {
-      display: "flex"
+      fontFamily: "var(--font-display)",
+      fontStyle: "italic",
+      fontSize: "clamp(1.15rem,1.9vw,1.5rem)",
+      lineHeight: 1.5,
+      color: "var(--von-cream)",
+      maxWidth: "46ch",
+      margin: "0 auto"
     }
-  }, React.createElement("div", {
-    style: {
-      flex: 1,
-      display: "flex",
-      flexDirection: "column",
-      borderRadius: "var(--radius-xl)",
-      padding: "30px 26px 28px",
-      background: t.featured ? "var(--von-ink-black)" : "var(--surface-card)",
-      color: t.featured ? "var(--von-cream)" : "var(--von-ink)",
-      border: t.featured ? "1px solid var(--border-dark)" : "1px solid var(--border-soft)",
-      boxShadow: t.featured ? "var(--shadow-lg)" : "var(--shadow-sm)",
-      position: "relative",
-      overflow: "hidden",
-      transform: t.featured ? "translateY(-10px)" : "none"
-    }
-  }, t.featured && React.createElement(Grain, null), React.createElement("div", {
-    style: {
-      position: "relative",
-      zIndex: 2,
-      display: "flex",
-      flexDirection: "column",
-      height: "100%"
-    }
-  }, React.createElement("div", {
-    style: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      marginBottom: 18
-    }
-  }, React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-subtitle)",
-      fontSize: "0.74rem",
-      letterSpacing: "0.16em",
-      textTransform: "uppercase",
-      color: t.featured ? "var(--von-cream-soft)" : "var(--von-ink-soft)"
-    }
-  }, t.name), React.createElement(Badge, {
-    variant: t.featured ? "amber" : "outline",
-    size: "sm"
-  }, t.tag)), React.createElement("div", {
-    style: {
-      fontFamily: "var(--font-condensed)",
-      fontSize: "3.4rem",
-      lineHeight: 0.9,
-      letterSpacing: "-0.01em",
-      marginBottom: 22,
-      color: t.featured ? "var(--von-parchment-text)" : "var(--von-ink)"
-    }
-  }, t.price), React.createElement("ul", {
-    style: {
-      listStyle: "none",
-      margin: "0 0 26px",
-      padding: 0,
-      display: "flex",
-      flexDirection: "column",
-      gap: 11,
-      flex: 1
-    }
-  }, t.feats.map((f, j) => React.createElement("li", {
-    key: j,
-    style: {
-      display: "flex",
-      gap: 10,
-      alignItems: "flex-start",
-      fontSize: "0.94rem",
-      lineHeight: 1.4
-    }
-  }, React.createElement("img", {
-    src: ICONS + (t.featured ? "/cream/hecho.png" : "/amber/hecho.png"),
-    alt: "",
-    style: {
-      width: 18,
-      height: 18,
-      marginTop: 2,
-      flexShrink: 0
-    }
-  }), React.createElement("span", null, f)))), React.createElement(Button, {
-    variant: t.featured ? "primary" : "secondary",
-    style: t.featured ? {} : {},
-    onClick: onJoin
-  }, t.cta))))))));
+  }, "Y por primera vez en mucho tiempo, sientes que est\xE1s haciendo algo de verdad."))));
 }
 function Cierre({
   joined,
@@ -779,16 +497,19 @@ function Cierre({
     }
   }, React.createElement(Reveal, null, React.createElement("h2", {
     style: {
-      fontFamily: "var(--font-display)",
-      fontStyle: "italic",
-      fontWeight: 600,
-      fontSize: "clamp(1.8rem,3.6vw,3rem)",
-      lineHeight: 1.2,
+      fontFamily: "var(--font-condensed)",
+      textTransform: "uppercase",
+      fontSize: "clamp(2.2rem,5.4vw,4.4rem)",
+      lineHeight: 0.95,
       letterSpacing: "-0.01em",
       color: "var(--von-parchment-text)",
-      margin: "0 0 14px"
+      margin: "0 0 18px"
     }
-  }, "\xBFVas a vivir tu vida o vas a seguir posponi\xE9ndola?")), React.createElement(Reveal, {
+  }, "Esto no va de entenderlo.", React.createElement("br", null), React.createElement("span", {
+    style: {
+      color: "var(--accent)"
+    }
+  }, "Va de hacerlo."))), React.createElement(Reveal, {
     delay: 90
   }, React.createElement("p", {
     style: {
@@ -797,7 +518,7 @@ function Cierre({
       color: "var(--von-cream-soft)",
       margin: "0 0 30px"
     }
-  }, "Deja tu email y te aviso cuando abran las plazas de la 1\xAA edici\xF3n. Sin spam. Solo direcci\xF3n.")), React.createElement(Reveal, {
+  }, "D\xE9jame tu email y te cuento c\xF3mo empezar. Sin vueltas, sin spam.")), React.createElement(Reveal, {
     delay: 150
   }, joined ? React.createElement("div", {
     style: {
@@ -857,7 +578,7 @@ function Cierre({
     size: "lg",
     as: "button",
     type: "submit"
-  }, "Cuenta conmigo")))), React.createElement("footer", {
+  }, "Empieza ahora")))), React.createElement("footer", {
     style: {
       marginTop: "var(--section-pad-y)",
       borderTop: "1px solid var(--border-dark)",
@@ -906,6 +627,5 @@ Object.assign(window, {
   Transformacion,
   Programa,
   Manifiesto,
-  Precio,
   Cierre
 });

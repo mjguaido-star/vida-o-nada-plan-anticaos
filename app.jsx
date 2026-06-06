@@ -17,7 +17,6 @@ function App() {
         <Transformacion />
         <Programa />
         <Manifiesto />
-        <Precio onJoin={scrollToCierre} />
         <Cierre joined={joined} onSubmit={onSubmit} />
       </main>
     </React.Fragment>
