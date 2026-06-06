@@ -174,7 +174,7 @@ function Programa() {
             </p>
           </Reveal>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16 }}>
+        <div className="pillar-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16 }}>
           {pillars.map(([n, ic, t, d], i) => (
             <Reveal key={n} delay={i * 100}><PillarCard base={ICONS} number={n} icon={ic} title={t} style={{ height: "100%" }}>{d}</PillarCard></Reveal>
           ))}

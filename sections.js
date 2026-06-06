@@ -390,6 +390,7 @@ function Programa() {
       margin: 0
     }
   }, "Para dejar de dar vueltas y empezar a hacer."))), React.createElement("div", {
+    className: "pillar-grid",
     style: {
       display: "grid",
       gridTemplateColumns: "repeat(3,1fr)",
