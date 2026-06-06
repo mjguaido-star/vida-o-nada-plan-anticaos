@@ -1,0 +1,15 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.log
+
+# Never commit secrets or subscriber data
+.env
+.env.*
+*.key
+*.pem
+subscribers*.csv
+leads*.csv
+
+# Vercel local
+.vercel

@@ -1,0 +1,90 @@
+/* ============================================================
+   Vida o Nada — Color tokens
+   Analog · cinematic · warm. Never pure white / pure black.
+   Palette mood: ámbar oscuro, tierra, crema cálida. Fuego
+   sofisticado, no explosivo.
+   ============================================================ */
+:root {
+  /* ---- Core surfaces (never #fff / #000) ---- */
+  --von-parchment:     #F2EAD3; /* warm parchment — light bg          */
+  --von-parchment-deep:#E9DCBE; /* aged parchment — cards on light    */
+  --von-ink-black:     #1A110A; /* dark warm near-black — primary dark*/
+  --von-ink-black-2:   #22160C; /* raised dark surface / cards on dark*/
+  --von-ink-black-3:   #2C1D10; /* hairline / border on dark          */
+
+  /* ---- Warm neutral ramp (lighter, less black) -------------------
+     The full warm range from cream paper to soft warm dark. Reach for
+     the paper/sand tones to lighten layouts; the darks are warm browns,
+     not pure black. Cream→Paper for big light surfaces, Border/Faint for
+     dividers & muted text, Ink-soft/Dark-2 for softer dark panels. */
+  --von-cream-paper:   #F6F0E6; /* cream — lightest paper             */
+  --von-paper:         #EFE7DA; /* paper — soft light surface         */
+  --von-paper-2:       #E7DDCC; /* paper-2 — warmer card on light     */
+  --von-sand:          #DACDB6; /* sand — borders / quiet fills       */
+  --von-faint:         #8A7E6E; /* faint — warm taupe, muted text     */
+  --von-dark-soft:     #4A4036; /* ink-soft brown — gentle dark       */
+  --von-dark-2:        #221C16; /* warm dark — softer than near-black */
+  --von-dark:          #181410; /* deepest warm dark (not #000)       */
+
+  /* ---- Text inks ---- */
+  --von-ink:           #1C150E; /* near-black ink — text on light     */
+  --von-ink-soft:      #4A3B2A; /* muted ink — secondary on light     */
+  --von-cream:         #E8C890; /* warm cream — text on dark          */
+  --von-cream-soft:    #C9A56E; /* muted cream — secondary on dark    */
+  --von-parchment-text:#F2EAD3; /* parchment as heading text on dark  */
+
+  /* ---- Brand palette (the six) ---- */
+  --von-tierra:        #5A3211; /* tierra — deep earth                */
+  --von-energia:       #964405; /* energía — burnt sienna             */
+  --von-claridad:      #D68631; /* claridad — AMBER · primary accent  */
+  --von-enfoque:       #3D717E; /* enfoque — dusty teal               */
+  --von-profundidad:   #10475E; /* profundidad — deep teal            */
+  --von-disciplina:    #0B2839; /* disciplina — midnight teal         */
+
+  /* ---- Amber ramp (primary CTA family) ---- */
+  --von-amber:         #D68631; /* = claridad                         */
+  --von-amber-bright:  #E59A45; /* hover / lighter                    */
+  --von-amber-deep:    #B8691E; /* press / darker                     */
+  --von-amber-glow:    rgba(214,134,49,0.30); /* focus ring / glow    */
+
+  /* ---- Disruptive accents ----------------------------------------
+     Loud market-stall colours for DISRUPTIVE moments only — a single
+     highlighted word, a sticker, a scarcity flag. Use one at a time,
+     sparingly, against parchment or near-black. Never as surfaces. */
+  --von-disruptivo-azul:    #293379; /* azul cobalto  */
+  --von-disruptivo-rojo:    #B81817; /* rojo tomate   */
+  --von-disruptivo-amarillo:#E5A300; /* amarillo cítrico */
+  --von-disruptivo-lima:    #A6AF32; /* verde lechuga */
+  --von-disruptivo-verde:   #607829; /* verde judía   */
+  --von-disruptivo-naranja: #EE7302; /* naranja vivo  */
+
+  /* ---- Semantic aliases — light surfaces ---- */
+  --surface-base:      var(--von-parchment);
+  --surface-card:      var(--von-parchment-deep);
+  --text-heading:      var(--von-ink);
+  --text-body:         var(--von-ink);
+  --text-muted:        var(--von-ink-soft);
+  --border-soft:       rgba(28,21,14,0.14);
+  --border-strong:     rgba(28,21,14,0.28);
+
+  /* ---- Semantic aliases — dark surfaces ---- */
+  --surface-dark:      var(--von-ink-black);
+  --surface-dark-card: var(--von-ink-black-2);
+  --text-heading-dark: var(--von-parchment-text);
+  --text-body-dark:    var(--von-cream);
+  --text-muted-dark:   var(--von-cream-soft);
+  --border-dark:       rgba(232,200,144,0.16);
+  --border-dark-strong:rgba(232,200,144,0.32);
+
+  /* ---- Accent / interactive ---- */
+  --accent:            var(--von-amber);
+  --accent-hover:      var(--von-amber-bright);
+  --accent-press:      var(--von-amber-deep);
+  --accent-on:         var(--von-ink-black); /* text on amber fills   */
+  --focus-ring:        var(--von-amber-glow);
+
+  /* ---- Status (kept warm, never clinical) ---- */
+  --status-go:         #5E7A3A; /* olive — affirmative                */
+  --status-warn:       var(--von-energia);
+  --status-stop:       #A23A1E; /* warm brick — destructive           */
+}

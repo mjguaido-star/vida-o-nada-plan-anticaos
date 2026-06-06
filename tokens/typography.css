@@ -1,0 +1,79 @@
+/* ============================================================
+   Vida o Nada — Typography tokens
+   Bodoni Moda (editorial serif display + italic quotes)
+   Bebas Neue   (condensed campaign display + accents)
+   Space Grotesk(eyebrows / tracked labels / subtitles)
+   Inter        (body)
+   ============================================================ */
+:root {
+  /* ---- Families ---- */
+  --font-display:   "Bodoni Moda", "Times New Roman", serif;       /* elegant serif headlines + quotes */
+  --font-condensed: "Bebas Neue", "Oswald", "Arial Narrow", sans-serif; /* big campaign impact */
+  --font-subtitle:  "Space Grotesk", "Inter", sans-serif;          /* eyebrows / labels */
+  --font-body:      "Inter", system-ui, sans-serif;                /* body copy */
+
+  /* ---- Weights ---- */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium:  500; /* @kind font */
+  --fw-semibold:600; /* @kind font */
+  --fw-bold:    700; /* @kind font */
+
+  /* ---- Fluid display scale (Bebas / Bodoni) ---- */
+  --text-mega:   clamp(4rem, 11vw, 9rem);     /* hero campaign line  */
+  --text-d1:     clamp(3rem, 7vw, 5.5rem);    /* page headline       */
+  --text-d2:     clamp(2.25rem, 5vw, 3.75rem);/* section headline    */
+  --text-d3:     clamp(1.75rem, 3.5vw, 2.5rem);/* sub-section        */
+
+  /* ---- Body scale ---- */
+  --text-xl:   1.5rem;    /* 24px — lead paragraph  */
+  --text-lg:   1.25rem;   /* 20px — large body      */
+  --text-base: 1.0625rem; /* 17px — default body    */
+  --text-sm:   0.9375rem; /* 15px — small           */
+  --text-xs:   0.8125rem; /* 13px — caption         */
+
+  /* ---- Eyebrow / label ---- */
+  --text-eyebrow: 0.8125rem; /* 13px tracked label   */
+
+  /* ---- Line heights ---- */
+  --lh-tight:   0.92; /* @kind font */
+  --lh-display: 1.04; /* @kind font */
+  --lh-snug:    1.25; /* @kind font */
+  --lh-body:    1.65; /* @kind font */
+
+  /* ---- Letter spacing ---- */
+  --ls-mega:     -0.01em; /* @kind font */
+  --ls-display:  -0.015em;/* @kind font */
+  --ls-eyebrow:   0.28em; /* @kind font */
+  --ls-label:     0.16em; /* @kind font */
+  --ls-body:      0; /* @kind font */
+}
+
+/* ---- Roles (apply directly) ---- */
+.von-eyebrow {
+  font-family: var(--font-subtitle);
+  font-size: var(--text-eyebrow);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+}
+.von-campaign {
+  font-family: var(--font-condensed);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-mega);
+  text-transform: uppercase;
+}
+.von-display {
+  font-family: var(--font-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+}
+.von-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  line-height: var(--lh-snug);
+}
+.von-body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--lh-body);
+}
