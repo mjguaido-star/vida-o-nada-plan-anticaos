@@ -74,7 +74,7 @@ function Hero({ onJoin }) {
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <h1 style={{
+            <h1 className="glitch" style={{
               fontFamily: "var(--font-condensed)", textTransform: "uppercase",
               fontSize: "clamp(3.2rem, 6.4vw, 6.2rem)", lineHeight: 0.9, letterSpacing: "-0.01em",
               margin: "0 0 24px", color: "var(--von-parchment-text)",
@@ -100,7 +100,9 @@ function Hero({ onJoin }) {
           </Reveal>
         </div>
         <Reveal delay={200} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
-          <img src={ILL + "/chaos-to-direction-light.png"} alt="Del caos a la dirección" style={{ width: "100%", maxWidth: 420, objectFit: "contain" }} />
+          <div className="crt" style={{ maxWidth: 460, width: "100%" }}>
+            <img src={ILL + "/chaos-to-direction-light.png"} alt="Del caos a la dirección" />
+          </div>
           <div style={{ display: "flex", gap: 26, fontFamily: "var(--font-subtitle)", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--von-cream-soft)" }}>
             <span>Caos mental</span>
             <span style={{ color: "var(--accent)" }}>→</span>

@@ -172,6 +172,7 @@ function Hero({
   }, "1\xAA edici\xF3n"))), React.createElement(Reveal, {
     delay: 80
   }, React.createElement("h1", {
+    className: "glitch",
     style: {
       fontFamily: "var(--font-condensed)",
       textTransform: "uppercase",
@@ -238,15 +239,16 @@ function Hero({
       alignItems: "center",
       gap: 22
     }
+  }, React.createElement("div", {
+    className: "crt",
+    style: {
+      maxWidth: 460,
+      width: "100%"
+    }
   }, React.createElement("img", {
     src: ILL + "/chaos-to-direction-light.png",
-    alt: "Del caos a la direcci\xF3n",
-    style: {
-      width: "100%",
-      maxWidth: 420,
-      objectFit: "contain"
-    }
-  }), React.createElement("div", {
+    alt: "Del caos a la direcci\xF3n"
+  })), React.createElement("div", {
     style: {
       display: "flex",
       gap: 26,
