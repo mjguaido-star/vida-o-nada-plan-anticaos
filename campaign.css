@@ -216,6 +216,25 @@ a[style*="var(--accent)"]:hover {
   content: "↟"; color: var(--accent); font-size: 0.85rem; opacity: 0.9;
 }
 
+/* ---------- 11. Hero watermarks: compass (rumbo) + lemon sprig (mediterráneo) ---------- */
+#top::before {
+  content: ""; position: absolute; z-index: 0; pointer-events: none;
+  top: 50%; right: 4%; width: min(42vw, 470px); height: min(42vw, 470px);
+  transform: translateY(-34%);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%23d68631' stroke-width='1.2'/%3E%3Ccircle cx='50' cy='50' r='33' fill='none' stroke='%234f93a1' stroke-width='0.9'/%3E%3Cpath d='M22 22 L78 78 M78 22 L22 78' stroke='%234f93a1' stroke-width='0.6'/%3E%3Cpath d='M50 5 L56 50 L50 95 L44 50 Z' fill='%23d68631'/%3E%3Cpath d='M5 50 L50 56 L95 50 L50 44 Z' fill='%23d68631' opacity='0.6'/%3E%3Ccircle cx='50' cy='50' r='3' fill='%23d68631'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.08;
+}
+#top::after {
+  content: ""; position: absolute; z-index: 0; pointer-events: none;
+  top: 104px; right: 3%; width: 132px; height: 132px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23e5a300' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M18 14 C40 28 52 46 60 66'/%3E%3Cpath d='M28 26 C40 18 56 22 60 34 C48 40 34 36 28 26 Z'/%3E%3Cpath d='M44 46 C58 38 72 44 74 56 C62 62 50 56 44 46 Z'/%3E%3C/g%3E%3Cellipse cx='60' cy='80' rx='15' ry='12' fill='%23e5a300' fill-opacity='0.16' stroke='%23e5a300' stroke-width='2'/%3E%3Cpath d='M60 92 L60 97' stroke='%23e5a300' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.5;
+}
+@media (max-width: 880px) {
+  #top::before { opacity: 0.05; }
+  #top::after { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fx-scan, .glitch, .rec-dot { animation: none; }
 }
