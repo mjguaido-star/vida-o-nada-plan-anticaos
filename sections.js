@@ -230,14 +230,11 @@ function Hero({
       gap: 22
     }
   }, React.createElement("div", {
-    className: "crt",
-    style: {
-      maxWidth: 460,
-      width: "100%"
-    }
+    className: "lens"
   }, React.createElement("img", {
+    className: "lens-symbol",
     src: ILL + "/chaos-to-direction-light.png",
-    alt: "Del caos a la direcci\xF3n"
+    alt: "Del caos a la direcci\xF3n \u2014 a trav\xE9s del objetivo"
   })), React.createElement("div", {
     style: {
       display: "flex",
