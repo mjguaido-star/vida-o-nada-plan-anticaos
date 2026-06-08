@@ -230,21 +230,15 @@ function Hero({
       gap: 22
     }
   }, React.createElement("div", {
-    className: "watch-cut",
+    className: "cam-hero",
     style: {
-      maxWidth: 470,
+      maxWidth: 520,
       width: "100%",
       margin: "0 auto"
     }
   }, React.createElement("img", {
-    src: "./assets/reloj-hero.png",
-    alt: "Reloj de bolsillo \u2014 el tiempo"
-  }), React.createElement("div", {
-    className: "dial-cover"
-  }), React.createElement("div", {
-    className: "watch-hand",
-    role: "img",
-    "aria-label": "Del caos a la direcci\xF3n \u2014 la flecha de oro"
+    src: "./assets/camara-hero.png",
+    alt: "C\xE1mara vintage \u2014 enfoca el caos en direcci\xF3n"
   })), React.createElement("div", {
     style: {
       display: "flex",
