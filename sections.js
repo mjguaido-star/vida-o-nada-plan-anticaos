@@ -230,13 +230,14 @@ function Hero({
       gap: 22
     }
   }, React.createElement("div", {
-    className: "watch-real",
+    className: "watch-cut",
     style: {
-      maxWidth: 460,
-      width: "100%"
+      maxWidth: 410,
+      width: "100%",
+      margin: "0 auto"
     }
   }, React.createElement("img", {
-    src: "./assets/reloj-real.jpg",
+    src: "./assets/reloj-cutout.png",
     alt: "Reloj de bolsillo \u2014 el tiempo"
   }), React.createElement("div", {
     className: "watch-hand",

@@ -95,8 +95,8 @@ function Hero({ onJoin }) {
           </Reveal>
         </div>
         <Reveal delay={200} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
-          <div className="watch-real" style={{ maxWidth: 460, width: "100%" }}>
-            <img src="./assets/reloj-real.jpg" alt="Reloj de bolsillo — el tiempo" />
+          <div className="watch-cut" style={{ maxWidth: 410, width: "100%", margin: "0 auto" }}>
+            <img src="./assets/reloj-cutout.png" alt="Reloj de bolsillo — el tiempo" />
             <div className="watch-hand" role="img" aria-label="Del caos a la dirección — la flecha de oro" />
           </div>
           <div style={{ display: "flex", gap: 26, fontFamily: "var(--font-subtitle)", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--von-cream-soft)" }}>
