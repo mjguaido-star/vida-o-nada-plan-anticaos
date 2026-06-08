@@ -142,9 +142,9 @@ body {
   filter: drop-shadow(0 26px 34px rgba(0,0,0,0.6)) drop-shadow(0 2px 6px rgba(0,0,0,0.4));
 }
 .watch-hand {
-  position: absolute; left: 48%; top: 60%;
-  width: 56%; aspect-ratio: 1635 / 690;
-  transform: translate(-50%, -50%) rotate(-3deg);
+  position: absolute; left: 50%; top: 62.5%;
+  width: 54%; aspect-ratio: 1635 / 690;
+  transform: translate(-50%, -50%) rotate(-4deg);
   background: linear-gradient(135deg, #fff0bf 0%, #e8bd54 30%, #c8912f 56%, #8f6019 80%, #5f3c0e 100%);
   -webkit-mask: url("assets/illustrations/chaos-to-direction-light.png") center / contain no-repeat;
           mask: url("assets/illustrations/chaos-to-direction-light.png") center / contain no-repeat;
