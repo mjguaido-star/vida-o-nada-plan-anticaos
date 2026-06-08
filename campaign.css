@@ -400,18 +400,28 @@ a[style*="var(--accent)"]:hover {
 }
 
 /* ---------- 9b. CTA arrow: hover = la flecha avanza (movimiento, no decoración) ---------- */
-button img[src*="rumbo"] {
-  transition: transform 0.25s var(--ease-out) !important;
-  will-change: transform;
+.cta {
+  display: inline-flex;
+  align-items: center;
 }
-button:hover img[src*="rumbo"],
-button:focus-visible img[src*="rumbo"] {
-  transform: translateX(5px) !important;
+.arrow {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 0.25s ease !important;
+}
+.cta:hover .arrow,
+.cta:focus-visible .arrow,
+button:hover .arrow,
+button:focus-visible .arrow,
+a:hover .arrow,
+a:focus-visible .arrow {
+  transform: translateX(6px) !important;
 }
 @media (prefers-reduced-motion: reduce) {
-  button img[src*="rumbo"] { transition: none !important; }
-  button:hover img[src*="rumbo"],
-  button:focus-visible img[src*="rumbo"] { transform: none !important; }
+  .arrow { transition: none !important; }
+  .cta:hover .arrow,
+  button:hover .arrow,
+  a:hover .arrow { transform: none !important; }
 }
 
 /* ---------- 10. CAOS-slide watermark: vintage compass rose (earth tones) ---------- */

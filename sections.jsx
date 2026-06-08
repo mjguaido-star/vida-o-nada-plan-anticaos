@@ -53,7 +53,7 @@ function Nav({ onJoin }) {
               <a key={h} href={h} style={{ fontFamily: "var(--font-subtitle)", fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--von-cream-soft)", textDecoration: "none" }}>{t}</a>
             ))}
           </div>
-          <Button variant="primary" size="sm" onClick={onJoin}>Empieza ahora</Button>
+          <Button variant="primary" size="sm" className="cta" onClick={onJoin}>Empieza ahora <span className="arrow">→</span></Button>
         </nav>
       </div>
     </header>
@@ -94,8 +94,8 @@ function Hero({ onJoin }) {
           </Reveal>
           <Reveal delay={240}>
             <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
-              <Button variant="primary" size="lg" iconSrc={ICONS + "/cream/rumbo.png"} iconRight onClick={onJoin}>Empieza ahora. De verdad.</Button>
-              <Button variant="ghost" size="lg" as="a" href="#programa" style={{ color: "var(--von-cream)" }}>Quiero verlo</Button>
+              <Button variant="primary" size="lg" className="cta" onClick={onJoin}>Empieza ahora. De verdad. <span className="arrow">→</span></Button>
+              <Button variant="ghost" size="lg" as="a" href="#programa" className="cta" style={{ color: "var(--von-cream)" }}>Quiero verlo <span className="arrow">→</span></Button>
             </div>
           </Reveal>
         </div>
@@ -268,7 +268,7 @@ function Decision({ onJoin }) {
           <div className="decision-step" key="go">
             <p style={big}>Entonces empieza de verdad.</p>
             <div style={{ marginTop: "clamp(36px,5vw,56px)" }}>
-              <Button variant="primary" size="lg" iconSrc={ICONS + "/cream/rumbo.png"} iconRight onClick={onJoin}>Empiezo</Button>
+              <Button variant="primary" size="lg" className="cta" onClick={onJoin}>Empiezo <span className="arrow">→</span></Button>
             </div>
           </div>
         )}
@@ -319,7 +319,7 @@ function Cierre({ joined, onSubmit }) {
                     onChange={(e) => setEmail(e.target.value)} invalid={!!err} aria-label="Tu email" />
                   {err && <span style={{ display: "block", marginTop: 7, fontSize: "0.82rem", color: "var(--status-stop)" }}>{err}</span>}
                 </div>
-                <Button variant="primary" size="lg" as="button" type="submit">Empiezo</Button>
+                <Button variant="primary" size="lg" as="button" type="submit" className="cta">Empiezo <span className="arrow">→</span></Button>
               </form>
             )}
           </Reveal>

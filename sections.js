@@ -134,8 +134,11 @@ function Nav({
   }, t))), React.createElement(Button, {
     variant: "primary",
     size: "sm",
+    className: "cta",
     onClick: onJoin
-  }, "Empieza ahora"))));
+  }, "Empieza ahora ", React.createElement("span", {
+    className: "arrow"
+  }, "\u2192")))));
 }
 function Hero({
   onJoin
@@ -222,18 +225,22 @@ function Hero({
   }, React.createElement(Button, {
     variant: "primary",
     size: "lg",
-    iconSrc: ICONS + "/cream/rumbo.png",
-    iconRight: true,
+    className: "cta",
     onClick: onJoin
-  }, "Empieza ahora. De verdad."), React.createElement(Button, {
+  }, "Empieza ahora. De verdad. ", React.createElement("span", {
+    className: "arrow"
+  }, "\u2192")), React.createElement(Button, {
     variant: "ghost",
     size: "lg",
     as: "a",
     href: "#programa",
+    className: "cta",
     style: {
       color: "var(--von-cream)"
     }
-  }, "Quiero verlo")))), React.createElement(Reveal, {
+  }, "Quiero verlo ", React.createElement("span", {
+    className: "arrow"
+  }, "\u2192"))))), React.createElement(Reveal, {
     delay: 200,
     style: {
       display: "flex",
@@ -610,10 +617,11 @@ function Decision({
   }, React.createElement(Button, {
     variant: "primary",
     size: "lg",
-    iconSrc: ICONS + "/cream/rumbo.png",
-    iconRight: true,
+    className: "cta",
     onClick: onJoin
-  }, "Empiezo")))));
+  }, "Empiezo ", React.createElement("span", {
+    className: "arrow"
+  }, "\u2192"))))));
 }
 function Cierre({
   joined,
@@ -745,8 +753,11 @@ function Cierre({
     variant: "primary",
     size: "lg",
     as: "button",
-    type: "submit"
-  }, "Empiezo"))), !joined && React.createElement(Reveal, {
+    type: "submit",
+    className: "cta"
+  }, "Empiezo ", React.createElement("span", {
+    className: "arrow"
+  }, "\u2192")))), !joined && React.createElement(Reveal, {
     delay: 210
   }, React.createElement("p", {
     style: {
