@@ -232,13 +232,11 @@ function Hero({
   }, React.createElement("div", {
     className: "lens-stage"
   }, React.createElement("div", {
-    className: "film-ribbon"
-  }), React.createElement("div", {
     className: "lens"
-  }, React.createElement("img", {
+  }, React.createElement("div", {
     className: "lens-symbol",
-    src: ILL + "/chaos-to-direction-light.png",
-    alt: "Del caos a la direcci\xF3n \u2014 a trav\xE9s del objetivo"
+    role: "img",
+    "aria-label": "Del caos a la direcci\xF3n \u2014 a trav\xE9s del objetivo"
   }))), React.createElement("div", {
     style: {
       display: "flex",

@@ -96,9 +96,8 @@ function Hero({ onJoin }) {
         </div>
         <Reveal delay={200} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
           <div className="lens-stage">
-            <div className="film-ribbon" />
             <div className="lens">
-              <img className="lens-symbol" src={ILL + "/chaos-to-direction-light.png"} alt="Del caos a la dirección — a través del objetivo" />
+              <div className="lens-symbol" role="img" aria-label="Del caos a la dirección — a través del objetivo" />
             </div>
           </div>
           <div style={{ display: "flex", gap: 26, fontFamily: "var(--font-subtitle)", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--von-cream-soft)" }}>
