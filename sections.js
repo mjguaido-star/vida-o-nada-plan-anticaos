@@ -240,6 +240,8 @@ function Hero({
     src: "./assets/reloj-cutout.png",
     alt: "Reloj de bolsillo \u2014 el tiempo"
   }), React.createElement("div", {
+    className: "dial-cover"
+  }), React.createElement("div", {
     className: "watch-hand",
     role: "img",
     "aria-label": "Del caos a la direcci\xF3n \u2014 la flecha de oro"
