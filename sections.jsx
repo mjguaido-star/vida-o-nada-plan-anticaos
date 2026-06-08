@@ -305,15 +305,16 @@ function MomentoIncomodo() {
   React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    let done = false;
-    const trigger = () => { if (!done) { done = true; el.classList.add("visible"); } };
-    const target = el.querySelector(".pause-line-1") || el;
     const io = new IntersectionObserver((es) => {
-      es.forEach((e) => { if (e.isIntersecting) { trigger(); io.disconnect(); } });
-    }, { threshold: 0.6 });
-    io.observe(target);
-    const failsafe = setTimeout(trigger, 4000); // nunca dejar el texto invisible
-    return () => { io.disconnect(); clearTimeout(failsafe); };
+      es.forEach((e) => {
+        if (e.isIntersecting) {
+          el.classList.add("visible");   // dispara SOLO al entrar en pantalla
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.25, rootMargin: "0px 0px -10% 0px" });
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
   return (
     <section ref={ref} className="pause-section">
