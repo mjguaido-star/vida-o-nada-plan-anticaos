@@ -179,13 +179,36 @@ body {
 }
 /* our chaos->direction symbol in GOLD, glowing, seen through the glass */
 .lens-symbol {
-  position: absolute; left: 50%; top: 49%; transform: translate(-50%, -50%);
-  width: 37%; aspect-ratio: 1635 / 690; z-index: 5;
+  position: absolute; left: 50%; top: 49%; z-index: 3;
+  width: 37%; aspect-ratio: 1635 / 690;
   background: linear-gradient(135deg, #fff3c6 0%, #f6d066 26%, #e3ad44 52%, #bb8124 78%, #8a5a16 100%);
   -webkit-mask: url("assets/illustrations/chaos-to-direction-light.png") center / contain no-repeat;
           mask: url("assets/illustrations/chaos-to-direction-light.png") center / contain no-repeat;
-  filter: drop-shadow(0 0 11px rgba(244,186,76,0.75)) drop-shadow(0 0 4px rgba(255,214,110,0.85))
-          drop-shadow(0 1px 2px rgba(0,0,0,0.55));
+  mix-blend-mode: screen;   /* blends into the glass optics */
+  transform: translate(-50%, -50%);
+  animation: shotFlare 5s ease-in-out infinite;
+}
+/* the lens "takes a photo": flash + the logo flares out */
+@keyframes shotFlare {
+  0%, 78%, 100% { transform: translate(-50%,-50%) scale(1);
+    filter: drop-shadow(0 0 10px rgba(244,186,76,0.78)) drop-shadow(0 0 3px rgba(255,214,110,0.9)); }
+  82% { transform: translate(-50%,-50%) scale(1.14);
+    filter: drop-shadow(0 0 24px rgba(255,228,150,1)) drop-shadow(0 0 9px rgba(255,242,190,1)); }
+  88% { transform: translate(-50%,-50%) scale(1);
+    filter: drop-shadow(0 0 10px rgba(244,186,76,0.78)) drop-shadow(0 0 3px rgba(255,214,110,0.9)); }
+}
+@keyframes shotFlash { 0%, 79%, 86%, 100% { opacity: 0; } 82% { opacity: 0.6; } }
+@keyframes shotFocus { 0%, 79%, 86%, 100% { transform: scale(1); } 82% { transform: scale(1.014); } }
+/* camera flash that blinks at the capture moment */
+.lens-flash {
+  position: absolute; inset: 0; border-radius: 50%; z-index: 5; pointer-events: none;
+  background: radial-gradient(circle at 50% 49%, rgba(255,246,214,0.95), rgba(255,212,120,0.4) 32%, transparent 62%);
+  mix-blend-mode: screen; opacity: 0;
+  animation: shotFlash 5s ease-in-out infinite;
+}
+.lens { animation: shotFocus 5s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .lens-symbol, .lens-flash, .lens { animation: none; }
 }
 
 /* REAL pocket-watch cut-out (no chain) + gold logo arrow as the hand */

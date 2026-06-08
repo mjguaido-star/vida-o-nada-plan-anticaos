@@ -241,6 +241,8 @@ function Hero({
     className: "lens-symbol",
     role: "img",
     "aria-label": "Del caos a la direcci\xF3n \u2014 a trav\xE9s del objetivo"
+  }), React.createElement("div", {
+    className: "lens-flash"
   }))), React.createElement("div", {
     style: {
       display: "flex",
