@@ -705,7 +705,7 @@ function MomentoIncomodo() {
     const trigger = () => {
       if (!done) {
         done = true;
-        el.classList.add("play");
+        el.classList.add("visible");
       }
     };
     const target = el.querySelector(".pause-line-1") || el;

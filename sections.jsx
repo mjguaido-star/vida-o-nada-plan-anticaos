@@ -306,7 +306,7 @@ function MomentoIncomodo() {
     const el = ref.current;
     if (!el) return;
     let done = false;
-    const trigger = () => { if (!done) { done = true; el.classList.add("play"); } };
+    const trigger = () => { if (!done) { done = true; el.classList.add("visible"); } };
     const target = el.querySelector(".pause-line-1") || el;
     const io = new IntersectionObserver((es) => {
       es.forEach((e) => { if (e.isIntersecting) { trigger(); io.disconnect(); } });
