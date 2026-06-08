@@ -233,7 +233,11 @@ function Hero({
     className: "lens-stage"
   }, React.createElement("div", {
     className: "lens"
-  }, React.createElement("div", {
+  }, React.createElement("img", {
+    className: "lens-photo",
+    src: "./assets/objetivo.jpg",
+    alt: "Objetivo de c\xE1mara"
+  }), React.createElement("div", {
     className: "lens-symbol",
     role: "img",
     "aria-label": "Del caos a la direcci\xF3n \u2014 a trav\xE9s del objetivo"

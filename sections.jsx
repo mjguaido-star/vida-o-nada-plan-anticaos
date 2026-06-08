@@ -97,6 +97,7 @@ function Hero({ onJoin }) {
         <Reveal delay={200} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
           <div className="lens-stage">
             <div className="lens">
+              <img className="lens-photo" src="./assets/objetivo.jpg" alt="Objetivo de cámara" />
               <div className="lens-symbol" role="img" aria-label="Del caos a la dirección — a través del objetivo" />
             </div>
           </div>
