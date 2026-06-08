@@ -479,24 +479,29 @@ a[style*="var(--accent)"]:hover {
 }
 
 /* ---- Momento de decisión: botones minimal, sin cajas ---- */
+/* (sobreescribe la regla global "button" de objetivo de cámara con !important) */
 .decision-btn {
   font-family: var(--font-subtitle);
   font-size: 0.8rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--von-ink);
-  background: transparent;
-  border: 1px solid rgba(42, 24, 16, 0.45);
-  border-radius: var(--radius-pill);
-  padding: 18px 34px;
+  color: var(--von-ink) !important;
+  background: none !important;
+  border: 1px solid rgba(42, 24, 16, 0.4) !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  padding: 17px 34px;
   cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease !important;
 }
 .decision-btn:hover,
 .decision-btn:focus-visible {
-  background: var(--von-ink);
-  color: var(--von-parchment);
-  border-color: var(--von-ink);
+  background: var(--von-ink) !important;
+  color: var(--von-parchment) !important;
+  border-color: var(--von-ink) !important;
+  filter: none !important;
+  box-shadow: none !important;
   outline: none;
 }
 .decision-step {
