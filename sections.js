@@ -441,7 +441,20 @@ function Programa() {
     style: {
       height: "100%"
     }
-  }, d))))));
+  }, d)))), React.createElement(Reveal, {
+    delay: 160
+  }, React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-subtitle)",
+      fontSize: "0.82rem",
+      letterSpacing: "0.06em",
+      textAlign: "center",
+      color: "var(--von-ink-soft)",
+      opacity: 0.72,
+      margin: "clamp(64px,8vw,104px) auto 0",
+      maxWidth: "44ch"
+    }
+  }, "Si has llegado hasta aqu\xED, ya sabes que esto va contigo."))));
 }
 function Manifiesto() {
   return React.createElement("section", {
@@ -692,50 +705,47 @@ function Cierre({
     }
   }, "@mariangparis")))));
 }
-function Pausa() {
+function MomentoIncomodo() {
   return React.createElement("section", {
     style: {
-      background: "var(--von-ink-black)",
-      padding: "clamp(72px,10vw,128px) 0",
-      overflow: "hidden",
-      textAlign: "center"
+      background: "var(--von-parchment)",
+      color: "var(--von-ink)",
+      padding: "clamp(140px,24vw,280px) 0",
+      textAlign: "center",
+      overflow: "hidden"
     }
-  }, React.createElement(Grain, null), React.createElement("div", {
-    className: "wrap",
+  }, React.createElement("div", {
+    className: "wrap"
+  }, React.createElement(Reveal, null, React.createElement("p", {
     style: {
-      position: "relative",
-      zIndex: 2
+      fontFamily: "var(--font-condensed)",
+      textTransform: "uppercase",
+      fontSize: "clamp(2.4rem,6.4vw,5.4rem)",
+      lineHeight: 1,
+      letterSpacing: "-0.01em",
+      color: "var(--von-ink)",
+      margin: 0
     }
-  }, React.createElement(Reveal, null, React.createElement("span", {
+  }, "Puedes cerrar esta p\xE1gina.")), React.createElement(Reveal, {
+    delay: 700
+  }, React.createElement("p", {
     style: {
-      display: "block",
-      width: 1,
-      height: 34,
-      background: "var(--border-dark)",
-      margin: "0 auto 26px"
+      fontFamily: "var(--font-condensed)",
+      textTransform: "uppercase",
+      fontSize: "clamp(2.4rem,6.4vw,5.4rem)",
+      lineHeight: 1,
+      letterSpacing: "-0.01em",
+      color: "var(--accent)",
+      margin: "20px 0 0"
     }
-  }), React.createElement("p", {
-    style: {
-      fontFamily: "var(--font-subtitle)",
-      fontSize: "clamp(1.05rem,1.7vw,1.35rem)",
-      letterSpacing: "0.05em",
-      lineHeight: 1.7,
-      color: "var(--von-cream-soft)",
-      maxWidth: "26ch",
-      margin: "0 auto"
-    }
-  }, "Nadie te va a obligar.", React.createElement("br", null), React.createElement("span", {
-    style: {
-      color: "var(--von-cream)"
-    }
-  }, "Pero tampoco te va a sacar de aqu\xED.")))));
+  }, "Y seguir igual."))));
 }
 Object.assign(window, {
   Nav,
   Hero,
   Problema,
+  MomentoIncomodo,
   Transformacion,
-  Pausa,
   Programa,
   Manifiesto,
   Cierre

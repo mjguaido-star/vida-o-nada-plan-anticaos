@@ -14,8 +14,8 @@ function App() {
       <main>
         <Hero onJoin={scrollToCierre} />
         <Problema />
+        <MomentoIncomodo />
         <Transformacion />
-        <Pausa />
         <Programa />
         <Manifiesto />
         <Cierre joined={joined} onSubmit={onSubmit} />
