@@ -230,15 +230,14 @@ function Hero({
       gap: 22
     }
   }, React.createElement("div", {
-    className: "cam-hero",
+    className: "crt",
     style: {
-      maxWidth: 520,
-      width: "100%",
-      margin: "0 auto"
+      maxWidth: 460,
+      width: "100%"
     }
   }, React.createElement("img", {
-    src: "./assets/camara-hero.jpg",
-    alt: "C\xE1mara vintage \u2014 enfoca el caos en direcci\xF3n"
+    src: ILL + "/chaos-to-direction-light.png",
+    alt: "Del caos a la direcci\xF3n"
   })), React.createElement("div", {
     style: {
       display: "flex",

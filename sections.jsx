@@ -95,8 +95,8 @@ function Hero({ onJoin }) {
           </Reveal>
         </div>
         <Reveal delay={200} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
-          <div className="cam-hero" style={{ maxWidth: 520, width: "100%", margin: "0 auto" }}>
-            <img src="./assets/camara-hero.jpg" alt="Cámara vintage — enfoca el caos en dirección" />
+          <div className="crt" style={{ maxWidth: 460, width: "100%" }}>
+            <img src={ILL + "/chaos-to-direction-light.png"} alt="Del caos a la dirección" />
           </div>
           <div style={{ display: "flex", gap: 26, fontFamily: "var(--font-subtitle)", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--von-cream-soft)" }}>
             <span>Caos mental</span>
