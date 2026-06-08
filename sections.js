@@ -461,10 +461,10 @@ function Hero({
     rx: "150",
     ry: "112",
     fill: "url(#glassGrad)"
-  }))), React.createElement("img", {
+  }))), React.createElement("div", {
     className: "watch-hands",
-    src: ILL + "/chaos-to-direction-light.png",
-    alt: "Del caos a la direcci\xF3n \u2014 el tiempo"
+    role: "img",
+    "aria-label": "Del caos a la direcci\xF3n \u2014 el tiempo"
   }))), React.createElement("div", {
     style: {
       display: "flex",

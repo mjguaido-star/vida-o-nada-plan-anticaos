@@ -142,9 +142,13 @@ body {
   filter: drop-shadow(0 16px 30px rgba(0,0,0,0.55));
 }
 .watch-hands {
-  position: absolute; left: 50%; top: 58%; width: 47%;
+  position: absolute; left: 50%; top: 58%; width: 50%;
+  aspect-ratio: 1635 / 690;
   transform: translate(-50%, -50%);
-  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.7)) brightness(1.1);
+  background: linear-gradient(135deg, #fff1c6 0%, #f2cd7c 28%, #d39e40 52%, #9c6b1e 78%, #6a4310 100%);
+  -webkit-mask: url("assets/illustrations/chaos-to-direction-light.png") center / contain no-repeat;
+          mask: url("assets/illustrations/chaos-to-direction-light.png") center / contain no-repeat;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.7));
 }
 /* polished hub cap over the hands' pivot */
 .watch::after {

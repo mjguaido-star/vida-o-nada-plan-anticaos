@@ -172,7 +172,7 @@ function Hero({ onJoin }) {
                   <ellipse cx="148" cy="188" rx="150" ry="112" fill="url(#glassGrad)" />
                 </g>
               </svg>
-              <img className="watch-hands" src={ILL + "/chaos-to-direction-light.png"} alt="Del caos a la dirección — el tiempo" />
+              <div className="watch-hands" role="img" aria-label="Del caos a la dirección — el tiempo" />
             </div>
           </div>
           <div style={{ display: "flex", gap: 26, fontFamily: "var(--font-subtitle)", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--von-cream-soft)" }}>
