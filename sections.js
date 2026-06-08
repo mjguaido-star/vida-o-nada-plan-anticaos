@@ -232,12 +232,12 @@ function Hero({
   }, React.createElement("div", {
     className: "watch-cut",
     style: {
-      maxWidth: 410,
+      maxWidth: 470,
       width: "100%",
       margin: "0 auto"
     }
   }, React.createElement("img", {
-    src: "./assets/reloj-cutout.png",
+    src: "./assets/reloj-hero.png",
     alt: "Reloj de bolsillo \u2014 el tiempo"
   }), React.createElement("div", {
     className: "dial-cover"

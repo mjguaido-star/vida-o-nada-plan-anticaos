@@ -135,41 +135,46 @@ body {
 }
 .crt img { display: block; width: 100%; filter: contrast(1.05) saturate(1.02) brightness(0.99); }
 
-/* REAL pocket-watch cut-out + gold tangled-arrow logo integrated as the hand */
+/* REAL pocket-watch cut-out (no chain) + gold logo arrow as the hand */
 .watch-cut { position: relative; z-index: 0; }
-/* warm halo so the watch reads as lit by the page, not pasted on top */
+/* soft warm light pooled under/behind the watch so it sits in the scene */
 .watch-cut::before {
-  content: ""; position: absolute; inset: -16% -12% -8%; z-index: -1; pointer-events: none;
-  background: radial-gradient(circle at 52% 56%, rgba(214,134,49,0.30), rgba(214,134,49,0.07) 46%, transparent 68%);
-  filter: blur(20px);
+  content: ""; position: absolute; inset: -14% -10% -18%; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(60% 42% at 50% 92%, rgba(0,0,0,0.5), transparent 70%),
+    radial-gradient(circle at 50% 48%, rgba(214,134,49,0.26), rgba(214,134,49,0.06) 48%, transparent 70%);
+  filter: blur(18px);
 }
 .watch-cut img {
-  display: block; width: 100%;
-  filter: sepia(0.08) saturate(1.03) brightness(0.96) contrast(1.04)
-          drop-shadow(0 26px 34px rgba(0,0,0,0.62)) drop-shadow(0 3px 8px rgba(0,0,0,0.45));
+  display: block; width: 100%; height: auto;
+  object-fit: contain; image-rendering: -webkit-optimize-contrast;
+  /* crisp metal: gentle contrast/saturation, no blur, soft realistic shadow */
+  filter: contrast(1.09) saturate(1.09) brightness(1.0) sepia(0.05)
+          drop-shadow(0 24px 30px rgba(0,0,0,0.5))
+          drop-shadow(0 7px 14px rgba(0,0,0,0.4));
 }
-/* disc that covers the watch's own hands so only our arrow shows */
+/* disc that hides the watch's own hands so only our arrow shows */
 .dial-cover {
-  position: absolute; left: 48%; top: 65.5%; z-index: 1; pointer-events: none;
-  width: 44%; aspect-ratio: 1; transform: translate(-50%, -50%);
+  position: absolute; left: 46%; top: 49%; z-index: 1; pointer-events: none;
+  width: 42%; aspect-ratio: 1; transform: translate(-50%, -50%);
   border-radius: 50%;
   background: radial-gradient(circle,
-    rgb(211,214,223) 0%, rgb(207,210,220) 50%, rgba(207,210,220,0.92) 64%, rgba(207,210,220,0) 82%);
+    rgb(210,213,222) 0%, rgb(206,209,219) 52%, rgba(206,209,219,0.92) 66%, rgba(206,209,219,0) 84%);
 }
-/* the logo arrow: tangle anchored ON the pivot, arrow sweeping out like a hand */
+/* the logo arrow: tangle on the pivot, bold gold, glowing, sweeping to direction */
 .watch-hand {
-  position: absolute; left: 48%; top: 65.5%; z-index: 2;
-  width: 54%; aspect-ratio: 1635 / 690;
-  transform: translate(-24%, -50%) rotate(-5deg);
-  background: linear-gradient(135deg, #fff0bf 0%, #e8bd54 30%, #c8912f 56%, #8f6019 80%, #5f3c0e 100%);
+  position: absolute; left: 46%; top: 49%; z-index: 2;
+  width: 56%; aspect-ratio: 1635 / 690;
+  transform: translate(-24%, -50%) rotate(-4deg);
+  background: linear-gradient(135deg, #ffeaa6 0%, #f4c95a 28%, #d89f38 56%, #9c6b1e 82%, #6a4310 100%);
   -webkit-mask: url("assets/illustrations/chaos-to-direction-light.png") center / contain no-repeat;
           mask: url("assets/illustrations/chaos-to-direction-light.png") center / contain no-repeat;
-  filter: drop-shadow(0 0 2px rgba(40,22,6,0.95)) drop-shadow(0 0 1px rgba(0,0,0,0.9)) drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 0 8px rgba(214,134,49,0.6)) drop-shadow(0 0 2px rgba(38,20,5,0.95)) drop-shadow(0 2px 4px rgba(0,0,0,0.55));
 }
 /* gold centre screw at the pivot — anchors the hand to the movement */
 .watch-cut::after {
-  content: ""; position: absolute; left: 48%; top: 65.5%; z-index: 3;
-  width: 4.6%; aspect-ratio: 1; transform: translate(-50%, -50%);
+  content: ""; position: absolute; left: 46%; top: 49%; z-index: 3;
+  width: 4.4%; aspect-ratio: 1; transform: translate(-50%, -50%);
   border-radius: 50%;
   background: radial-gradient(circle at 38% 32%, #ffe6a6, #c8912f 55%, #6e4512);
   box-shadow: 0 1px 3px rgba(0,0,0,0.75), 0 0 0 1px rgba(20,12,6,0.55);
