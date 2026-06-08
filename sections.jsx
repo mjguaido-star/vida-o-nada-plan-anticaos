@@ -96,7 +96,10 @@ function Hero({ onJoin }) {
         </div>
         <Reveal delay={200} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
           <div className="crt" style={{ maxWidth: 460, width: "100%" }}>
-            <img src={ILL + "/chaos-to-direction-light.png"} alt="Del caos a la dirección" />
+            <div className="watch">
+              <div className="watch-face" />
+              <img className="watch-hands" src={ILL + "/chaos-to-direction-light.png"} alt="Del caos a la dirección — el tiempo" />
+            </div>
           </div>
           <div style={{ display: "flex", gap: 26, fontFamily: "var(--font-subtitle)", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--von-cream-soft)" }}>
             <span>Caos mental</span>

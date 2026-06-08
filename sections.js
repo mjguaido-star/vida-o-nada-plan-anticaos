@@ -235,10 +235,15 @@ function Hero({
       maxWidth: 460,
       width: "100%"
     }
-  }, React.createElement("img", {
+  }, React.createElement("div", {
+    className: "watch"
+  }, React.createElement("div", {
+    className: "watch-face"
+  }), React.createElement("img", {
+    className: "watch-hands",
     src: ILL + "/chaos-to-direction-light.png",
-    alt: "Del caos a la direcci\xF3n"
-  })), React.createElement("div", {
+    alt: "Del caos a la direcci\xF3n \u2014 el tiempo"
+  }))), React.createElement("div", {
     style: {
       display: "flex",
       gap: 26,
