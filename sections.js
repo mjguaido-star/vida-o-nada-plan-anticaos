@@ -292,11 +292,11 @@ function Problema() {
     delay: 80
   }, React.createElement("h2", {
     style: {
-      fontFamily: "var(--font-display)",
+      fontFamily: "\"Space Grotesk\", var(--font-body)",
       fontWeight: 600,
       fontSize: "clamp(2rem,4.4vw,3.5rem)",
-      lineHeight: 1.06,
-      letterSpacing: "-0.015em",
+      lineHeight: 1.1,
+      letterSpacing: "-0.02em",
       margin: "18px 0 28px",
       maxWidth: "22ch"
     }
@@ -475,11 +475,11 @@ function Manifiesto() {
     delay: 80
   }, React.createElement("p", {
     style: {
-      fontFamily: "var(--font-display)",
+      fontFamily: "\"Space Grotesk\", var(--font-body)",
       fontWeight: 600,
       fontSize: "clamp(2rem,4.4vw,3.4rem)",
-      lineHeight: 1.2,
-      letterSpacing: "-0.015em",
+      lineHeight: 1.18,
+      letterSpacing: "-0.02em",
       color: "var(--von-ink)",
       margin: "20px 0 22px"
     }

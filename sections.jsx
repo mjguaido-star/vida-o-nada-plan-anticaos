@@ -124,7 +124,7 @@ function Problema() {
       <div className="wrap" style={{ maxWidth: 920 }}>
         <Reveal><Eyebrow number="01" tone="energia">El caos</Eyebrow></Reveal>
         <Reveal delay={80}>
-          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: "clamp(2rem,4.4vw,3.5rem)", lineHeight: 1.06, letterSpacing: "-0.015em", margin: "18px 0 28px", maxWidth: "22ch" }}>
+          <h2 style={{ fontFamily: "\"Space Grotesk\", var(--font-body)", fontWeight: 600, fontSize: "clamp(2rem,4.4vw,3.5rem)", lineHeight: 1.1, letterSpacing: "-0.02em", margin: "18px 0 28px", maxWidth: "22ch" }}>
             Empiezas cosas.<br />Las dejas.<br />Vuelves a empezar otras.
           </h2>
         </Reveal>
@@ -213,7 +213,7 @@ function Manifiesto() {
       <div className="wrap" style={{ position: "relative", zIndex: 2, textAlign: "center", maxWidth: 900 }}>
         <Reveal><Eyebrow number="03" tone="energia" style={{ justifyContent: "center" }}>El resultado</Eyebrow></Reveal>
         <Reveal delay={80}>
-          <p style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: "clamp(2rem,4.4vw,3.4rem)", lineHeight: 1.2, letterSpacing: "-0.015em", color: "var(--von-ink)", margin: "20px 0 22px" }}>
+          <p style={{ fontFamily: "\"Space Grotesk\", var(--font-body)", fontWeight: 600, fontSize: "clamp(2rem,4.4vw,3.4rem)", lineHeight: 1.18, letterSpacing: "-0.02em", color: "var(--von-ink)", margin: "20px 0 22px" }}>
             Dejas de pensar tanto.<br /><span style={{ color: "var(--accent)", fontFamily: "\"Space Grotesk\", var(--font-body)", fontWeight: 700, fontStyle: "normal", letterSpacing: "-0.02em" }}>Empiezas a moverte.</span>
           </p>
         </Reveal>
