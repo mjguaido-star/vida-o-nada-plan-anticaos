@@ -239,12 +239,6 @@ function Hero({
     alt: "Objetivo de c\xE1mara"
   }), React.createElement("div", {
     className: "lens-flash"
-  })), React.createElement("div", {
-    className: "film-out"
-  }, React.createElement("div", {
-    className: "film-logo",
-    role: "img",
-    "aria-label": "Del caos a la direcci\xF3n \u2014 revelado en el carrete"
   }))), React.createElement("div", {
     style: {
       display: "flex",
