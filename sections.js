@@ -485,7 +485,11 @@ function Manifiesto() {
     }
   }, "Dejas de pensar tanto.", React.createElement("br", null), React.createElement("span", {
     style: {
-      color: "var(--accent)"
+      color: "var(--accent)",
+      fontFamily: "var(--font-body)",
+      fontWeight: 800,
+      fontStyle: "normal",
+      letterSpacing: "-0.02em"
     }
   }, "Empiezas a moverte."))), React.createElement(Reveal, {
     delay: 150
