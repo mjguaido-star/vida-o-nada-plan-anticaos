@@ -399,6 +399,21 @@ a[style*="var(--accent)"]:hover {
     0 0 30px rgba(214,134,49,0.42) !important;
 }
 
+/* ---------- 9b. CTA arrow: hover = la flecha avanza (movimiento, no decoración) ---------- */
+button img[src*="rumbo"] {
+  transition: transform 0.25s var(--ease-out) !important;
+  will-change: transform;
+}
+button:hover img[src*="rumbo"],
+button:focus-visible img[src*="rumbo"] {
+  transform: translateX(5px) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  button img[src*="rumbo"] { transition: none !important; }
+  button:hover img[src*="rumbo"],
+  button:focus-visible img[src*="rumbo"] { transform: none !important; }
+}
+
 /* ---------- 10. CAOS-slide watermark: vintage compass rose (earth tones) ---------- */
 #problema { overflow: hidden; }
 #problema > .wrap { position: relative; z-index: 1; }
