@@ -195,10 +195,20 @@ function Hero({
       fontSize: "clamp(1.25rem,1.9vw,1.7rem)",
       lineHeight: 1.4,
       color: "var(--von-cream)",
-      maxWidth: "32ch",
+      maxWidth: "34ch",
+      margin: "0 0 16px"
+    }
+  }, "Sabes perfectamente lo que quieres.", React.createElement("br", null), "Y aun as\xED no lo est\xE1s haciendo.")), React.createElement(Reveal, {
+    delay: 210
+  }, React.createElement("p", {
+    style: {
+      fontSize: "1.02rem",
+      lineHeight: 1.6,
+      color: "var(--von-cream-soft)",
+      maxWidth: "42ch",
       margin: "0 0 34px"
     }
-  }, "Sabes lo que quieres\u2026 pero no lo est\xE1s haciendo.")), React.createElement(Reveal, {
+  }, "Y cuanto m\xE1s esperas, m\xE1s te acostumbras a seguir igual.")), React.createElement(Reveal, {
     delay: 240
   }, React.createElement("div", {
     style: {
@@ -213,7 +223,7 @@ function Hero({
     iconSrc: ICONS + "/cream/rumbo.png",
     iconRight: true,
     onClick: onJoin
-  }, "Empieza ahora"), React.createElement(Button, {
+  }, "Empieza ahora. De verdad."), React.createElement(Button, {
     variant: "ghost",
     size: "lg",
     as: "a",
@@ -282,14 +292,24 @@ function Problema() {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 600,
-      fontSize: "clamp(2rem,4.2vw,3.4rem)",
-      lineHeight: 1.08,
+      fontSize: "clamp(2rem,4.4vw,3.5rem)",
+      lineHeight: 1.06,
       letterSpacing: "-0.015em",
       margin: "18px 0 28px",
       maxWidth: "22ch"
     }
-  }, "Tienes mil ideas. Mil ganas de cambiar cosas. Pero sigues en el mismo punto.")), React.createElement(Reveal, {
+  }, "Empiezas cosas.", React.createElement("br", null), "Las dejas.", React.createElement("br", null), "Vuelves a empezar otras.")), React.createElement(Reveal, {
     delay: 140
+  }, React.createElement("p", {
+    style: {
+      fontSize: "1.3rem",
+      lineHeight: 1.55,
+      color: "var(--von-ink)",
+      margin: "0 0 26px",
+      fontWeight: 600
+    }
+  }, "Y al final del d\xEDa, sigues en el mismo sitio.")), React.createElement(Reveal, {
+    delay: 180
   }, React.createElement("p", {
     style: {
       fontSize: "1.2rem",
@@ -297,8 +317,8 @@ function Problema() {
       color: "var(--von-ink-soft)",
       margin: "0 0 30px"
     }
-  }, "No es falta de tiempo.", React.createElement("br", null), "No es falta de capacidad.")), React.createElement(Reveal, {
-    delay: 200
+  }, "No es falta de tiempo.")), React.createElement(Reveal, {
+    delay: 220
   }, React.createElement("p", {
     style: {
       fontFamily: "var(--font-condensed)",
@@ -338,14 +358,14 @@ function Transformacion() {
       color: "var(--von-ink)",
       margin: 0
     }
-  }, "No es motivaci\xF3n.", React.createElement("br", null), React.createElement("span", {
+  }, "No necesitas m\xE1s ganas.", React.createElement("br", null), React.createElement("span", {
     style: {
       color: "var(--teal)"
     }
-  }, "Es un sistema.")))));
+  }, "Necesitas dejar de perder el tiempo.")))));
 }
 function Programa() {
-  const pillars = [["01", "caos", "Caos interno", "Entender tu mente antes de cambiar nada."], ["02", "direccion", "Dirección", "Definir lo que importa y soltar lo que no."], ["03", "accion", "Acción real", "Hacer, aunque no sea perfecto."]];
+  const pillars = [["01", "caos", "Caos interno", "Dejar de sabotearte sin darte cuenta."], ["02", "direccion", "Dirección", "Elegir de una vez qué importa."], ["03", "accion", "Acción real", "Hacer aunque no tengas ganas."]];
   return React.createElement("section", {
     id: "programa",
     style: {
@@ -390,7 +410,7 @@ function Programa() {
       color: "var(--von-ink-soft)",
       margin: 0
     }
-  }, "Para dejar de dar vueltas y empezar a hacer."))), React.createElement("div", {
+  }, "Un sistema para salir del bucle en el que llevas meses."))), React.createElement("div", {
     className: "pillar-grid",
     style: {
       display: "grid",
@@ -462,7 +482,19 @@ function Manifiesto() {
       maxWidth: "46ch",
       margin: "0 auto"
     }
-  }, "Y por primera vez en mucho tiempo, sientes que est\xE1s haciendo algo de verdad."))));
+  }, "Y por primera vez en mucho tiempo, sientes que est\xE1s haciendo algo de verdad.")), React.createElement(Reveal, {
+    delay: 210
+  }, React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-condensed)",
+      textTransform: "uppercase",
+      fontSize: "clamp(1.5rem,3vw,2.4rem)",
+      lineHeight: 1.05,
+      letterSpacing: "-0.005em",
+      color: "var(--accent)",
+      margin: "30px 0 0"
+    }
+  }, "Y dejas de sentir que est\xE1s perdiendo el tiempo."))));
 }
 function Cierre({
   joined,
@@ -517,12 +549,13 @@ function Cierre({
     delay: 90
   }, React.createElement("p", {
     style: {
-      fontSize: "1.05rem",
+      fontSize: "1.15rem",
       lineHeight: 1.6,
-      color: "var(--von-cream-soft)",
-      margin: "0 0 30px"
+      color: "var(--von-cream)",
+      margin: "0 0 30px",
+      fontWeight: 600
     }
-  }, "D\xE9jame tu email y te cuento c\xF3mo empezar. Sin vueltas, sin spam.")), React.createElement(Reveal, {
+  }, "Si sabes que no puedes seguir as\xED, empieza aqu\xED.")), React.createElement(Reveal, {
     delay: 150
   }, joined ? React.createElement("div", {
     style: {
@@ -582,7 +615,17 @@ function Cierre({
     size: "lg",
     as: "button",
     type: "submit"
-  }, "Empieza ahora")))), React.createElement("footer", {
+  }, "Empieza ahora"))), !joined && React.createElement(Reveal, {
+    delay: 210
+  }, React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-subtitle)",
+      fontSize: "0.86rem",
+      letterSpacing: "0.04em",
+      color: "var(--von-cream-soft)",
+      margin: "16px 0 0"
+    }
+  }, "No necesitas m\xE1s informaci\xF3n. Necesitas empezar."))), React.createElement("footer", {
     style: {
       marginTop: "var(--section-pad-y)",
       borderTop: "1px solid var(--border-dark)",

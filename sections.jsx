@@ -83,13 +83,18 @@ function Hero({ onJoin }) {
             </h1>
           </Reveal>
           <Reveal delay={160}>
-            <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(1.25rem,1.9vw,1.7rem)", lineHeight: 1.4, color: "var(--von-cream)", maxWidth: "32ch", margin: "0 0 34px" }}>
-              Sabes lo que quieres… pero no lo estás haciendo.
+            <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(1.25rem,1.9vw,1.7rem)", lineHeight: 1.4, color: "var(--von-cream)", maxWidth: "34ch", margin: "0 0 16px" }}>
+              Sabes perfectamente lo que quieres.<br />Y aun así no lo estás haciendo.
+            </p>
+          </Reveal>
+          <Reveal delay={210}>
+            <p style={{ fontSize: "1.02rem", lineHeight: 1.6, color: "var(--von-cream-soft)", maxWidth: "42ch", margin: "0 0 34px" }}>
+              Y cuanto más esperas, más te acostumbras a seguir igual.
             </p>
           </Reveal>
           <Reveal delay={240}>
             <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
-              <Button variant="primary" size="lg" iconSrc={ICONS + "/cream/rumbo.png"} iconRight onClick={onJoin}>Empieza ahora</Button>
+              <Button variant="primary" size="lg" iconSrc={ICONS + "/cream/rumbo.png"} iconRight onClick={onJoin}>Empieza ahora. De verdad.</Button>
               <Button variant="ghost" size="lg" as="a" href="#programa" style={{ color: "var(--von-cream)" }}>Ver el plan</Button>
             </div>
           </Reveal>
@@ -119,16 +124,21 @@ function Problema() {
       <div className="wrap" style={{ maxWidth: 920 }}>
         <Reveal><Eyebrow number="01" tone="energia">El caos</Eyebrow></Reveal>
         <Reveal delay={80}>
-          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: "clamp(2rem,4.2vw,3.4rem)", lineHeight: 1.08, letterSpacing: "-0.015em", margin: "18px 0 28px", maxWidth: "22ch" }}>
-            Tienes mil ideas. Mil ganas de cambiar cosas. Pero sigues en el mismo punto.
+          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: "clamp(2rem,4.4vw,3.5rem)", lineHeight: 1.06, letterSpacing: "-0.015em", margin: "18px 0 28px", maxWidth: "22ch" }}>
+            Empiezas cosas.<br />Las dejas.<br />Vuelves a empezar otras.
           </h2>
         </Reveal>
         <Reveal delay={140}>
-          <p style={{ fontSize: "1.2rem", lineHeight: 1.6, color: "var(--von-ink-soft)", margin: "0 0 30px" }}>
-            No es falta de tiempo.<br />No es falta de capacidad.
+          <p style={{ fontSize: "1.3rem", lineHeight: 1.55, color: "var(--von-ink)", margin: "0 0 26px", fontWeight: 600 }}>
+            Y al final del día, sigues en el mismo sitio.
           </p>
         </Reveal>
-        <Reveal delay={200}>
+        <Reveal delay={180}>
+          <p style={{ fontSize: "1.2rem", lineHeight: 1.6, color: "var(--von-ink-soft)", margin: "0 0 30px" }}>
+            No es falta de tiempo.
+          </p>
+        </Reveal>
+        <Reveal delay={220}>
           <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(2.2rem,5vw,4rem)", lineHeight: 0.95, letterSpacing: "-0.01em", color: "var(--accent)", margin: 0 }}>
             Es que no estás eligiendo.
           </p>
@@ -146,7 +156,7 @@ function Transformacion() {
       <div className="wrap" style={{ position: "relative", zIndex: 2, textAlign: "center", maxWidth: 900 }}>
         <Reveal>
           <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(2.4rem,6vw,5rem)", lineHeight: 0.95, letterSpacing: "-0.01em", color: "var(--von-ink)", margin: 0 }}>
-            No es motivación.<br /><span style={{ color: "var(--teal)" }}>Es un sistema.</span>
+            No necesitas más ganas.<br /><span style={{ color: "var(--teal)" }}>Necesitas dejar de perder el tiempo.</span>
           </p>
         </Reveal>
       </div>
@@ -157,9 +167,9 @@ function Transformacion() {
 /* ======================================================== SOLUCIÓN — PLAN ANTICAOS */
 function Programa() {
   const pillars = [
-    ["01", "caos", "Caos interno", "Entender tu mente antes de cambiar nada."],
-    ["02", "direccion", "Dirección", "Definir lo que importa y soltar lo que no."],
-    ["03", "accion", "Acción real", "Hacer, aunque no sea perfecto."],
+    ["01", "caos", "Caos interno", "Dejar de sabotearte sin darte cuenta."],
+    ["02", "direccion", "Dirección", "Elegir de una vez qué importa."],
+    ["03", "accion", "Acción real", "Hacer aunque no tengas ganas."],
   ];
   return (
     <section id="programa" style={{ background: "var(--von-parchment)", color: "var(--von-ink)", paddingTop: "var(--section-pad-y)", paddingBottom: "var(--section-pad-y)" }}>
@@ -173,7 +183,7 @@ function Programa() {
           </Reveal>
           <Reveal delay={130}>
             <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(1.2rem,2vw,1.6rem)", lineHeight: 1.4, color: "var(--von-ink-soft)", margin: 0 }}>
-              Para dejar de dar vueltas y empezar a hacer.
+              Un sistema para salir del bucle en el que llevas meses.
             </p>
           </Reveal>
         </div>
@@ -204,6 +214,11 @@ function Manifiesto() {
             Y por primera vez en mucho tiempo, sientes que estás haciendo algo de verdad.
           </p>
         </Reveal>
+        <Reveal delay={210}>
+          <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(1.5rem,3vw,2.4rem)", lineHeight: 1.05, letterSpacing: "-0.005em", color: "var(--accent)", margin: "30px 0 0" }}>
+            Y dejas de sentir que estás perdiendo el tiempo.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
@@ -229,8 +244,8 @@ function Cierre({ joined, onSubmit }) {
             </h2>
           </Reveal>
           <Reveal delay={90}>
-            <p style={{ fontSize: "1.05rem", lineHeight: 1.6, color: "var(--von-cream-soft)", margin: "0 0 30px" }}>
-              Déjame tu email y te cuento cómo empezar. Sin vueltas, sin spam.
+            <p style={{ fontSize: "1.15rem", lineHeight: 1.6, color: "var(--von-cream)", margin: "0 0 30px", fontWeight: 600 }}>
+              Si sabes que no puedes seguir así, empieza aquí.
             </p>
           </Reveal>
           <Reveal delay={150}>
@@ -250,6 +265,13 @@ function Cierre({ joined, onSubmit }) {
               </form>
             )}
           </Reveal>
+          {!joined && (
+            <Reveal delay={210}>
+              <p style={{ fontFamily: "var(--font-subtitle)", fontSize: "0.86rem", letterSpacing: "0.04em", color: "var(--von-cream-soft)", margin: "16px 0 0" }}>
+                No necesitas más información. Necesitas empezar.
+              </p>
+            </Reveal>
+          )}
         </div>
 
         <footer style={{ marginTop: "var(--section-pad-y)", borderTop: "1px solid var(--border-dark)", padding: "40px 0 48px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 22 }}>
