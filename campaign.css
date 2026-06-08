@@ -454,3 +454,17 @@ a[style*="var(--accent)"]:hover {
   .momento .line1,
   .momento .line2 { opacity: 1; transform: none; animation: none; }
 }
+
+/* ---- Texto escondido tras los pilares ---- */
+.hidden-line {
+  font-size: 14px;
+  opacity: 0.6;
+  text-align: center;
+  margin: 60px 0;
+  font-family: var(--font-subtitle);
+  letter-spacing: 0.04em;
+  color: var(--von-ink-soft);
+  max-width: 46ch;
+  margin-left: auto;
+  margin-right: auto;
+}

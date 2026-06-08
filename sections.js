@@ -444,16 +444,7 @@ function Programa() {
   }, d)))), React.createElement(Reveal, {
     delay: 160
   }, React.createElement("p", {
-    style: {
-      fontFamily: "var(--font-subtitle)",
-      fontSize: "0.82rem",
-      letterSpacing: "0.06em",
-      textAlign: "center",
-      color: "var(--von-ink-soft)",
-      opacity: 0.72,
-      margin: "clamp(64px,8vw,104px) auto 0",
-      maxWidth: "44ch"
-    }
+    className: "hidden-line"
   }, "Si has llegado hasta aqu\xED, ya sabes que esto va contigo."))));
 }
 function Manifiesto() {
