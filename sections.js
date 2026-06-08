@@ -62,7 +62,7 @@ function Nav({
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const links = [["El caos", "#problema"], ["El plan", "#programa"], ["Empezar", "#cierre"]];
+  const links = [["Te está pasando esto", "#problema"], ["Así sales", "#programa"], ["Empezar", "#cierre"]];
   return React.createElement("header", {
     style: {
       position: "fixed",
@@ -395,7 +395,17 @@ function Programa() {
       maxWidth: 720,
       margin: "0 auto 48px"
     }
-  }, React.createElement(Reveal, null, React.createElement(Eyebrow, {
+  }, React.createElement(Reveal, null, React.createElement("p", {
+    style: {
+      fontFamily: "\"Space Grotesk\", var(--font-body)",
+      fontWeight: 500,
+      fontSize: "clamp(1.1rem,1.7vw,1.4rem)",
+      lineHeight: 1.45,
+      color: "var(--von-ink)",
+      maxWidth: "30ch",
+      margin: "0 auto 28px"
+    }
+  }, "Esto no es teor\xEDa. Es lo que yo misma tuve que hacer.")), React.createElement(Reveal, null, React.createElement(Eyebrow, {
     number: "02",
     tone: "energia",
     style: {
@@ -603,7 +613,7 @@ function Decision({
     iconSrc: ICONS + "/cream/rumbo.png",
     iconRight: true,
     onClick: onJoin
-  }, "Empieza ahora")))));
+  }, "Empiezo")))));
 }
 function Cierre({
   joined,
@@ -661,10 +671,22 @@ function Cierre({
       fontSize: "1.15rem",
       lineHeight: 1.6,
       color: "var(--von-cream)",
-      margin: "0 0 30px",
+      margin: "0 0 16px",
       fontWeight: 600
     }
   }, "Si sabes que no puedes seguir as\xED, empieza.")), React.createElement(Reveal, {
+    delay: 120
+  }, React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-condensed)",
+      textTransform: "uppercase",
+      fontSize: "clamp(1.4rem,3.2vw,2.4rem)",
+      lineHeight: 1,
+      letterSpacing: "-0.005em",
+      color: "var(--accent)",
+      margin: "0 0 30px"
+    }
+  }, "Si no haces nada, todo sigue igual.")), React.createElement(Reveal, {
     delay: 150
   }, joined ? React.createElement("div", {
     style: {
@@ -707,7 +729,7 @@ function Cierre({
   }, React.createElement(Input, {
     tone: "dark",
     pill: true,
-    placeholder: "Tu email",
+    placeholder: "Tu email (si de verdad quieres cambiar esto)",
     value: email,
     onChange: e => setEmail(e.target.value),
     invalid: !!err,
@@ -724,15 +746,24 @@ function Cierre({
     size: "lg",
     as: "button",
     type: "submit"
-  }, "Empieza ahora"))), !joined && React.createElement(Reveal, {
+  }, "Empiezo"))), !joined && React.createElement(Reveal, {
     delay: 210
   }, React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-body)",
+      fontWeight: 500,
+      fontSize: "0.98rem",
+      lineHeight: 1.5,
+      color: "var(--von-cream)",
+      margin: "18px 0 0"
+    }
+  }, "Te explico c\xF3mo empezar. Sin vueltas."), React.createElement("p", {
     style: {
       fontFamily: "var(--font-subtitle)",
       fontSize: "0.86rem",
       letterSpacing: "0.04em",
       color: "var(--von-cream-soft)",
-      margin: "16px 0 0"
+      margin: "8px 0 0"
     }
   }, "No necesitas m\xE1s informaci\xF3n. Necesitas empezar."))), React.createElement("footer", {
     style: {
@@ -765,7 +796,7 @@ function Cierre({
       color: "var(--von-parchment-text)",
       margin: "0 0 6px"
     }
-  }, "Menos ruido. M\xE1s direcci\xF3n. M\xE1s vida."), React.createElement("a", {
+  }, "Menos ruido. M\xE1s direcci\xF3n. O lo de siempre."), React.createElement("a", {
     href: "#top",
     style: {
       fontFamily: "var(--font-subtitle)",

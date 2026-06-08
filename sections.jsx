@@ -32,7 +32,7 @@ function Nav({ onJoin }) {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const links = [["El caos", "#problema"], ["El plan", "#programa"], ["Empezar", "#cierre"]];
+  const links = [["Te está pasando esto", "#problema"], ["Así sales", "#programa"], ["Empezar", "#cierre"]];
   return (
     <header style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
@@ -180,6 +180,11 @@ function Programa() {
     <section id="programa" style={{ background: "var(--von-parchment)", color: "var(--von-ink)", paddingTop: "var(--section-pad-y)", paddingBottom: "var(--section-pad-y)" }}>
       <div className="wrap">
         <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 48px" }}>
+          <Reveal>
+            <p style={{ fontFamily: "\"Space Grotesk\", var(--font-body)", fontWeight: 500, fontSize: "clamp(1.1rem,1.7vw,1.4rem)", lineHeight: 1.45, color: "var(--von-ink)", maxWidth: "30ch", margin: "0 auto 28px" }}>
+              Esto no es teoría. Es lo que yo misma tuve que hacer.
+            </p>
+          </Reveal>
           <Reveal><Eyebrow number="02" tone="energia" style={{ justifyContent: "center" }}>La solución</Eyebrow></Reveal>
           <Reveal delay={80}>
             <h2 style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(2.8rem,6.5vw,5.4rem)", lineHeight: 0.9, letterSpacing: "-0.01em", margin: "16px 0 14px" }}>
@@ -263,7 +268,7 @@ function Decision({ onJoin }) {
           <div className="decision-step" key="go">
             <p style={big}>Entonces empieza de verdad.</p>
             <div style={{ marginTop: "clamp(36px,5vw,56px)" }}>
-              <Button variant="primary" size="lg" iconSrc={ICONS + "/cream/rumbo.png"} iconRight onClick={onJoin}>Empieza ahora</Button>
+              <Button variant="primary" size="lg" iconSrc={ICONS + "/cream/rumbo.png"} iconRight onClick={onJoin}>Empiezo</Button>
             </div>
           </div>
         )}
@@ -292,8 +297,13 @@ function Cierre({ joined, onSubmit }) {
             </h2>
           </Reveal>
           <Reveal delay={90}>
-            <p style={{ fontSize: "1.15rem", lineHeight: 1.6, color: "var(--von-cream)", margin: "0 0 30px", fontWeight: 600 }}>
+            <p style={{ fontSize: "1.15rem", lineHeight: 1.6, color: "var(--von-cream)", margin: "0 0 16px", fontWeight: 600 }}>
               Si sabes que no puedes seguir así, empieza.
+            </p>
+          </Reveal>
+          <Reveal delay={120}>
+            <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(1.4rem,3.2vw,2.4rem)", lineHeight: 1, letterSpacing: "-0.005em", color: "var(--accent)", margin: "0 0 30px" }}>
+              Si no haces nada, todo sigue igual.
             </p>
           </Reveal>
           <Reveal delay={150}>
@@ -305,17 +315,20 @@ function Cierre({ joined, onSubmit }) {
             ) : (
               <form onSubmit={submit} style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", maxWidth: 540, margin: "0 auto" }}>
                 <div style={{ flex: "1 1 280px", textAlign: "left" }}>
-                  <Input tone="dark" pill placeholder="Tu email" value={email}
+                  <Input tone="dark" pill placeholder="Tu email (si de verdad quieres cambiar esto)" value={email}
                     onChange={(e) => setEmail(e.target.value)} invalid={!!err} aria-label="Tu email" />
                   {err && <span style={{ display: "block", marginTop: 7, fontSize: "0.82rem", color: "var(--status-stop)" }}>{err}</span>}
                 </div>
-                <Button variant="primary" size="lg" as="button" type="submit">Empieza ahora</Button>
+                <Button variant="primary" size="lg" as="button" type="submit">Empiezo</Button>
               </form>
             )}
           </Reveal>
           {!joined && (
             <Reveal delay={210}>
-              <p style={{ fontFamily: "var(--font-subtitle)", fontSize: "0.86rem", letterSpacing: "0.04em", color: "var(--von-cream-soft)", margin: "16px 0 0" }}>
+              <p style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "0.98rem", lineHeight: 1.5, color: "var(--von-cream)", margin: "18px 0 0" }}>
+                Te explico cómo empezar. Sin vueltas.
+              </p>
+              <p style={{ fontFamily: "var(--font-subtitle)", fontSize: "0.86rem", letterSpacing: "0.04em", color: "var(--von-cream-soft)", margin: "8px 0 0" }}>
                 No necesitas más información. Necesitas empezar.
               </p>
             </Reveal>
@@ -325,7 +338,7 @@ function Cierre({ joined, onSubmit }) {
         <footer style={{ marginTop: "var(--section-pad-y)", borderTop: "1px solid var(--border-dark)", padding: "40px 0 48px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 22 }}>
           <img src={LOGOS + "/marian-g-paris-logo-light.png"} alt="Marian G Paris" style={{ height: 64, objectFit: "contain" }} />
           <div style={{ textAlign: "right" }}>
-            <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", letterSpacing: "0.1em", fontSize: "1.1rem", color: "var(--von-parchment-text)", margin: "0 0 6px" }}>Menos ruido. Más dirección. Más vida.</p>
+            <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", letterSpacing: "0.1em", fontSize: "1.1rem", color: "var(--von-parchment-text)", margin: "0 0 6px" }}>Menos ruido. Más dirección. O lo de siempre.</p>
             <a href="#top" style={{ fontFamily: "var(--font-subtitle)", fontSize: "0.82rem", letterSpacing: "0.1em", color: "var(--von-cream-soft)", textDecoration: "none" }}>@mariangparis</a>
           </div>
         </footer>
