@@ -706,7 +706,34 @@ function Cierre({
   }, "@mariangparis")))));
 }
 function MomentoIncomodo() {
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          el.classList.add("play");
+          io.unobserve(el);
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  const lineStyle = {
+    fontFamily: "var(--font-condensed)",
+    textTransform: "uppercase",
+    fontSize: "clamp(2.4rem,6.4vw,5.4rem)",
+    lineHeight: 1,
+    letterSpacing: "-0.01em",
+    margin: 0
+  };
   return React.createElement("section", {
+    ref: ref,
+    className: "momento",
     style: {
       background: "var(--von-parchment)",
       color: "var(--von-ink)",
@@ -716,29 +743,20 @@ function MomentoIncomodo() {
     }
   }, React.createElement("div", {
     className: "wrap"
-  }, React.createElement(Reveal, null, React.createElement("p", {
-    style: {
-      fontFamily: "var(--font-condensed)",
-      textTransform: "uppercase",
-      fontSize: "clamp(2.4rem,6.4vw,5.4rem)",
-      lineHeight: 1,
-      letterSpacing: "-0.01em",
-      color: "var(--von-ink)",
-      margin: 0
-    }
-  }, "Puedes cerrar esta p\xE1gina.")), React.createElement(Reveal, {
-    delay: 700
   }, React.createElement("p", {
+    className: "line1",
     style: {
-      fontFamily: "var(--font-condensed)",
-      textTransform: "uppercase",
-      fontSize: "clamp(2.4rem,6.4vw,5.4rem)",
-      lineHeight: 1,
-      letterSpacing: "-0.01em",
-      color: "var(--accent)",
-      margin: "20px 0 0"
+      ...lineStyle,
+      color: "var(--von-ink)"
     }
-  }, "Y seguir igual."))));
+  }, "Puedes cerrar esta p\xE1gina."), React.createElement("p", {
+    className: "line2",
+    style: {
+      ...lineStyle,
+      color: "var(--accent)",
+      marginTop: 20
+    }
+  }, "Y seguir igual.")));
 }
 Object.assign(window, {
   Nav,
