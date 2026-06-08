@@ -431,16 +431,33 @@ a[style*="var(--accent)"]:hover {
   .vf { width: 22px; height: 22px; }
 }
 
-/* ---- Momento Incómodo: fade-in escalonado (dispara al entrar en pantalla) ---- */
-.momento .line1,
-.momento .line2 {
+/* ---- La pausa: sección vacía e intencional (no es una sección visual) ---- */
+.pause-section {
+  padding: 140px 20px;
+  text-align: center;
+  background: var(--von-parchment);
+  overflow: hidden;
+}
+.pause-line-1 {
+  font-size: 32px;
+  margin: 0;
+  color: var(--von-ink);
+}
+.pause-line-2 {
+  font-size: 28px;
+  margin: 16px 0 0;
+  color: var(--accent);
+}
+/* fade-in escalonado — se dispara al entrar en pantalla (clase .play) */
+.pause-line-1,
+.pause-line-2 {
   opacity: 0;
   transform: translateY(10px);
 }
-.momento.play .line1 {
+.pause-section.play .pause-line-1 {
   animation: fadeIn 0.6s ease forwards;
 }
-.momento.play .line2 {
+.pause-section.play .pause-line-2 {
   animation: fadeIn 0.6s ease forwards;
   animation-delay: 0.6s;
 }
@@ -451,8 +468,8 @@ a[style*="var(--accent)"]:hover {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .momento .line1,
-  .momento .line2 { opacity: 1; transform: none; animation: none; }
+  .pause-line-1,
+  .pause-line-2 { opacity: 1; transform: none; animation: none; }
 }
 
 /* ---- Texto escondido tras los pilares ---- */
@@ -460,11 +477,6 @@ a[style*="var(--accent)"]:hover {
   font-size: 14px;
   opacity: 0.6;
   text-align: center;
-  margin: 60px 0;
-  font-family: var(--font-subtitle);
-  letter-spacing: 0.04em;
+  margin: 80px 0;
   color: var(--von-ink-soft);
-  max-width: 46ch;
-  margin-left: auto;
-  margin-right: auto;
 }

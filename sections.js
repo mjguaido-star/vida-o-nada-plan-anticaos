@@ -708,7 +708,7 @@ function MomentoIncomodo() {
         el.classList.add("play");
       }
     };
-    const target = el.querySelector(".line1") || el;
+    const target = el.querySelector(".pause-line-1") || el;
     const io = new IntersectionObserver(es => {
       es.forEach(e => {
         if (e.isIntersecting) {
@@ -726,40 +726,14 @@ function MomentoIncomodo() {
       clearTimeout(failsafe);
     };
   }, []);
-  const lineStyle = {
-    fontFamily: "var(--font-condensed)",
-    textTransform: "uppercase",
-    fontSize: "clamp(2.4rem,6.4vw,5.4rem)",
-    lineHeight: 1,
-    letterSpacing: "-0.01em",
-    margin: 0
-  };
   return React.createElement("section", {
     ref: ref,
-    className: "momento",
-    style: {
-      background: "var(--von-parchment)",
-      color: "var(--von-ink)",
-      padding: "clamp(140px,24vw,280px) 0",
-      textAlign: "center",
-      overflow: "hidden"
-    }
-  }, React.createElement("div", {
-    className: "wrap"
+    className: "pause-section"
   }, React.createElement("p", {
-    className: "line1",
-    style: {
-      ...lineStyle,
-      color: "var(--von-ink)"
-    }
+    className: "pause-line-1"
   }, "Puedes cerrar esta p\xE1gina."), React.createElement("p", {
-    className: "line2",
-    style: {
-      ...lineStyle,
-      color: "var(--accent)",
-      marginTop: 20
-    }
-  }, "Y seguir igual.")));
+    className: "pause-line-2"
+  }, "Y seguir igual."));
 }
 Object.assign(window, {
   Nav,

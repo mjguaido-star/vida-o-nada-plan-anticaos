@@ -307,7 +307,7 @@ function MomentoIncomodo() {
     if (!el) return;
     let done = false;
     const trigger = () => { if (!done) { done = true; el.classList.add("play"); } };
-    const target = el.querySelector(".line1") || el;
+    const target = el.querySelector(".pause-line-1") || el;
     const io = new IntersectionObserver((es) => {
       es.forEach((e) => { if (e.isIntersecting) { trigger(); io.disconnect(); } });
     }, { threshold: 0.6 });
@@ -315,13 +315,10 @@ function MomentoIncomodo() {
     const failsafe = setTimeout(trigger, 4000); // nunca dejar el texto invisible
     return () => { io.disconnect(); clearTimeout(failsafe); };
   }, []);
-  const lineStyle = { fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(2.4rem,6.4vw,5.4rem)", lineHeight: 1, letterSpacing: "-0.01em", margin: 0 };
   return (
-    <section ref={ref} className="momento" style={{ background: "var(--von-parchment)", color: "var(--von-ink)", padding: "clamp(140px,24vw,280px) 0", textAlign: "center", overflow: "hidden" }}>
-      <div className="wrap">
-        <p className="line1" style={{ ...lineStyle, color: "var(--von-ink)" }}>Puedes cerrar esta página.</p>
-        <p className="line2" style={{ ...lineStyle, color: "var(--accent)", marginTop: 20 }}>Y seguir igual.</p>
-      </div>
+    <section ref={ref} className="pause-section">
+      <p className="pause-line-1">Puedes cerrar esta página.</p>
+      <p className="pause-line-2">Y seguir igual.</p>
     </section>
   );
 }
