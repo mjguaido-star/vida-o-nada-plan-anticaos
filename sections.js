@@ -237,9 +237,231 @@ function Hero({
     }
   }, React.createElement("div", {
     className: "watch"
-  }, React.createElement("div", {
-    className: "watch-face"
-  }), React.createElement("img", {
+  }, React.createElement("svg", {
+    className: "watch-face",
+    viewBox: "0 0 400 440",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, React.createElement("defs", null, React.createElement("linearGradient", {
+    id: "goldCase",
+    x1: "0",
+    y1: "0",
+    x2: "1",
+    y2: "1"
+  }, React.createElement("stop", {
+    offset: "0",
+    stopColor: "#fbe6ac"
+  }), React.createElement("stop", {
+    offset: "0.22",
+    stopColor: "#dca948"
+  }), React.createElement("stop", {
+    offset: "0.5",
+    stopColor: "#8f6019"
+  }), React.createElement("stop", {
+    offset: "0.74",
+    stopColor: "#e7c569"
+  }), React.createElement("stop", {
+    offset: "1",
+    stopColor: "#6e4512"
+  })), React.createElement("linearGradient", {
+    id: "goldRim",
+    x1: "0",
+    y1: "0",
+    x2: "0",
+    y2: "1"
+  }, React.createElement("stop", {
+    offset: "0",
+    stopColor: "#ffeab0"
+  }), React.createElement("stop", {
+    offset: "1",
+    stopColor: "#855420"
+  })), React.createElement("radialGradient", {
+    id: "dialGrad",
+    cx: "40%",
+    cy: "34%",
+    r: "78%"
+  }, React.createElement("stop", {
+    offset: "0",
+    stopColor: "#22647f"
+  }), React.createElement("stop", {
+    offset: "0.55",
+    stopColor: "#103c53"
+  }), React.createElement("stop", {
+    offset: "1",
+    stopColor: "#06202c"
+  })), React.createElement("radialGradient", {
+    id: "vigGrad",
+    cx: "50%",
+    cy: "50%",
+    r: "50%"
+  }, React.createElement("stop", {
+    offset: "0.68",
+    stopColor: "rgba(0,0,0,0)"
+  }), React.createElement("stop", {
+    offset: "1",
+    stopColor: "rgba(0,0,0,0.6)"
+  })), React.createElement("radialGradient", {
+    id: "glassGrad",
+    cx: "34%",
+    cy: "26%",
+    r: "60%"
+  }, React.createElement("stop", {
+    offset: "0",
+    stopColor: "rgba(255,255,255,0.5)"
+  }), React.createElement("stop", {
+    offset: "0.42",
+    stopColor: "rgba(255,255,255,0.08)"
+  }), React.createElement("stop", {
+    offset: "1",
+    stopColor: "rgba(255,255,255,0)"
+  })), React.createElement("clipPath", {
+    id: "dialClip"
+  }, React.createElement("circle", {
+    cx: "200",
+    cy: "255",
+    r: "158"
+  }))), React.createElement("circle", {
+    cx: "200",
+    cy: "24",
+    r: "15",
+    fill: "none",
+    stroke: "url(#goldRim)",
+    strokeWidth: "8"
+  }), React.createElement("rect", {
+    x: "186",
+    y: "36",
+    width: "28",
+    height: "24",
+    rx: "5",
+    fill: "url(#goldCase)"
+  }), React.createElement("rect", {
+    x: "190",
+    y: "37",
+    width: "3",
+    height: "22",
+    fill: "rgba(255,255,255,0.3)"
+  }), React.createElement("rect", {
+    x: "207",
+    y: "37",
+    width: "3",
+    height: "22",
+    fill: "rgba(0,0,0,0.3)"
+  }), React.createElement("circle", {
+    cx: "200",
+    cy: "259",
+    r: "186",
+    fill: "rgba(0,0,0,0.4)"
+  }), React.createElement("circle", {
+    cx: "200",
+    cy: "255",
+    r: "184",
+    fill: "none",
+    stroke: "url(#goldCase)",
+    strokeWidth: "22"
+  }), React.createElement("circle", {
+    cx: "200",
+    cy: "255",
+    r: "194",
+    fill: "none",
+    stroke: "rgba(255,236,184,0.55)",
+    strokeWidth: "1.5"
+  }), React.createElement("circle", {
+    cx: "200",
+    cy: "255",
+    r: "172",
+    fill: "none",
+    stroke: "rgba(54,34,10,0.65)",
+    strokeWidth: "2.5"
+  }), React.createElement("circle", {
+    cx: "200",
+    cy: "255",
+    r: "165",
+    fill: "none",
+    stroke: "url(#goldRim)",
+    strokeWidth: "6"
+  }), React.createElement("circle", {
+    cx: "200",
+    cy: "255",
+    r: "158",
+    fill: "url(#dialGrad)"
+  }), React.createElement("circle", {
+    cx: "200",
+    cy: "255",
+    r: "158",
+    fill: "url(#vigGrad)"
+  }), React.createElement("circle", {
+    cx: "200",
+    cy: "255",
+    r: "150",
+    fill: "none",
+    stroke: "#cfe0e8",
+    strokeWidth: "5",
+    strokeDasharray: "1.6 14",
+    opacity: "0.7"
+  }), React.createElement("circle", {
+    cx: "200",
+    cy: "255",
+    r: "150",
+    fill: "none",
+    stroke: "url(#goldRim)",
+    strokeWidth: "11",
+    strokeDasharray: "3.4 75"
+  }), React.createElement("g", {
+    fill: "#ecca7d",
+    fontFamily: "'Bodoni Moda', Georgia, serif",
+    fontSize: "26",
+    fontWeight: "600",
+    textAnchor: "middle",
+    dominantBaseline: "central"
+  }, React.createElement("text", {
+    x: "200",
+    y: "130"
+  }, "XII"), React.createElement("text", {
+    x: "263",
+    y: "147"
+  }, "I"), React.createElement("text", {
+    x: "310",
+    y: "192"
+  }, "II"), React.createElement("text", {
+    x: "327",
+    y: "255"
+  }, "III"), React.createElement("text", {
+    x: "310",
+    y: "318"
+  }, "IV"), React.createElement("text", {
+    x: "263",
+    y: "363"
+  }, "V"), React.createElement("text", {
+    x: "200",
+    y: "380"
+  }, "VI"), React.createElement("text", {
+    x: "137",
+    y: "363"
+  }, "VII"), React.createElement("text", {
+    x: "90",
+    y: "318"
+  }, "VIII"), React.createElement("text", {
+    x: "73",
+    y: "255"
+  }, "IX"), React.createElement("text", {
+    x: "90",
+    y: "192"
+  }, "X"), React.createElement("text", {
+    x: "137",
+    y: "147"
+  }, "XI")), React.createElement("circle", {
+    cx: "200",
+    cy: "255",
+    r: "10",
+    fill: "url(#goldCase)"
+  }), React.createElement("g", {
+    clipPath: "url(#dialClip)"
+  }, React.createElement("ellipse", {
+    cx: "148",
+    cy: "188",
+    rx: "150",
+    ry: "112",
+    fill: "url(#glassGrad)"
+  }))), React.createElement("img", {
     className: "watch-hands",
     src: ILL + "/chaos-to-direction-light.png",
     alt: "Del caos a la direcci\xF3n \u2014 el tiempo"
