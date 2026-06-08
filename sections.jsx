@@ -214,7 +214,7 @@ function Manifiesto() {
         <Reveal><Eyebrow number="03" tone="energia" style={{ justifyContent: "center" }}>El resultado</Eyebrow></Reveal>
         <Reveal delay={80}>
           <p style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: "clamp(2rem,4.4vw,3.4rem)", lineHeight: 1.2, letterSpacing: "-0.015em", color: "var(--von-ink)", margin: "20px 0 22px" }}>
-            Dejas de pensar tanto.<br /><span style={{ color: "var(--accent)", fontFamily: "var(--font-body)", fontWeight: 800, fontStyle: "normal", letterSpacing: "-0.02em" }}>Empiezas a moverte.</span>
+            Dejas de pensar tanto.<br /><span style={{ color: "var(--accent)", fontFamily: "\"Space Grotesk\", var(--font-body)", fontWeight: 700, fontStyle: "normal", letterSpacing: "-0.02em" }}>Empiezas a moverte.</span>
           </p>
         </Reveal>
         <Reveal delay={150}>

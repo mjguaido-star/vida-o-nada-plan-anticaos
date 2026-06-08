@@ -486,8 +486,8 @@ function Manifiesto() {
   }, "Dejas de pensar tanto.", React.createElement("br", null), React.createElement("span", {
     style: {
       color: "var(--accent)",
-      fontFamily: "var(--font-body)",
-      fontWeight: 800,
+      fontFamily: "\"Space Grotesk\", var(--font-body)",
+      fontWeight: 700,
       fontStyle: "normal",
       letterSpacing: "-0.02em"
     }
