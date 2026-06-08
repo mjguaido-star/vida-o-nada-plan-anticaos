@@ -160,7 +160,7 @@ body {
 }
 /* REAL camera lens photo, clipped to a circle */
 .lens {
-  position: relative; z-index: 2; width: 100%; max-width: 440px; aspect-ratio: 1; margin: 0 auto;
+  position: relative; z-index: 2; width: 100%; max-width: 380px; aspect-ratio: 1; margin: 0 auto;
   border-radius: 50%; overflow: hidden;
   box-shadow:
     0 36px 66px rgba(0,0,0,0.65),
@@ -207,8 +207,34 @@ body {
   animation: shotFlash 5s ease-in-out infinite;
 }
 .lens { animation: shotFocus 5s ease-in-out infinite; }
+
+/* old film strip that "comes out" of the camera with our logo developed on it */
+.film-out {
+  position: relative; width: 100%; max-width: 470px; height: 106px;
+  margin: 30px auto 0; border-radius: 3px; overflow: hidden;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 106'%3E%3Crect width='56' height='106' fill='%231f1308'/%3E%3Crect x='20' y='10' width='16' height='11' rx='2' fill='%23e8dcc0'/%3E%3Crect x='20' y='85' width='16' height='11' rx='2' fill='%23e8dcc0'/%3E%3Crect x='5' y='28' width='46' height='50' rx='1' fill='%233a2410'/%3E%3C/svg%3E");
+  background-size: 56px 100%; background-repeat: repeat-x; background-position: center;
+  box-shadow: 0 18px 38px rgba(0,0,0,0.55), inset 0 0 0 1px rgba(0,0,0,0.6), inset 0 0 44px rgba(0,0,0,0.5);
+  transform: perspective(820px) rotateX(7deg);
+  filter: sepia(0.2) contrast(1.04);
+}
+.film-logo {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 82%; aspect-ratio: 1635 / 690; z-index: 2;
+  background: linear-gradient(135deg, #ffe9a8 0%, #eec268 34%, #c8912f 64%, #7a5018 100%);
+  -webkit-mask: url("assets/illustrations/chaos-to-direction-light.png") center / contain no-repeat;
+          mask: url("assets/illustrations/chaos-to-direction-light.png") center / contain no-repeat;
+  animation: developFlare 5s ease-in-out infinite;
+}
+/* the logo "develops" / flares the moment the lens fires */
+@keyframes developFlare {
+  0%, 78%, 100% { opacity: 0.9; filter: drop-shadow(0 0 5px rgba(214,134,49,0.5)) drop-shadow(0 1px 2px rgba(0,0,0,0.6)); }
+  82% { opacity: 1; filter: drop-shadow(0 0 16px rgba(255,225,140,0.95)) drop-shadow(0 0 5px rgba(255,240,180,1)); }
+  88% { opacity: 0.9; filter: drop-shadow(0 0 5px rgba(214,134,49,0.5)) drop-shadow(0 1px 2px rgba(0,0,0,0.6)); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .lens-symbol, .lens-flash, .lens { animation: none; }
+  .lens-symbol, .lens-flash, .lens, .film-logo { animation: none; }
 }
 
 /* REAL pocket-watch cut-out (no chain) + gold logo arrow as the hand */

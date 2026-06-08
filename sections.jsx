@@ -98,8 +98,10 @@ function Hero({ onJoin }) {
           <div className="lens-stage">
             <div className="lens">
               <img className="lens-photo" src="./assets/objetivo.jpg" alt="Objetivo de cámara" />
-              <div className="lens-symbol" role="img" aria-label="Del caos a la dirección — a través del objetivo" />
               <div className="lens-flash" />
+            </div>
+            <div className="film-out">
+              <div className="film-logo" role="img" aria-label="Del caos a la dirección — revelado en el carrete" />
             </div>
           </div>
           <div style={{ display: "flex", gap: 26, fontFamily: "var(--font-subtitle)", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--von-cream-soft)" }}>
