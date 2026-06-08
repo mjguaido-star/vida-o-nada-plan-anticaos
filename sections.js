@@ -190,25 +190,27 @@ function Hero({
     delay: 160
   }, React.createElement("p", {
     style: {
-      fontFamily: "var(--font-display)",
-      fontStyle: "italic",
-      fontSize: "clamp(1.25rem,1.9vw,1.7rem)",
-      lineHeight: 1.4,
+      fontFamily: "var(--font-body)",
+      fontWeight: 500,
+      fontSize: "clamp(1.2rem,1.7vw,1.5rem)",
+      lineHeight: 1.45,
       color: "var(--von-cream)",
       maxWidth: "34ch",
-      margin: "0 0 16px"
+      margin: "0 0 14px"
     }
   }, "Sabes perfectamente lo que quieres.", React.createElement("br", null), "Y aun as\xED no lo est\xE1s haciendo.")), React.createElement(Reveal, {
     delay: 210
   }, React.createElement("p", {
     style: {
-      fontSize: "1.02rem",
-      lineHeight: 1.6,
-      color: "var(--von-cream-soft)",
-      maxWidth: "42ch",
+      fontFamily: "var(--font-condensed)",
+      textTransform: "uppercase",
+      fontSize: "clamp(1.6rem,2.6vw,2.2rem)",
+      letterSpacing: "0.01em",
+      lineHeight: 1,
+      color: "var(--accent)",
       margin: "0 0 34px"
     }
-  }, "Y cuanto m\xE1s esperas, m\xE1s te acostumbras a seguir igual.")), React.createElement(Reveal, {
+  }, "Y lo sabes.")), React.createElement(Reveal, {
     delay: 240
   }, React.createElement("div", {
     style: {
@@ -231,7 +233,7 @@ function Hero({
     style: {
       color: "var(--von-cream)"
     }
-  }, "Ver el plan")))), React.createElement(Reveal, {
+  }, "Quiero verlo")))), React.createElement(Reveal, {
     delay: 200,
     style: {
       display: "flex",
@@ -329,7 +331,18 @@ function Problema() {
       color: "var(--accent)",
       margin: 0
     }
-  }, "Es que no est\xE1s eligiendo."))));
+  }, "Es que no est\xE1s eligiendo.")), React.createElement(Reveal, {
+    delay: 280
+  }, React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-body)",
+      fontWeight: 600,
+      fontSize: "1.3rem",
+      lineHeight: 1.5,
+      color: "var(--von-ink)",
+      margin: "26px 0 0"
+    }
+  }, "Y te est\xE1s cansando de ti."))));
 }
 function Transformacion() {
   return React.createElement("section", {
@@ -360,12 +373,12 @@ function Transformacion() {
     }
   }, "No necesitas m\xE1s ganas.", React.createElement("br", null), React.createElement("span", {
     style: {
-      color: "var(--teal)"
+      color: "var(--accent)"
     }
   }, "Necesitas dejar de perder el tiempo.")))));
 }
 function Programa() {
-  const pillars = [["01", "caos", "Caos interno", "Dejar de sabotearte sin darte cuenta."], ["02", "direccion", "Dirección", "Elegir de una vez qué importa."], ["03", "accion", "Acción real", "Hacer aunque no tengas ganas."]];
+  const pillars = [["01", "caos", "Caos interno", "Dejar de sabotearte sin darte cuenta."], ["02", "direccion", "Dirección", "Decidir de una vez qué importa."], ["03", "accion", "Acción real", "Hacer, aunque no te apetezca."]];
   return React.createElement("section", {
     id: "programa",
     style: {
@@ -403,14 +416,14 @@ function Programa() {
     delay: 130
   }, React.createElement("p", {
     style: {
-      fontFamily: "var(--font-display)",
-      fontStyle: "italic",
-      fontSize: "clamp(1.2rem,2vw,1.6rem)",
-      lineHeight: 1.4,
-      color: "var(--von-ink-soft)",
+      fontFamily: "var(--font-body)",
+      fontWeight: 500,
+      fontSize: "clamp(1.1rem,1.6vw,1.35rem)",
+      lineHeight: 1.5,
+      color: "var(--von-ink)",
       margin: 0
     }
-  }, "Un sistema para salir del bucle en el que llevas meses."))), React.createElement("div", {
+  }, "Un sistema para salir del bucle en el que llevas demasiado tiempo."))), React.createElement("div", {
     className: "pillar-grid",
     style: {
       display: "grid",
@@ -474,12 +487,12 @@ function Manifiesto() {
     delay: 150
   }, React.createElement("p", {
     style: {
-      fontFamily: "var(--font-display)",
-      fontStyle: "italic",
-      fontSize: "clamp(1.15rem,1.9vw,1.5rem)",
-      lineHeight: 1.5,
-      color: "var(--von-ink-soft)",
-      maxWidth: "46ch",
+      fontFamily: "var(--font-body)",
+      fontWeight: 500,
+      fontSize: "clamp(1.05rem,1.6vw,1.3rem)",
+      lineHeight: 1.55,
+      color: "var(--von-ink)",
+      maxWidth: "48ch",
       margin: "0 auto"
     }
   }, "Y por primera vez en mucho tiempo, sientes que est\xE1s haciendo algo de verdad.")), React.createElement(Reveal, {
@@ -494,7 +507,19 @@ function Manifiesto() {
       color: "var(--accent)",
       margin: "30px 0 0"
     }
-  }, "Y dejas de sentir que est\xE1s perdiendo el tiempo."))));
+  }, "Y dejas de sentir que est\xE1s perdiendo el tiempo.")), React.createElement(Reveal, {
+    delay: 260
+  }, React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-condensed)",
+      textTransform: "uppercase",
+      fontSize: "clamp(2.2rem,5vw,4rem)",
+      lineHeight: 0.95,
+      letterSpacing: "-0.01em",
+      color: "var(--von-ink)",
+      margin: "14px 0 0"
+    }
+  }, "Y eso cambia todo."))));
 }
 function Cierre({
   joined,
@@ -555,7 +580,7 @@ function Cierre({
       margin: "0 0 30px",
       fontWeight: 600
     }
-  }, "Si sabes que no puedes seguir as\xED, empieza aqu\xED.")), React.createElement(Reveal, {
+  }, "Si sabes que no puedes seguir as\xED, empieza.")), React.createElement(Reveal, {
     delay: 150
   }, joined ? React.createElement("div", {
     style: {
@@ -667,11 +692,50 @@ function Cierre({
     }
   }, "@mariangparis")))));
 }
+function Pausa() {
+  return React.createElement("section", {
+    style: {
+      background: "var(--von-ink-black)",
+      padding: "clamp(72px,10vw,128px) 0",
+      overflow: "hidden",
+      textAlign: "center"
+    }
+  }, React.createElement(Grain, null), React.createElement("div", {
+    className: "wrap",
+    style: {
+      position: "relative",
+      zIndex: 2
+    }
+  }, React.createElement(Reveal, null, React.createElement("span", {
+    style: {
+      display: "block",
+      width: 1,
+      height: 34,
+      background: "var(--border-dark)",
+      margin: "0 auto 26px"
+    }
+  }), React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-subtitle)",
+      fontSize: "clamp(1.05rem,1.7vw,1.35rem)",
+      letterSpacing: "0.05em",
+      lineHeight: 1.7,
+      color: "var(--von-cream-soft)",
+      maxWidth: "26ch",
+      margin: "0 auto"
+    }
+  }, "Nadie te va a obligar.", React.createElement("br", null), React.createElement("span", {
+    style: {
+      color: "var(--von-cream)"
+    }
+  }, "Pero tampoco te va a sacar de aqu\xED.")))));
+}
 Object.assign(window, {
   Nav,
   Hero,
   Problema,
   Transformacion,
+  Pausa,
   Programa,
   Manifiesto,
   Cierre

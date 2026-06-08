@@ -83,19 +83,19 @@ function Hero({ onJoin }) {
             </h1>
           </Reveal>
           <Reveal delay={160}>
-            <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(1.25rem,1.9vw,1.7rem)", lineHeight: 1.4, color: "var(--von-cream)", maxWidth: "34ch", margin: "0 0 16px" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "clamp(1.2rem,1.7vw,1.5rem)", lineHeight: 1.45, color: "var(--von-cream)", maxWidth: "34ch", margin: "0 0 14px" }}>
               Sabes perfectamente lo que quieres.<br />Y aun así no lo estás haciendo.
             </p>
           </Reveal>
           <Reveal delay={210}>
-            <p style={{ fontSize: "1.02rem", lineHeight: 1.6, color: "var(--von-cream-soft)", maxWidth: "42ch", margin: "0 0 34px" }}>
-              Y cuanto más esperas, más te acostumbras a seguir igual.
+            <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(1.6rem,2.6vw,2.2rem)", letterSpacing: "0.01em", lineHeight: 1, color: "var(--accent)", margin: "0 0 34px" }}>
+              Y lo sabes.
             </p>
           </Reveal>
           <Reveal delay={240}>
             <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
               <Button variant="primary" size="lg" iconSrc={ICONS + "/cream/rumbo.png"} iconRight onClick={onJoin}>Empieza ahora. De verdad.</Button>
-              <Button variant="ghost" size="lg" as="a" href="#programa" style={{ color: "var(--von-cream)" }}>Ver el plan</Button>
+              <Button variant="ghost" size="lg" as="a" href="#programa" style={{ color: "var(--von-cream)" }}>Quiero verlo</Button>
             </div>
           </Reveal>
         </div>
@@ -143,6 +143,11 @@ function Problema() {
             Es que no estás eligiendo.
           </p>
         </Reveal>
+        <Reveal delay={280}>
+          <p style={{ fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "1.3rem", lineHeight: 1.5, color: "var(--von-ink)", margin: "26px 0 0" }}>
+            Y te estás cansando de ti.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
@@ -156,7 +161,7 @@ function Transformacion() {
       <div className="wrap" style={{ position: "relative", zIndex: 2, textAlign: "center", maxWidth: 900 }}>
         <Reveal>
           <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(2.4rem,6vw,5rem)", lineHeight: 0.95, letterSpacing: "-0.01em", color: "var(--von-ink)", margin: 0 }}>
-            No necesitas más ganas.<br /><span style={{ color: "var(--teal)" }}>Necesitas dejar de perder el tiempo.</span>
+            No necesitas más ganas.<br /><span style={{ color: "var(--accent)" }}>Necesitas dejar de perder el tiempo.</span>
           </p>
         </Reveal>
       </div>
@@ -168,8 +173,8 @@ function Transformacion() {
 function Programa() {
   const pillars = [
     ["01", "caos", "Caos interno", "Dejar de sabotearte sin darte cuenta."],
-    ["02", "direccion", "Dirección", "Elegir de una vez qué importa."],
-    ["03", "accion", "Acción real", "Hacer aunque no tengas ganas."],
+    ["02", "direccion", "Dirección", "Decidir de una vez qué importa."],
+    ["03", "accion", "Acción real", "Hacer, aunque no te apetezca."],
   ];
   return (
     <section id="programa" style={{ background: "var(--von-parchment)", color: "var(--von-ink)", paddingTop: "var(--section-pad-y)", paddingBottom: "var(--section-pad-y)" }}>
@@ -182,8 +187,8 @@ function Programa() {
             </h2>
           </Reveal>
           <Reveal delay={130}>
-            <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(1.2rem,2vw,1.6rem)", lineHeight: 1.4, color: "var(--von-ink-soft)", margin: 0 }}>
-              Un sistema para salir del bucle en el que llevas meses.
+            <p style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "clamp(1.1rem,1.6vw,1.35rem)", lineHeight: 1.5, color: "var(--von-ink)", margin: 0 }}>
+              Un sistema para salir del bucle en el que llevas demasiado tiempo.
             </p>
           </Reveal>
         </div>
@@ -210,13 +215,18 @@ function Manifiesto() {
           </p>
         </Reveal>
         <Reveal delay={150}>
-          <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(1.15rem,1.9vw,1.5rem)", lineHeight: 1.5, color: "var(--von-ink-soft)", maxWidth: "46ch", margin: "0 auto" }}>
+          <p style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "clamp(1.05rem,1.6vw,1.3rem)", lineHeight: 1.55, color: "var(--von-ink)", maxWidth: "48ch", margin: "0 auto" }}>
             Y por primera vez en mucho tiempo, sientes que estás haciendo algo de verdad.
           </p>
         </Reveal>
         <Reveal delay={210}>
           <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(1.5rem,3vw,2.4rem)", lineHeight: 1.05, letterSpacing: "-0.005em", color: "var(--accent)", margin: "30px 0 0" }}>
             Y dejas de sentir que estás perdiendo el tiempo.
+          </p>
+        </Reveal>
+        <Reveal delay={260}>
+          <p style={{ fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(2.2rem,5vw,4rem)", lineHeight: 0.95, letterSpacing: "-0.01em", color: "var(--von-ink)", margin: "14px 0 0" }}>
+            Y eso cambia todo.
           </p>
         </Reveal>
       </div>
@@ -245,7 +255,7 @@ function Cierre({ joined, onSubmit }) {
           </Reveal>
           <Reveal delay={90}>
             <p style={{ fontSize: "1.15rem", lineHeight: 1.6, color: "var(--von-cream)", margin: "0 0 30px", fontWeight: 600 }}>
-              Si sabes que no puedes seguir así, empieza aquí.
+              Si sabes que no puedes seguir así, empieza.
             </p>
           </Reveal>
           <Reveal delay={150}>
@@ -286,4 +296,21 @@ function Cierre({ joined, onSubmit }) {
   );
 }
 
-Object.assign(window, { Nav, Hero, Problema, Transformacion, Programa, Manifiesto, Cierre });
+/* ======================================================== PAUSA (interrupción cinematográfica) */
+function Pausa() {
+  return (
+    <section style={{ background: "var(--von-ink-black)", padding: "clamp(72px,10vw,128px) 0", overflow: "hidden", textAlign: "center" }}>
+      <Grain />
+      <div className="wrap" style={{ position: "relative", zIndex: 2 }}>
+        <Reveal>
+          <span style={{ display: "block", width: 1, height: 34, background: "var(--border-dark)", margin: "0 auto 26px" }} />
+          <p style={{ fontFamily: "var(--font-subtitle)", fontSize: "clamp(1.05rem,1.7vw,1.35rem)", letterSpacing: "0.05em", lineHeight: 1.7, color: "var(--von-cream-soft)", maxWidth: "26ch", margin: "0 auto" }}>
+            Nadie te va a obligar.<br /><span style={{ color: "var(--von-cream)" }}>Pero tampoco te va a sacar de aquí.</span>
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+Object.assign(window, { Nav, Hero, Problema, Transformacion, Pausa, Programa, Manifiesto, Cierre });

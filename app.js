@@ -12,7 +12,7 @@ function App() {
     onJoin: scrollToCierre
   }), React.createElement("main", null, React.createElement(Hero, {
     onJoin: scrollToCierre
-  }), React.createElement(Problema, null), React.createElement(Transformacion, null), React.createElement(Programa, null), React.createElement(Manifiesto, null), React.createElement(Cierre, {
+  }), React.createElement(Problema, null), React.createElement(Transformacion, null), React.createElement(Pausa, null), React.createElement(Programa, null), React.createElement(Manifiesto, null), React.createElement(Cierre, {
     joined: joined,
     onSubmit: onSubmit
   })));
