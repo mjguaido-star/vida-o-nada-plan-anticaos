@@ -710,18 +710,30 @@ function MomentoIncomodo() {
   React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    let done = false;
+    const trigger = () => {
+      if (!done) {
+        done = true;
+        el.classList.add("play");
+      }
+    };
+    const target = el.querySelector(".line1") || el;
     const io = new IntersectionObserver(es => {
       es.forEach(e => {
         if (e.isIntersecting) {
-          el.classList.add("play");
-          io.unobserve(el);
+          trigger();
+          io.disconnect();
         }
       });
     }, {
-      threshold: 0.3
+      threshold: 0.6
     });
-    io.observe(el);
-    return () => io.disconnect();
+    io.observe(target);
+    const failsafe = setTimeout(trigger, 4000);
+    return () => {
+      io.disconnect();
+      clearTimeout(failsafe);
+    };
   }, []);
   const lineStyle = {
     fontFamily: "var(--font-condensed)",

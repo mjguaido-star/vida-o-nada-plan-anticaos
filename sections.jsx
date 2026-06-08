@@ -307,11 +307,15 @@ function MomentoIncomodo() {
   React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    let done = false;
+    const trigger = () => { if (!done) { done = true; el.classList.add("play"); } };
+    const target = el.querySelector(".line1") || el;
     const io = new IntersectionObserver((es) => {
-      es.forEach((e) => { if (e.isIntersecting) { el.classList.add("play"); io.unobserve(el); } });
-    }, { threshold: 0.3 });
-    io.observe(el);
-    return () => io.disconnect();
+      es.forEach((e) => { if (e.isIntersecting) { trigger(); io.disconnect(); } });
+    }, { threshold: 0.6 });
+    io.observe(target);
+    const failsafe = setTimeout(trigger, 4000); // nunca dejar el texto invisible
+    return () => { io.disconnect(); clearTimeout(failsafe); };
   }, []);
   const lineStyle = { fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(2.4rem,6.4vw,5.4rem)", lineHeight: 1, letterSpacing: "-0.01em", margin: 0 };
   return (
