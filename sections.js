@@ -237,7 +237,7 @@ function Hero({
       margin: "0 auto"
     }
   }, React.createElement("img", {
-    src: "./assets/camara-hero.png",
+    src: "./assets/camara-hero.jpg",
     alt: "C\xE1mara vintage \u2014 enfoca el caos en direcci\xF3n"
   })), React.createElement("div", {
     style: {
