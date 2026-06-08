@@ -237,6 +237,41 @@ function Manifiesto() {
   );
 }
 
+/* ======================================================== DECISIÓN (te toca elegir) */
+function Decision({ onJoin }) {
+  const [choice, setChoice] = React.useState("ask");
+  const big = { fontFamily: "var(--font-condensed)", textTransform: "uppercase", fontSize: "clamp(2.2rem,5.4vw,4.2rem)", lineHeight: 1.02, letterSpacing: "-0.01em", margin: 0, color: "var(--von-ink)" };
+  return (
+    <section style={{ background: "var(--von-parchment)", color: "var(--von-ink)", paddingTop: "var(--section-pad-y)", paddingBottom: "var(--section-pad-y)", textAlign: "center", overflow: "hidden" }}>
+      <div className="wrap" style={{ maxWidth: 820 }}>
+        {choice === "ask" && (
+          <div className="decision-step" key="ask">
+            <p style={big}>Sé honesta:</p>
+            <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginTop: "clamp(36px,5vw,56px)" }}>
+              <button type="button" className="decision-btn" onClick={() => setChoice("go")}>Voy a hacer algo</button>
+              <button type="button" className="decision-btn" onClick={() => setChoice("stay")}>Voy a seguir igual</button>
+            </div>
+          </div>
+        )}
+        {choice === "stay" && (
+          <div className="decision-step" key="stay">
+            <p style={big}>Perfecto.</p>
+            <p style={{ ...big, color: "var(--accent)", marginTop: 12 }}>Entonces deja de engañarte.</p>
+          </div>
+        )}
+        {choice === "go" && (
+          <div className="decision-step" key="go">
+            <p style={big}>Entonces empieza de verdad.</p>
+            <div style={{ marginTop: "clamp(36px,5vw,56px)" }}>
+              <Button variant="primary" size="lg" iconSrc={ICONS + "/cream/rumbo.png"} iconRight onClick={onJoin}>Empieza ahora</Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 /* ======================================================== CIERRE (CTA FINAL) + footer */
 function Cierre({ joined, onSubmit }) {
   const [email, setEmail] = React.useState("");
@@ -324,4 +359,4 @@ function MomentoIncomodo() {
   );
 }
 
-Object.assign(window, { Nav, Hero, Problema, MomentoIncomodo, Transformacion, Programa, Manifiesto, Cierre });
+Object.assign(window, { Nav, Hero, Problema, MomentoIncomodo, Transformacion, Programa, Manifiesto, Decision, Cierre });

@@ -525,6 +525,82 @@ function Manifiesto() {
     }
   }, "Y eso cambia todo."))));
 }
+function Decision({
+  onJoin
+}) {
+  const [choice, setChoice] = React.useState("ask");
+  const big = {
+    fontFamily: "var(--font-condensed)",
+    textTransform: "uppercase",
+    fontSize: "clamp(2.2rem,5.4vw,4.2rem)",
+    lineHeight: 1.02,
+    letterSpacing: "-0.01em",
+    margin: 0,
+    color: "var(--von-ink)"
+  };
+  return React.createElement("section", {
+    style: {
+      background: "var(--von-parchment)",
+      color: "var(--von-ink)",
+      paddingTop: "var(--section-pad-y)",
+      paddingBottom: "var(--section-pad-y)",
+      textAlign: "center",
+      overflow: "hidden"
+    }
+  }, React.createElement("div", {
+    className: "wrap",
+    style: {
+      maxWidth: 820
+    }
+  }, choice === "ask" && React.createElement("div", {
+    className: "decision-step",
+    key: "ask"
+  }, React.createElement("p", {
+    style: big
+  }, "S\xE9 honesta:"), React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 16,
+      justifyContent: "center",
+      flexWrap: "wrap",
+      marginTop: "clamp(36px,5vw,56px)"
+    }
+  }, React.createElement("button", {
+    type: "button",
+    className: "decision-btn",
+    onClick: () => setChoice("go")
+  }, "Voy a hacer algo"), React.createElement("button", {
+    type: "button",
+    className: "decision-btn",
+    onClick: () => setChoice("stay")
+  }, "Voy a seguir igual"))), choice === "stay" && React.createElement("div", {
+    className: "decision-step",
+    key: "stay"
+  }, React.createElement("p", {
+    style: big
+  }, "Perfecto."), React.createElement("p", {
+    style: {
+      ...big,
+      color: "var(--accent)",
+      marginTop: 12
+    }
+  }, "Entonces deja de enga\xF1arte.")), choice === "go" && React.createElement("div", {
+    className: "decision-step",
+    key: "go"
+  }, React.createElement("p", {
+    style: big
+  }, "Entonces empieza de verdad."), React.createElement("div", {
+    style: {
+      marginTop: "clamp(36px,5vw,56px)"
+    }
+  }, React.createElement(Button, {
+    variant: "primary",
+    size: "lg",
+    iconSrc: ICONS + "/cream/rumbo.png",
+    iconRight: true,
+    onClick: onJoin
+  }, "Empieza ahora")))));
+}
 function Cierre({
   joined,
   onSubmit
@@ -732,5 +808,6 @@ Object.assign(window, {
   Transformacion,
   Programa,
   Manifiesto,
+  Decision,
   Cierre
 });

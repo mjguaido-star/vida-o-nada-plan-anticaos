@@ -18,6 +18,7 @@ function App() {
         <Transformacion />
         <Programa />
         <Manifiesto />
+        <Decision onJoin={scrollToCierre} />
         <Cierre joined={joined} onSubmit={onSubmit} />
       </main>
     </React.Fragment>
