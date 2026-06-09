@@ -377,6 +377,7 @@ function MomentoIncomodo() {
       <p className="pause-line-1">Puedes cerrar esto.</p>
       <p className="pause-line-2">Y seguir igual.</p>
       <p className="pause-line-3">Y dentro de una semana, nada habrá cambiado.</p>
+      <div className="pause-track" aria-hidden="true"><span className="pause-track-fill"></span></div>
     </section>
   );
 }

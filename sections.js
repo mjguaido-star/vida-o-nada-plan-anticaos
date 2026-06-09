@@ -860,7 +860,12 @@ function MomentoIncomodo() {
     className: "pause-line-2"
   }, "Y seguir igual."), React.createElement("p", {
     className: "pause-line-3"
-  }, "Y dentro de una semana, nada habr\xE1 cambiado."));
+  }, "Y dentro de una semana, nada habr\xE1 cambiado."), React.createElement("div", {
+    className: "pause-track",
+    "aria-hidden": "true"
+  }, React.createElement("span", {
+    className: "pause-track-fill"
+  })));
 }
 Object.assign(window, {
   Nav,

@@ -579,6 +579,33 @@ a:focus-visible .arrow {
   .pause-line-2,
   .pause-line-3 { opacity: 1; transform: none; transition: none; }
 }
+/* línea horizontal sutil: avanza desde la izquierda, nunca llega al final, bucle */
+.pause-track {
+  position: relative;
+  width: clamp(220px, 38vw, 420px);
+  height: 1px;
+  margin: clamp(66px, 9vw, 120px) auto 0;
+  background: rgba(42, 24, 16, 0.08);
+  overflow: hidden;
+}
+.pause-track-fill {
+  position: absolute;
+  top: 0; left: -30%;
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, rgba(150, 68, 5, 0.45), transparent);
+  animation: pauseTravel 7.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+@keyframes pauseTravel {
+  0%   { left: -30%; opacity: 0; }
+  14%  { opacity: 1; }
+  58%  { opacity: 1; }
+  80%  { left: 62%; opacity: 0; }
+  100% { left: 62%; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pause-track-fill { animation: none; left: 0; opacity: 0.4; }
+}
 
 /* ---- Texto escondido tras los pilares ---- */
 .hidden-line {
