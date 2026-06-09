@@ -210,7 +210,6 @@ function Programa() {
             </Reveal>
           ))}
         </div>
-        <p className="cards-hint" aria-hidden="true">↔ Pasa el ratón para ver</p>
         <Reveal delay={160}>
           <p className="hidden-line">Si has llegado hasta aquí, ya sabes que esto va contigo.</p>
         </Reveal>

@@ -472,10 +472,7 @@ function Programa() {
     style: {
       height: "100%"
     }
-  }, d))))), React.createElement("p", {
-    className: "cards-hint",
-    "aria-hidden": "true"
-  }, "\u2194 Pasa el rat\xF3n para ver"), React.createElement(Reveal, {
+  }, d))))), React.createElement(Reveal, {
     delay: 160
   }, React.createElement("p", {
     className: "hidden-line"

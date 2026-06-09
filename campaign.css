@@ -501,16 +501,6 @@ a:focus-visible .arrow {
 .film-43 { left: 18px; bottom: 14px; }
 .film-2  { right: 16px; bottom: 14px; }
 .film-tick { right: 15px; top: 14px; font-size: 0.5rem; color: rgba(214,134,49,0.55); }
-/* pista de interacción bajo las tarjetas */
-.cards-hint {
-  text-align: center;
-  font-family: var(--font-subtitle);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(42,24,16,0.42);
-  margin: 34px 0 0;
-}
 /* responsive: sin 3D en pantallas pequeñas (legibilidad + layout intactos) */
 @media (max-width: 880px) {
   .film-card { transform: none; box-shadow: 0 16px 34px -18px rgba(0,0,0,0.55); }
