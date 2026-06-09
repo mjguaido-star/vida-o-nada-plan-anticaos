@@ -856,9 +856,11 @@ function MomentoIncomodo() {
     className: "pause-section"
   }, React.createElement("p", {
     className: "pause-line-1"
-  }, "Puedes cerrar esta p\xE1gina."), React.createElement("p", {
+  }, "Puedes cerrar esto."), React.createElement("p", {
     className: "pause-line-2"
-  }, "Y seguir igual."));
+  }, "Y seguir igual."), React.createElement("p", {
+    className: "pause-line-3"
+  }, "Y dentro de una semana, nada habr\xE1 cambiado."));
 }
 Object.assign(window, {
   Nav,

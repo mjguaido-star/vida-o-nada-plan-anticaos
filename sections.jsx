@@ -374,8 +374,9 @@ function MomentoIncomodo() {
   }, []);
   return (
     <section ref={ref} className="pause-section">
-      <p className="pause-line-1">Puedes cerrar esta página.</p>
+      <p className="pause-line-1">Puedes cerrar esto.</p>
       <p className="pause-line-2">Y seguir igual.</p>
+      <p className="pause-line-3">Y dentro de una semana, nada habrá cambiado.</p>
     </section>
   );
 }
