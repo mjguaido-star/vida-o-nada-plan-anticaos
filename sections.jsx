@@ -199,9 +199,18 @@ function Programa() {
         </div>
         <div className="pillar-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16 }}>
           {pillars.map(([n, ic, t, d], i) => (
-            <Reveal key={n} delay={i * 100}><PillarCard base={ICONS} number={n} icon={ic} title={t} style={{ height: "100%" }}>{d}</PillarCard></Reveal>
+            <Reveal key={n} delay={i * 100}>
+              <div className="film-card">
+                <span className="film-label" aria-hidden="true">Kodak Portra 400</span>
+                <span className="film-mark film-43" aria-hidden="true">43</span>
+                <span className="film-mark film-2" aria-hidden="true">2</span>
+                <span className="film-mark film-tick" aria-hidden="true">▲</span>
+                <PillarCard base={ICONS} number={n} icon={ic} title={t} style={{ height: "100%" }}>{d}</PillarCard>
+              </div>
+            </Reveal>
           ))}
         </div>
+        <p className="cards-hint" aria-hidden="true">↔ Pasa el ratón para ver</p>
         <Reveal delay={160}>
           <p className="hidden-line">Si has llegado hasta aquí, ya sabes que esto va contigo.</p>
         </Reveal>

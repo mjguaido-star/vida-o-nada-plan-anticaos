@@ -435,13 +435,92 @@ a:focus-visible .arrow {
   opacity: 0.22;
 }
 
-/* ---------- 11. PLAN ANTICAOS pillar cards: earth gradient + shadow ---------- */
-.pillar-grid > .reveal > * {
+/* ---------- 11. PLAN ANTICAOS: tarjetas como tira de película (3D cinematográfico) ---------- */
+.film-card {
+  position: relative;
+  height: 100%;
+  border-radius: 18px;
+  transform: perspective(1200px) rotateY(-12deg) rotateX(2deg);
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 22px 30px 60px -26px rgba(0,0,0,0.7), 0 8px 22px rgba(0,0,0,0.34);
+  will-change: transform;
+}
+/* hover: la tarjeta gira hacia ti y se acerca */
+.film-card:hover {
+  transform: perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1.04);
+  box-shadow: 0 40px 74px -26px rgba(0,0,0,0.72), 0 12px 30px rgba(0,0,0,0.42);
+  z-index: 5;
+}
+/* superficie real de la tarjeta (PillarCard interno) — degradado tierra intacto */
+.pillar-grid .film-card > div {
   background: linear-gradient(158deg, #4d3019 0%, #301d11 52%, #1d1209 100%) !important;
   box-shadow:
-    0 22px 46px rgba(18,10,5,0.5),
     inset 0 1px 0 rgba(243,232,204,0.08),
     inset 0 0 0 1px rgba(243,232,204,0.06) !important;
+  height: 100%;
+  border-radius: inherit;
+}
+/* luz simulada en el borde izquierdo (la fuente entra por la izquierda) */
+.film-card::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(101deg, rgba(255,238,205,0.17) 0%, rgba(255,238,205,0.05) 12%, transparent 30%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 4;
+}
+/* etiqueta tipo carrete, borde izquierdo, vertical */
+.film-label {
+  position: absolute;
+  left: 7px; top: 0; bottom: 0;
+  display: flex; align-items: center; justify-content: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-subtitle);
+  font-size: 0.58rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(214,134,49,0.72);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 5;
+}
+/* marcas de fotograma (muy sutiles) */
+.film-mark {
+  position: absolute;
+  font-family: var(--font-subtitle);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: rgba(243,232,204,0.4);
+  pointer-events: none;
+  z-index: 5;
+}
+.film-43 { left: 18px; bottom: 14px; }
+.film-2  { right: 16px; bottom: 14px; }
+.film-tick { right: 15px; top: 14px; font-size: 0.5rem; color: rgba(214,134,49,0.55); }
+/* pista de interacción bajo las tarjetas */
+.cards-hint {
+  text-align: center;
+  font-family: var(--font-subtitle);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(42,24,16,0.42);
+  margin: 34px 0 0;
+}
+/* responsive: sin 3D en pantallas pequeñas (legibilidad + layout intactos) */
+@media (max-width: 880px) {
+  .film-card { transform: none; box-shadow: 0 16px 34px -18px rgba(0,0,0,0.55); }
+  .film-card:hover { transform: scale(1.02); }
+}
+@media (max-width: 640px) {
+  .film-label, .film-mark { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .film-card { transition: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
