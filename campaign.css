@@ -536,19 +536,23 @@ a:focus-visible .arrow {
   padding: clamp(90px, 12vw, 150px) clamp(28px, 8vw, 110px);
 }
 
-/* Cámara REAL, nítida, a la derecha, con giro 3D */
+/* Cámara REAL flotando (PNG transparente, sin caja) — entra desde la derecha */
 .camera-img {
   position: absolute;
-  right: clamp(-8%, -2vw, 0%);
+  right: -200px;                 /* arranca fuera de pantalla */
   top: 50%;
-  width: clamp(300px, 42vw, 620px);
+  width: clamp(280px, 38vw, 560px);
   height: auto;
   transform: translateY(-50%) perspective(1000px) rotateY(-20deg);
-  transform-origin: right center;
-  border-radius: 10px;
-  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.55);
+  filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.32));
+  opacity: 0;
+  transition: right 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.5s ease;
   z-index: 1;
   pointer-events: none;
+}
+.camera-section.active .camera-img {
+  right: 5%;
+  opacity: 1;
 }
 
 /* Haz de luz desde la lente de la cámara hacia la izquierda (el texto) */
@@ -565,7 +569,7 @@ a:focus-visible .arrow {
   pointer-events: none;
   z-index: 2;
 }
-.camera-section.active .light { animation: cameraBeam 0.9s ease 0.18s forwards; }
+.camera-section.active .light { animation: cameraBeam 0.8s ease 0.95s forwards; }
 
 /* FLASH a pantalla completa: opacity 0 → 1 → 0 */
 .flash {
@@ -576,7 +580,7 @@ a:focus-visible .arrow {
   pointer-events: none;
   z-index: 4;
 }
-.camera-section.active .flash { animation: cameraFlash 0.16s ease-out 0.05s 1; }
+.camera-section.active .flash { animation: cameraFlash 0.15s ease-out 0.85s 1; }
 
 /* Texto a la izquierda */
 .camera-section .text {
@@ -617,9 +621,9 @@ a:focus-visible .arrow {
   color: var(--accent);
 }
 /* tras el flash, el texto se "revela" — stagger 0.2s */
-.camera-section.active .text h2 { opacity: 1; filter: blur(0); transform: none; transition-delay: 0.3s; }
-.camera-section.active .text h3 { opacity: 1; filter: blur(0); transform: none; transition-delay: 0.5s; }
-.camera-section.active .text h1 { opacity: 1; filter: blur(0); transform: none; transition-delay: 0.7s; }
+.camera-section.active .text h2 { opacity: 1; filter: blur(0); transform: none; transition-delay: 1.05s; }
+.camera-section.active .text h3 { opacity: 1; filter: blur(0); transform: none; transition-delay: 1.25s; }
+.camera-section.active .text h1 { opacity: 1; filter: blur(0); transform: none; transition-delay: 1.45s; }
 
 @keyframes cameraFlash {
   0%   { opacity: 0; }
@@ -637,7 +641,8 @@ a:focus-visible .arrow {
     justify-content: center;
     text-align: center;
   }
-  .camera-img { right: -24%; width: clamp(340px, 86vw, 540px); opacity: 0.55; }
+  .camera-img { width: clamp(320px, 80vw, 480px); }
+  .camera-section.active .camera-img { right: -16%; opacity: 0.38; }
   .camera-section .text { margin: 0 auto; max-width: 26ch; }
   .light { right: 50%; transform: translate(50%, -50%); }
 }
