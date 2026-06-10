@@ -571,19 +571,20 @@ a:focus-visible .arrow {
   position: relative;
   z-index: 2;
   opacity: 0;
-  transform: translate(10px, 16px);
+  transform: translate(-12px, 16px);
   filter: blur(8px);
   transition: opacity 0.9s ease, transform 0.9s ease, filter 0.9s ease;
 }
-.pause-section.visible .pause-line-1 { opacity: 1; transform: none; filter: blur(0); transition-delay: 0.35s; }
-.pause-section.visible .pause-line-2 { opacity: 1; transform: none; filter: blur(0); transition-delay: 0.6s; }
-.pause-section.visible .pause-line-3 { opacity: 1; transform: none; filter: blur(0); transition-delay: 1s; }
+/* el texto aparece JUSTO con el flash (≈0.85s) y en la dirección de la lente */
+.pause-section.visible .pause-line-1 { opacity: 1; transform: none; filter: blur(0); transition-delay: 0.95s; }
+.pause-section.visible .pause-line-2 { opacity: 1; transform: none; filter: blur(0); transition-delay: 1.2s; }
+.pause-section.visible .pause-line-3 { opacity: 1; transform: none; filter: blur(0); transition-delay: 1.6s; }
 
 /* la cámara que revela: lente tenue (derecha) + luz cálida que se extiende al centro */
 .pause-glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 72% 88% at 80% 50%, rgba(214, 134, 49, 0.10), transparent 56%);
+  background: radial-gradient(ellipse 72% 88% at 18% 50%, rgba(214, 134, 49, 0.10), transparent 56%);
   opacity: 0;
   transition: opacity 1.3s ease;
   pointer-events: none;
@@ -592,14 +593,14 @@ a:focus-visible .arrow {
 .pause-section.visible .pause-glow { opacity: 1; }
 .pause-lens {
   position: absolute;
-  top: 50%; right: clamp(2%, 6vw, 8%);
+  top: 50%; left: clamp(0%, 2vw, 5%);
   width: clamp(150px, 22vw, 300px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
-  transform: translateY(-50%) scale(0.96);
+  transform: translate(-54px, -50%) scale(0.96);
   opacity: 0;
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
   pointer-events: none;
   z-index: 1;
   -webkit-mask: radial-gradient(circle, #000 50%, transparent 72%);
@@ -612,8 +613,8 @@ a:focus-visible .arrow {
   filter: saturate(0.85) brightness(0.85);
 }
 .pause-section.visible .pause-lens {
-  opacity: 0.22;
-  transform: translateY(-50%) scale(1);
+  opacity: 0.3;
+  transform: translate(0, -50%) scale(1);
 }
 /* destello cálido del cristal del objetivo al revelarse */
 .pause-lens::after {
@@ -624,6 +625,24 @@ a:focus-visible .arrow {
   transition: opacity 1.3s ease;
 }
 .pause-section.visible .pause-lens::after { opacity: 1; }
+/* el flash: un único destello cálido desde la lente que "expone" el texto */
+.pause-flash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 14% 50%, rgba(255, 246, 226, 0.92), rgba(255, 209, 138, 0.32) 28%, transparent 60%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: screen;
+}
+.pause-section.visible .pause-flash {
+  animation: pauseFlash 0.6s ease-out 0.75s 1 both;
+}
+@keyframes pauseFlash {
+  0%   { opacity: 0; }
+  20%  { opacity: 0.95; }
+  100% { opacity: 0; }
+}
 @media (max-width: 640px) {
   .pause-lens { display: none; }
 }
@@ -632,6 +651,7 @@ a:focus-visible .arrow {
   .pause-line-2,
   .pause-line-3 { opacity: 1; transform: none; filter: none; transition: none; }
   .pause-glow, .pause-lens, .pause-lens::after { transition: none; }
+  .pause-flash { display: none; }
 }
 /* línea horizontal: avanza desde la izquierda, nunca llega al final, bucle */
 .pause-track {

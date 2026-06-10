@@ -376,6 +376,7 @@ function MomentoIncomodo() {
     <section ref={ref} className="pause-section">
       <div className="pause-glow" aria-hidden="true"></div>
       <div className="pause-lens" aria-hidden="true"><img className="pause-lens-img" src="./assets/objetivo.jpg" alt="" /></div>
+      <div className="pause-flash" aria-hidden="true"></div>
       <p className="pause-line-1">Puedes cerrar esto.</p>
       <p className="pause-line-2">Y seguir igual.</p>
       <p className="pause-line-3">Y dentro de una semana, nada habrá cambiado.</p>
