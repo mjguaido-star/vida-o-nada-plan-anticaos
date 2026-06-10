@@ -539,19 +539,20 @@ a:focus-visible .arrow {
 /* Cámara REAL flotando (PNG transparente, sin caja) — entra desde la derecha */
 .camera-img {
   position: absolute;
-  right: -200px;                 /* arranca fuera de pantalla */
+  right: 5%;
   top: 50%;
   width: clamp(280px, 38vw, 560px);
   height: auto;
-  transform: translateY(-50%) perspective(1000px) rotateY(-20deg);
+  /* arranca empujada fuera de pantalla (a la derecha) y entra deslizándose */
+  transform: translate(440px, -50%) perspective(1000px) rotateY(-20deg);
   filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.32));
   opacity: 0;
-  transition: right 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.5s ease;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.5s ease;
   z-index: 1;
   pointer-events: none;
 }
 .camera-section.active .camera-img {
-  right: 5%;
+  transform: translate(0, -50%) perspective(1000px) rotateY(-20deg);
   opacity: 1;
 }
 
@@ -641,8 +642,8 @@ a:focus-visible .arrow {
     justify-content: center;
     text-align: center;
   }
-  .camera-img { width: clamp(320px, 80vw, 480px); }
-  .camera-section.active .camera-img { right: -16%; opacity: 0.38; }
+  .camera-img { width: clamp(320px, 80vw, 480px); right: -14%; }
+  .camera-section.active .camera-img { opacity: 0.4; }
   .camera-section .text { margin: 0 auto; max-width: 26ch; }
   .light { right: 50%; transform: translate(50%, -50%); }
 }
