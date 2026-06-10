@@ -856,7 +856,7 @@ function MomentoIncomodo() {
     className: "camera-section"
   }, React.createElement("img", {
     className: "camera-img",
-    src: "./assets/camara-leica.png",
+    src: "./assets/camara-leica2.png",
     alt: "",
     "aria-hidden": "true"
   }), React.createElement("div", {

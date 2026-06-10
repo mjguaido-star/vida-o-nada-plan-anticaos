@@ -539,12 +539,13 @@ a:focus-visible .arrow {
 /* Cámara REAL flotando (PNG transparente, sin caja) — entra desde la derecha */
 .camera-img {
   position: absolute;
-  right: -4%;                     /* pegada al margen derecho, como si saliera de ahí */
-  top: 44%;                       /* ligeramente por encima del centro */
-  width: clamp(300px, 40vw, 600px);
+  right: -3%;                     /* pegada al margen derecho, como si saliera de ahí */
+  top: 46%;                       /* ligeramente por encima del centro */
+  width: clamp(260px, 33vw, 500px);
   height: auto;
+  image-rendering: -webkit-optimize-contrast;   /* nítida al escalar */
   /* cámara de lado, girada sobre el eje vertical + entra deslizándose desde la derecha */
-  transform: translate(460px, -50%) perspective(1200px) rotateY(-22deg) rotateX(4deg);
+  transform: translate(440px, -50%) perspective(1200px) rotateY(-16deg) rotateX(3deg);
   filter: drop-shadow(0px 20px 40px rgba(0, 0, 0, 0.25));
   opacity: 0;
   transition: transform 0.85s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.5s ease;
@@ -552,22 +553,26 @@ a:focus-visible .arrow {
   pointer-events: none;
 }
 .camera-section.active .camera-img {
-  transform: translate(0, -50%) perspective(1200px) rotateY(-22deg) rotateX(4deg);
+  transform: translate(0, -50%) perspective(1200px) rotateY(-16deg) rotateX(3deg);
   opacity: 1;
 }
 
 /* Haz de luz desde la lente de la cámara hacia la izquierda (el texto) */
 .light {
   position: absolute;
-  right: 30%;                      /* el vértice nace en la lente */
-  top: 44%;
-  width: clamp(460px, 58vw, 860px);   /* largo del cono hacia el texto */
-  height: clamp(240px, 34vw, 440px);  /* apertura del cono */
+  right: 44%;                      /* el vértice nace justo en la lente */
+  top: 47%;
+  width: clamp(380px, 44vw, 640px);   /* largo del cono hasta el texto */
+  height: clamp(190px, 26vw, 350px);  /* apertura del cono */
   transform: translateY(-50%) scaleX(0);
   transform-origin: right center;     /* crece desde el vértice (lente) hacia el texto */
-  clip-path: polygon(100% 50%, 0% 0%, 0% 100%);   /* triángulo: punta a la derecha, base a la izquierda */
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.92), rgba(255, 170, 70, 0.6) 30%, rgba(255, 170, 70, 0.16) 68%, transparent 96%);
-  filter: blur(5px);
+  clip-path: polygon(100% 50%, 0% 0%, 0% 100%);   /* triángulo: punta a la derecha (lente), base a la izquierda (texto) */
+  background: linear-gradient(to left,
+      rgba(255, 247, 222, 0.95) 0%,
+      rgba(255, 209, 135, 0.82) 42%,
+      rgba(255, 197, 120, 0.5) 80%,
+      rgba(255, 197, 120, 0.12) 100%);
+  filter: blur(3px);
   opacity: 0;
   pointer-events: none;
   z-index: 2;
