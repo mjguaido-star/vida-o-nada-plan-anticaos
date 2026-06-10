@@ -837,6 +837,7 @@ function MomentoIncomodo() {
   React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const target = el.querySelector(".text") || el;
     const io = new IntersectionObserver(es => {
       es.forEach(e => {
         if (e.isIntersecting) {
@@ -845,22 +846,20 @@ function MomentoIncomodo() {
         }
       });
     }, {
-      threshold: 0.35
+      threshold: 0.5
     });
-    io.observe(el);
+    io.observe(target);
     return () => io.disconnect();
   }, []);
   return React.createElement("section", {
     ref: ref,
     className: "camera-section"
-  }, React.createElement("div", {
-    className: "camera",
-    "aria-hidden": "true"
   }, React.createElement("img", {
-    className: "camera-lens-img",
-    src: "./assets/objetivo.jpg",
-    alt: ""
-  })), React.createElement("div", {
+    className: "camera-img",
+    src: "./assets/camara-hero.jpg",
+    alt: "",
+    "aria-hidden": "true"
+  }), React.createElement("div", {
     className: "light",
     "aria-hidden": "true"
   }), React.createElement("div", {

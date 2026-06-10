@@ -361,20 +361,21 @@ function MomentoIncomodo() {
   React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const target = el.querySelector(".text") || el;   // dispara cuando el TEXTO está en pantalla
     const io = new IntersectionObserver((es) => {
       es.forEach((e) => {
         if (e.isIntersecting) {
-          el.classList.add("active");   // dispara la secuencia: flash + luz + texto
+          el.classList.add("active");   // secuencia: flash → luz → texto
           io.disconnect();
         }
       });
-    }, { threshold: 0.35 });
-    io.observe(el);
+    }, { threshold: 0.5 });
+    io.observe(target);
     return () => io.disconnect();
   }, []);
   return (
     <section ref={ref} className="camera-section">
-      <div className="camera" aria-hidden="true"><img className="camera-lens-img" src="./assets/objetivo.jpg" alt="" /></div>
+      <img className="camera-img" src="./assets/camara-hero.jpg" alt="" aria-hidden="true" />
       <div className="light" aria-hidden="true"></div>
       <div className="flash" aria-hidden="true"></div>
       <div className="text">
