@@ -864,10 +864,7 @@ function MomentoIncomodo() {
     className: "pause-lens-img",
     src: "./assets/objetivo.jpg",
     alt: ""
-  })), React.createElement("div", {
-    className: "pause-flash",
-    "aria-hidden": "true"
-  }), React.createElement("p", {
+  })), React.createElement("p", {
     className: "pause-line-1"
   }, "Puedes cerrar esto."), React.createElement("p", {
     className: "pause-line-2"
