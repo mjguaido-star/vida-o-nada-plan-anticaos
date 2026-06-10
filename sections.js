@@ -856,7 +856,7 @@ function MomentoIncomodo() {
     className: "camera-section"
   }, React.createElement("img", {
     className: "camera-img",
-    src: "./assets/camara-float.png",
+    src: "./assets/camara-perfil.png",
     alt: "",
     "aria-hidden": "true"
   }), React.createElement("div", {
