@@ -375,7 +375,7 @@ function MomentoIncomodo() {
   }, []);
   return (
     <section ref={ref} className="camera-section">
-      <img className="camera-img" src="./assets/camara-perfil.png" alt="" aria-hidden="true" />
+      <img className="camera-img" src="./assets/camara-lado.png" alt="" aria-hidden="true" />
       <div className="light" aria-hidden="true"></div>
       <div className="flash" aria-hidden="true"></div>
       <div className="text">
