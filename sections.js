@@ -840,42 +840,35 @@ function MomentoIncomodo() {
     const io = new IntersectionObserver(es => {
       es.forEach(e => {
         if (e.isIntersecting) {
-          el.classList.add("visible");
+          el.classList.add("active");
           io.disconnect();
         }
       });
     }, {
-      threshold: 0.25,
-      rootMargin: "0px 0px -10% 0px"
+      threshold: 0.35
     });
     io.observe(el);
     return () => io.disconnect();
   }, []);
   return React.createElement("section", {
     ref: ref,
-    className: "pause-section"
+    className: "camera-section"
   }, React.createElement("div", {
-    className: "pause-glow",
-    "aria-hidden": "true"
-  }), React.createElement("div", {
-    className: "pause-lens",
+    className: "camera",
     "aria-hidden": "true"
   }, React.createElement("img", {
-    className: "pause-lens-img",
+    className: "camera-lens-img",
     src: "./assets/objetivo.jpg",
     alt: ""
-  })), React.createElement("p", {
-    className: "pause-line-1"
-  }, "Puedes cerrar esto."), React.createElement("p", {
-    className: "pause-line-2"
-  }, "Y seguir igual."), React.createElement("p", {
-    className: "pause-line-3"
-  }, "Y dentro de una semana, nada habr\xE1 cambiado."), React.createElement("div", {
-    className: "pause-track",
+  })), React.createElement("div", {
+    className: "light",
     "aria-hidden": "true"
-  }, React.createElement("span", {
-    className: "pause-track-fill"
-  })));
+  }), React.createElement("div", {
+    className: "flash",
+    "aria-hidden": "true"
+  }), React.createElement("div", {
+    className: "text"
+  }, React.createElement("h2", null, "Puedes cerrar esto."), React.createElement("h3", null, "Y seguir igual."), React.createElement("h1", null, "Y dentro de una semana, nada habr\xE1 cambiado.")));
 }
 Object.assign(window, {
   Nav,

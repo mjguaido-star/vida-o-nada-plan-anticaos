@@ -355,7 +355,7 @@ function Cierre({ joined, onSubmit }) {
   );
 }
 
-/* ======================================================== MOMENTO INCÓMODO (la pausa) */
+/* ======================================================== MOMENTO INCÓMODO: la cámara revela */
 function MomentoIncomodo() {
   const ref = React.useRef(null);
   React.useEffect(() => {
@@ -364,22 +364,24 @@ function MomentoIncomodo() {
     const io = new IntersectionObserver((es) => {
       es.forEach((e) => {
         if (e.isIntersecting) {
-          el.classList.add("visible");   // dispara SOLO al entrar en pantalla
+          el.classList.add("active");   // dispara la secuencia: flash + luz + texto
           io.disconnect();
         }
       });
-    }, { threshold: 0.25, rootMargin: "0px 0px -10% 0px" });
+    }, { threshold: 0.35 });
     io.observe(el);
     return () => io.disconnect();
   }, []);
   return (
-    <section ref={ref} className="pause-section">
-      <div className="pause-glow" aria-hidden="true"></div>
-      <div className="pause-lens" aria-hidden="true"><img className="pause-lens-img" src="./assets/objetivo.jpg" alt="" /></div>
-      <p className="pause-line-1">Puedes cerrar esto.</p>
-      <p className="pause-line-2">Y seguir igual.</p>
-      <p className="pause-line-3">Y dentro de una semana, nada habrá cambiado.</p>
-      <div className="pause-track" aria-hidden="true"><span className="pause-track-fill"></span></div>
+    <section ref={ref} className="camera-section">
+      <div className="camera" aria-hidden="true"><img className="camera-lens-img" src="./assets/objetivo.jpg" alt="" /></div>
+      <div className="light" aria-hidden="true"></div>
+      <div className="flash" aria-hidden="true"></div>
+      <div className="text">
+        <h2>Puedes cerrar esto.</h2>
+        <h3>Y seguir igual.</h3>
+        <h1>Y dentro de una semana, nada habrá cambiado.</h1>
+      </div>
     </section>
   );
 }
