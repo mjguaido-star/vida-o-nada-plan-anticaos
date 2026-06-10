@@ -854,7 +854,17 @@ function MomentoIncomodo() {
   return React.createElement("section", {
     ref: ref,
     className: "pause-section"
-  }, React.createElement("p", {
+  }, React.createElement("div", {
+    className: "pause-glow",
+    "aria-hidden": "true"
+  }), React.createElement("div", {
+    className: "pause-lens",
+    "aria-hidden": "true"
+  }, React.createElement("img", {
+    className: "pause-lens-img",
+    src: "./assets/objetivo.jpg",
+    alt: ""
+  })), React.createElement("p", {
     className: "pause-line-1"
   }, "Puedes cerrar esto."), React.createElement("p", {
     className: "pause-line-2"

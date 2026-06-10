@@ -527,6 +527,7 @@ a:focus-visible .arrow {
 
 /* ---- La pausa: momento reflexivo, no espacio vacío ---- */
 .pause-section {
+  position: relative;
   padding: clamp(150px, 24vw, 260px) 20px;
   text-align: center;
   background: var(--von-parchment);
@@ -563,21 +564,74 @@ a:focus-visible .arrow {
   margin: clamp(56px, 9vw, 100px) auto 0;
   color: var(--accent);
 }
-/* fade-in escalonado — scroll-triggered vía clase .visible, lento y suave */
+/* reveal "proyectado por la lente": opacity + desenfoque + leve subida, escalonado */
 .pause-line-1,
 .pause-line-2,
 .pause-line-3 {
+  position: relative;
+  z-index: 2;
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translate(10px, 16px);
+  filter: blur(8px);
+  transition: opacity 0.9s ease, transform 0.9s ease, filter 0.9s ease;
 }
-.pause-section.visible .pause-line-1 { opacity: 1; transform: none; }
-.pause-section.visible .pause-line-2 { opacity: 1; transform: none; transition-delay: 0.55s; }
-.pause-section.visible .pause-line-3 { opacity: 1; transform: none; transition-delay: 1.1s; }
+.pause-section.visible .pause-line-1 { opacity: 1; transform: none; filter: blur(0); transition-delay: 0.35s; }
+.pause-section.visible .pause-line-2 { opacity: 1; transform: none; filter: blur(0); transition-delay: 0.6s; }
+.pause-section.visible .pause-line-3 { opacity: 1; transform: none; filter: blur(0); transition-delay: 1s; }
+
+/* la cámara que revela: lente tenue (derecha) + luz cálida que se extiende al centro */
+.pause-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 72% 88% at 80% 50%, rgba(214, 134, 49, 0.10), transparent 56%);
+  opacity: 0;
+  transition: opacity 1.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.pause-section.visible .pause-glow { opacity: 1; }
+.pause-lens {
+  position: absolute;
+  top: 50%; right: clamp(2%, 6vw, 8%);
+  width: clamp(150px, 22vw, 300px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: translateY(-50%) scale(0.96);
+  opacity: 0;
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask: radial-gradient(circle, #000 50%, transparent 72%);
+          mask: radial-gradient(circle, #000 50%, transparent 72%);
+}
+.pause-lens-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85) brightness(0.85);
+}
+.pause-section.visible .pause-lens {
+  opacity: 0.22;
+  transform: translateY(-50%) scale(1);
+}
+/* destello cálido del cristal del objetivo al revelarse */
+.pause-lens::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 201, 38, 0.4), transparent 58%);
+  opacity: 0;
+  transition: opacity 1.3s ease;
+}
+.pause-section.visible .pause-lens::after { opacity: 1; }
+@media (max-width: 640px) {
+  .pause-lens { display: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   .pause-line-1,
   .pause-line-2,
-  .pause-line-3 { opacity: 1; transform: none; transition: none; }
+  .pause-line-3 { opacity: 1; transform: none; filter: none; transition: none; }
+  .pause-glow, .pause-lens, .pause-lens::after { transition: none; }
 }
 /* línea horizontal: avanza desde la izquierda, nunca llega al final, bucle */
 .pause-track {
