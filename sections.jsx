@@ -375,7 +375,7 @@ function MomentoIncomodo() {
   }, []);
   return (
     <section ref={ref} className="camera-section">
-      <img className="camera-img" src="./assets/camara-leica3.png" alt="" aria-hidden="true" />
+      <img className="camera-img" src="./assets/camara-leica4.png" alt="" aria-hidden="true" />
       <div className="flash-cone" aria-hidden="true"></div>
       <div className="flash-burst" aria-hidden="true"></div>
       <div className="text-col">
