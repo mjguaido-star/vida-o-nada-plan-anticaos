@@ -860,10 +860,7 @@ function MomentoIncomodo() {
     alt: "",
     "aria-hidden": "true"
   }), React.createElement("div", {
-    className: "light",
-    "aria-hidden": "true"
-  }), React.createElement("div", {
-    className: "flash",
+    className: "flash-light",
     "aria-hidden": "true"
   }), React.createElement("div", {
     className: "text"
