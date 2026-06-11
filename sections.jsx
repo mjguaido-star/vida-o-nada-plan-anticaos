@@ -361,26 +361,31 @@ function MomentoIncomodo() {
   React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const target = el.querySelector(".text") || el;   // dispara cuando el TEXTO está en pantalla
+    const target = el.querySelector(".text-col") || el;   // dispara cuando el texto está en pantalla
     const io = new IntersectionObserver((es) => {
       es.forEach((e) => {
         if (e.isIntersecting) {
-          el.classList.add("active");   // secuencia: flash → luz → texto
+          el.classList.add("active");   // secuencia: cámara → flash → cono → revelado
           io.disconnect();
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.4 });
     io.observe(target);
     return () => io.disconnect();
   }, []);
   return (
     <section ref={ref} className="camera-section">
       <img className="camera-img" src="./assets/camara-leica2.png" alt="" aria-hidden="true" />
-      <div className="flash-light" aria-hidden="true"></div>
-      <div className="text">
-        <h2>Puedes cerrar esto.</h2>
-        <h3>Y seguir igual.</h3>
-        <h1>Y dentro de una semana, nada habrá cambiado.</h1>
+      <div className="flash-cone" aria-hidden="true"></div>
+      <div className="flash-burst" aria-hidden="true"></div>
+      <div className="text-col">
+        <p className="lead lead-1">Puedes cerrar esto.</p>
+        <p className="lead lead-2">Y seguir igual.</p>
+        <div className="filmstrip">
+          <div className="filmstrip-inner">
+            <p className="reveal-text">Y dentro de una semana, nada habrá cambiado.</p>
+          </div>
+        </div>
       </div>
     </section>
   );

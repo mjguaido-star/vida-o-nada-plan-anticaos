@@ -837,7 +837,7 @@ function MomentoIncomodo() {
   React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const target = el.querySelector(".text") || el;
+    const target = el.querySelector(".text-col") || el;
     const io = new IntersectionObserver(es => {
       es.forEach(e => {
         if (e.isIntersecting) {
@@ -846,7 +846,7 @@ function MomentoIncomodo() {
         }
       });
     }, {
-      threshold: 0.5
+      threshold: 0.4
     });
     io.observe(target);
     return () => io.disconnect();
@@ -860,11 +860,24 @@ function MomentoIncomodo() {
     alt: "",
     "aria-hidden": "true"
   }), React.createElement("div", {
-    className: "flash-light",
+    className: "flash-cone",
     "aria-hidden": "true"
   }), React.createElement("div", {
-    className: "text"
-  }, React.createElement("h2", null, "Puedes cerrar esto."), React.createElement("h3", null, "Y seguir igual."), React.createElement("h1", null, "Y dentro de una semana, nada habr\xE1 cambiado.")));
+    className: "flash-burst",
+    "aria-hidden": "true"
+  }), React.createElement("div", {
+    className: "text-col"
+  }, React.createElement("p", {
+    className: "lead lead-1"
+  }, "Puedes cerrar esto."), React.createElement("p", {
+    className: "lead lead-2"
+  }, "Y seguir igual."), React.createElement("div", {
+    className: "filmstrip"
+  }, React.createElement("div", {
+    className: "filmstrip-inner"
+  }, React.createElement("p", {
+    className: "reveal-text"
+  }, "Y dentro de una semana, nada habr\xE1 cambiado.")))));
 }
 Object.assign(window, {
   Nav,
